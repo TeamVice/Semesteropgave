@@ -8,5 +8,6 @@ namespace JanitorSystem.Model
 {
     class Janitor : Ansat
     {
+        private int Vice_Id;
     }
 }

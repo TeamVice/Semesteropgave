@@ -8,5 +8,6 @@ namespace JanitorSystem.Model
 {
     class DLA : Ansat
     {
+        private int DLA_Id;
     }
 }
