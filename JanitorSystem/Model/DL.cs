@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Model
 {
-    class DL
+    class DL : Medarbejder
     {
     }
 }
