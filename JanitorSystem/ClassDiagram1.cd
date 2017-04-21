@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="JanitorSystem.Model.DL">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+    <Position X="0.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\DL.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="JanitorSystem.Model.DLA">
-    <Position X="2.5" Y="3.25" Width="1.5" />
+    <Position X="2.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\DLA.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="JanitorSystem.Model.Janitor">
-    <Position X="4.5" Y="3.25" Width="1.5" />
+    <Position X="4.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
       <FileName>Model\Janitor.cs</FileName>
@@ -29,30 +29,30 @@
     </TypeIdentifier>
   </Class>
   <Class Name="JanitorSystem.Model.Opgaver">
-    <Position X="6.75" Y="0.75" Width="1.5" />
+    <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAgAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAQAIQIAA=</HashCode>
       <FileName>Model\Opgaver.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="JanitorSystem.View.OpgaveInfo" Collapsed="true">
-    <Position X="8" Y="5.75" Width="1.5" />
+  <Class Name="JanitorSystem.View.OpgaveInfo">
+    <Position X="10.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\OpgaveInfo.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="JanitorSystem.View.OpgaveListe" Collapsed="true">
-    <Position X="6" Y="5.25" Width="1.5" />
+  <Class Name="JanitorSystem.View.OpgaveListe">
+    <Position X="10.5" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\OpgaveListe.xaml.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="JanitorSystem.View.OpretOpgave" Collapsed="true">
-    <Position X="3.75" Y="5.5" Width="1.5" />
+  <Class Name="JanitorSystem.View.OpretOpgave">
+    <Position X="10.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>View\OpretOpgave.xaml.cs</FileName>
