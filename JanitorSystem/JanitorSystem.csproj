@@ -100,20 +100,22 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Assignment.cs" />
     <Compile Include="Model\DL.cs" />
     <Compile Include="Model\DLA.cs" />
     <Compile Include="Model\Janitor.cs" />
     <Compile Include="Model\Ansat.cs" />
-    <Compile Include="Model\Opgaver.cs" />
+    <Compile Include="Model\ListCatalogSingleton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\OpgaveInfo.xaml.cs">
-      <DependentUpon>OpgaveInfo.xaml</DependentUpon>
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="View\AddAssignment.xaml.cs">
+      <DependentUpon>AddAssignment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\OpgaveListe.xaml.cs">
-      <DependentUpon>OpgaveListe.xaml</DependentUpon>
+    <Compile Include="View\AssignmentInfo.xaml.cs">
+      <DependentUpon>AssignmentInfo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\OpretOpgave.xaml.cs">
-      <DependentUpon>OpretOpgave.xaml</DependentUpon>
+    <Compile Include="View\AssignmentList.xaml.cs">
+      <DependentUpon>AssignmentList.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -141,15 +143,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\OpgaveInfo.xaml">
+    <Page Include="View\AddAssignment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\OpgaveListe.xaml">
+    <Page Include="View\AssignmentInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\OpretOpgave.xaml">
+    <Page Include="View\AssignmentList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,7 +159,6 @@
   <ItemGroup>
     <Folder Include="Converters\" />
     <Folder Include="Handlers\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
