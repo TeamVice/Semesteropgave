@@ -16,6 +16,6 @@ namespace JanitorSystem.Model
         public int Fødselsdag;
         public int Telefon { get; set; }
         public string Titel { get; set; }
-        public string TestString { get; set; }
+        
     }
 }
