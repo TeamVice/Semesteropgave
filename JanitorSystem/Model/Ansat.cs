@@ -12,8 +12,7 @@ namespace JanitorSystem.Model
         public int Arbejdstid { get; set; }
         public string Fornavn { get; set; }
         public string Efternavn { get; set; }
-
-        public int Fødselsdag;
+        public int Birthday { get; set; }
         public int Telefon { get; set; }
         public string Titel { get; set; }
         public string TestString { get; set; }
