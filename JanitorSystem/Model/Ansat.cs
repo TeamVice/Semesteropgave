@@ -15,6 +15,6 @@ namespace JanitorSystem.Model
         public int Birthday { get; set; }
         public int Telefon { get; set; }
         public string Titel { get; set; }
-        public string TestString { get; set; }
+        
     }
 }

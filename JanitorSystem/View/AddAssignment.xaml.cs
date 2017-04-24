@@ -20,9 +20,9 @@ namespace JanitorSystem.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class OpgaveInfo : Page
+    public sealed partial class AddAssignment : Page
     {
-        public OpgaveInfo()
+        public AddAssignment()
         {
             this.InitializeComponent();
         }
