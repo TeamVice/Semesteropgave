@@ -8,6 +8,6 @@ namespace JanitorSystem.Model
 {
     class DL
     {
-        private int DL_ID;
+        private int DL_Id;
     }
 }

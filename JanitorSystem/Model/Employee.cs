@@ -22,9 +22,5 @@ namespace JanitorSystem.Model
         {
 
         }
-        public override Tostring()
-        {
-
-        }
     }
 }
