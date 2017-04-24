@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JanitorSystem.Model
+namespace JanitorSystem.Handlers
 {
-    class Janitor
+    class AssignmentHandler
     {
-        private int Vice_Id;
     }
 }

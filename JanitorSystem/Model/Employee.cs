@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Model
 {
-    class Janitor
+    class Employee
     {
-        private int Vice_Id;
     }
 }

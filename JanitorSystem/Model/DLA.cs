@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Model
 {
-    class DLA : Ansat
+    class DLA
     {
         private int DLA_Id;
     }
