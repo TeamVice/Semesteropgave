@@ -22,5 +22,10 @@ namespace JanitorSystem.ViewModel
             }
         }
         #endregion
+
+        public MainViewModel()
+        {
+
+        }
     }
 }
