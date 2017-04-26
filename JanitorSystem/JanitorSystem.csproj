@@ -106,6 +106,8 @@
     </Compile>
     <Compile Include="Model\AssignemtList.cs" />
     <Compile Include="Model\Assignment.cs" />
+    <Compile Include="Model\Client.cs" />
+    <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\EmployeeList.cs" />
     <Compile Include="Model\RegAssignment.cs" />
