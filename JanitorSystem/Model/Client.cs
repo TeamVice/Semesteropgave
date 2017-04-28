@@ -7,10 +7,16 @@ using System.Threading.Tasks;
 namespace JanitorSystem.Model
 {
     class Client
-    { 
+    {
+        public int ClientId { get; set; }
 
-        public string clientFirstName { get; set; }
-        public string clientLastName { get; set; }
-        public string clientAddress { get; set; }
+        public string ClientBuildingNo { get; set; }
+
+        public string ClientName { get; set; }
+        
+        public int ClientPhone1 { get; set; }
+
+        public int ClientPhone2 { get; set; } 
+
     }
 }
