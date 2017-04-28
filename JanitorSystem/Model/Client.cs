@@ -16,7 +16,11 @@ namespace JanitorSystem.Model
         
         public int ClientPhone1 { get; set; }
 
-        public int ClientPhone2 { get; set; } 
+        public int ClientPhone2 { get; set; }
 
+        public Client()
+        {
+
+        }
     }
 }

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="dbcccbc1-f589-49bc-b947-6da40e606266"
+  name="Handler" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <packagedElements>
+    <packageHasNamedElement>
+      <Interface
+        Id="011cc2c5-5ae9-46e1-abb8-10e27ab9af22"
+        name="Interface1"
+        isAbstract="false"
+        isLeaf="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="4d84bb2c-8614-4105-ac6f-27752a8c4412"
+        name="AssignmentHandler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="daa08aa8-b1c4-4cf2-8149-2feb894a1d37">
+            <classMoniker
+              Id="6d299ee6-3e4a-48c9-949f-a4dd8586bce1"
+              LastKnownName="DateTimeConverter"
+              LastKnownLocation="Package_1351.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="077540f3-a1c5-4218-92a0-a4ebe3080872"
+        name="EmployeeHandler"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <dependency
+            Id="33f1218d-33b7-4df3-b5ca-f4a7c911b8b3">
+            <classMoniker
+              Id="df26eebd-e520-4b33-b7ea-fc83325e2e89"
+              LastKnownName="IntConverter"
+              LastKnownLocation="Package_1351.uml" />
+          </dependency>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
