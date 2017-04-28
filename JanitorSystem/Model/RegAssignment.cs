@@ -8,5 +8,10 @@ namespace JanitorSystem.Model
 {
     class RegAssignment
     {
+        public int RegAssignId { get; set; }
+
+        public string RegAssignTitle { get; set; }
+
+        public string RegAssignText { get; set; }
     }
 }

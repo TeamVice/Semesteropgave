@@ -9,9 +9,9 @@ namespace JanitorSystem.Model
     class Assignment
     {
        
-        public int assignId { get; set; }
-        public string assignTitle { get; set; }
-        public string assignDescription { get; set; }
+        public int AssignId { get; set; }
+        public string AssignTitle { get; set; }
+        public string AssignText { get; set; }
 
         public Assignment()
         {

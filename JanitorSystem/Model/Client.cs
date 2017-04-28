@@ -10,7 +10,7 @@ namespace JanitorSystem.Model
     {
         public int ClientId { get; set; }
 
-        public string ClientBuildingNo { get; set; }
+        public int ClientBuildingNo { get; set; }
 
         public string ClientName { get; set; }
         
