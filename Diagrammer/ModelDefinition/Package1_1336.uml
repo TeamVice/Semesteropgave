@@ -27,6 +27,16 @@
               LastKnownLocation="Package_1351.uml" />
           </dependency>
         </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="2c92e6af-f409-45ea-9f16-6cb531df5578"
+            name="CreateAssign"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>

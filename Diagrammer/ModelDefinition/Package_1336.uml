@@ -36,16 +36,6 @@
               LastKnownLocation="Package1_1336.uml" />
           </dependency>
         </suppliersInternal>
-        <ownedOperationsInternal>
-          <operation
-            Id="4cfd8283-691a-430e-8819-553e37ea2773"
-            name="MainViewModel"
-            isLeaf="false"
-            isStatic="false"
-            isAbstract="false"
-            concurrency="Sequential"
-            isQuery="false" />
-        </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>
     <packageHasNamedElement>
