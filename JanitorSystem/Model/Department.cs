@@ -8,5 +8,14 @@ namespace JanitorSystem.Model
 {
     class Department
     {
+
+        public int DepId { get; set; }
+
+        public string DepAddress { get; set; }
+
+        public string DepCity { get; set; }
+
+        public int DepZipCode { get; set; }
+
     }
 }
