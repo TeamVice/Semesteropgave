@@ -9,12 +9,17 @@ namespace JanitorSystem.Model
     public class Employee
     {
         #region Properties
-        public string firstName { get; set; }
-        public string lastName { get; set; }
-        public string department { get; set; }
-        public int workHours { get; set; }
-        public int phone { get; set; }
-        public string title { get; set; }
+   
+        
+        
+        public int EmployeeId { get; set; }
+
+        public string EmployeeName { get; set; }
+
+        public int Phone { get; set; }
+
+        public string Title { get; set; }
+
         #endregion
 
         // ctor
