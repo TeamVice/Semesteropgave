@@ -8,7 +8,12 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="150,198,0,0" TextWrapping="Wrap" Text="Skal være 6 tommer" VerticalAlignment="Top" Height="144" Width="138" FontSize="36"/>
-
+        <Grid x:Name="ViceAppMobile" Margin="10,20,10,20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="48"/>
+            </Grid.RowDefinitions>
+        </Grid>
     </Grid>
 </Page>
