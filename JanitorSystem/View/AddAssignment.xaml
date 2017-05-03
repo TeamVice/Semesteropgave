@@ -8,7 +8,57 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="107,99,0,0" TextWrapping="Wrap" Text="Skal være 6 Tommer" VerticalAlignment="Top" Height="139" Width="151" FontSize="36"/>
+        <Grid x:Name="ViceAppMobile">
 
+            <!-- General seperation of areas -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="48"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Title area -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock Text="TeamVice Boligforening" FontSize="25" FontFamily="verdana" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Border BorderBrush="Black" BorderThickness="3">
+                        <TextBlock Text="VTM" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
+                    </Border>
+                </Grid>
+            </Grid>
+            <!-- Area with menu buttons -->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
+                    <Button Content="Mine opgaver"/>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Button Content="Opret opgave"/>
+                </Grid>
+                <Grid Grid.Column="5">
+                    <Button Content="Opret fællesopgave"/>
+                </Grid>
+                <Grid Grid.Column="7">
+                    <Button Content="Telefonbog"/>
+                </Grid>
+            </Grid>
+        </Grid>
     </Grid>
 </Page>

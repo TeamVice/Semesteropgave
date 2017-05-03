@@ -6,4 +6,8 @@
     <Style x:Key="FontStyle" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Verdana"/>
     </Style>
+    
+    <Style x:Key="LabelStyle" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
+        <Setter Property="FontSize" Value="25"/>
+    </Style>
 </ResourceDictionary>

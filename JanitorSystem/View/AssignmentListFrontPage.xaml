@@ -9,11 +9,13 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid x:Name="ViceAppMobile">
+            <!-- General seperation of areas -->
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="13*"/>
                 <RowDefinition Height="48"/>
             </Grid.RowDefinitions>
+            <!-- Title area -->
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="5*"/>
@@ -28,6 +30,7 @@
                     </Border>
                 </Grid>
             </Grid>
+            <!-- Middle area with different things -->
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -45,7 +48,7 @@
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="1">
-                        <TextBlock Text="Mine opgaver" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontFamily="Verdana"/>
+                        <TextBlock Style="{StaticResource LabelStyle}" Text="Mine opgaver" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border BorderBrush="Black" BorderThickness="5">
@@ -53,7 +56,7 @@
                         </Border>
                     </Grid>
                     <Grid Grid.Row="4">
-                        <TextBlock Text="Fælles opgaver" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontFamily="Verdana"/>
+                        <TextBlock Style="{StaticResource LabelStyle}" Text="Fælles opgaver" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </Grid>
                     <Grid Grid.Row="5">
                         <Border BorderBrush="Black" BorderThickness="5">
@@ -62,6 +65,8 @@
                     </Grid>
                 </Grid>
             </Grid>
+            
+            <!-- Area with menu buttons -->
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="5"/>
@@ -75,7 +80,17 @@
                     <ColumnDefinition Width="5"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1">
-                    <AppBarButton Icon="List" HorizontalAlignment="Center"/>
+                    <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
+                    <Button Content="Mine opgaver"/>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Button Content="Opret opgave"/>
+                </Grid>
+                <Grid Grid.Column="5">
+                    <Button Content="Opret fællesopgave"/>
+                </Grid>
+                <Grid Grid.Column="7">
+                    <Button Content="Telefonbog"/>
                 </Grid>
             </Grid>
         </Grid>
