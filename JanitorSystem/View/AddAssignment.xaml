@@ -92,11 +92,13 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Grid Grid.Row="0" Grid.RowSpan="7">
-                                <Border BorderBrush="Black" BorderThickness="2">
-                                    
-                                </Border>
-                            </Grid>
+                            <Rectangle Grid.Row="0" Grid.RowSpan="6" Fill="White" Stroke="Black"/>
+                            <TextBox Grid.Row="0" PlaceholderText="Navn"/>
+                            <TextBox Grid.Row="1" PlaceholderText="Adresse"/>
+                            <TextBox Grid.Row="2" PlaceholderText="Postnummer"/>
+                            <TextBox Grid.Row="3" PlaceholderText="By"/>
+                            <TextBox Grid.Row="4" PlaceholderText="Primær telefon"/>
+                            <TextBox Grid.Row="5" PlaceholderText="Sekundær telefon"/>
                         </Grid>
                     </Grid>
                 </Grid>
