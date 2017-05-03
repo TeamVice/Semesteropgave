@@ -10,4 +10,9 @@
     <Style x:Key="LabelStyle" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
         <Setter Property="FontSize" Value="25"/>
     </Style>
+
+    <Style x:Key="Border" TargetType="Border">
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="5"/>
+    </Style>
 </ResourceDictionary>

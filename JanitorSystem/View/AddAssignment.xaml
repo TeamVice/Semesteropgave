@@ -32,6 +32,76 @@
                     </Border>
                 </Grid>
             </Grid>
+
+            <!-- Middle area with different things -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1">
+                        <TextBlock Style="{StaticResource LabelStyle}" Text="Opgaver"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Border Style="{StaticResource Border}">
+                            <ListView/>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBox Grid.Row="0" Grid.Column="0" PlaceholderText="Titel"/>
+                            <TextBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" PlaceholderText="Beskrivelse"/>
+                            <ComboBox Grid.Row="3" Grid.Column="0" Width="155" Height="39">
+                                <ComboBoxItem Content="Ansvarlig..."/>
+                                <ComboBoxItem Content="Karsten"/>
+                                <ComboBoxItem Content="Malene"/>
+                                <ComboBoxItem Content="Karsten"/>
+                            </ComboBox>
+                            <Button Grid.Row="4" Grid.Column="0" Content="Fælles" HorizontalAlignment="Left"/>
+                            <Button Grid.Row="4" Grid.Column="0" Content="Opgaveliste" HorizontalAlignment="Right"/>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Grid.RowSpan="7">
+                                <Border BorderBrush="Black" BorderThickness="2">
+                                    
+                                </Border>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+            
             <!-- Area with menu buttons -->
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>

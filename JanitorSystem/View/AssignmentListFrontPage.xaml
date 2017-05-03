@@ -51,7 +51,7 @@
                         <TextBlock Style="{StaticResource LabelStyle}" Text="Mine opgaver" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </Grid>
                     <Grid Grid.Row="2">
-                        <Border BorderBrush="Black" BorderThickness="5">
+                        <Border Style="{StaticResource Border}">
                             <ListView/>
                         </Border>
                     </Grid>
@@ -59,7 +59,7 @@
                         <TextBlock Style="{StaticResource LabelStyle}" Text="Fælles opgaver" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </Grid>
                     <Grid Grid.Row="5">
-                        <Border BorderBrush="Black" BorderThickness="5">
+                        <Border Style="{StaticResource Border}">
                             <ListView/>
                         </Border>
                     </Grid>
