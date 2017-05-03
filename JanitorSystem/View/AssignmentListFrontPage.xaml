@@ -8,12 +8,76 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid x:Name="ViceAppMobile" Margin="10,20,10,20">
+        <Grid x:Name="ViceAppMobile">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="13*"/>
                 <RowDefinition Height="48"/>
             </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock Text="TeamVice Boligforening" FontSize="25" FontFamily="verdana" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Border BorderBrush="Black" BorderThickness="3">
+                        <TextBlock Text="VTM" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
+                    </Border>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1">
+                        <TextBlock Text="Mine opgaver" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontFamily="Verdana"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Border BorderBrush="Black" BorderThickness="5">
+                            <ListView/>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <TextBlock Text="Fælles opgaver" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontFamily="Verdana"/>
+                    </Grid>
+                    <Grid Grid.Row="5">
+                        <Border BorderBrush="Black" BorderThickness="5">
+                            <ListView/>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <AppBarButton Icon="List" HorizontalAlignment="Center"/>
+                </Grid>
+            </Grid>
         </Grid>
     </Grid>
 </Page>
