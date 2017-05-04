@@ -44,7 +44,38 @@ namespace JanitorSystem.Facade
 
             }
         }
-    
+
+        public static async Task<ObservableCollection<RegAssignment>> GetRegAssignmentList()
+        {
+            ObservableCollection<RegAssignment> tempList = new ObservableCollection<RegAssignment>();
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(serverUrl);
+
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync("api/RegAssignments");
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        tempList = await response.Content.ReadAsAsync<ObservableCollection<RegAssignment>>();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.Write($"Exception {e} ");
+                    tempList = null;
+                }
+
+                return tempList;
+
+            }
+        }
+
+
 
     }
 }

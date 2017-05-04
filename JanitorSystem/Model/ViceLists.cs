@@ -23,7 +23,11 @@ namespace JanitorSystem.Model
         #endregion
 
 
-        #region Props
+        #region PropAssignmentList
+
+        /// <summary>
+        /// Denne prop er initieseret af assignmenthandler.
+        /// </summary>
 
         private ObservableCollection<Assignment> assignmentList;
 
@@ -39,6 +43,29 @@ namespace JanitorSystem.Model
         }
 
         #endregion
+
+
+        #region PropRegAssignmentList
+
+        /// <summary>
+        /// Denne prop er initieseret af assignmenthandler.
+        /// </summary>
+
+        private ObservableCollection<RegAssignment> regAssignmentList;
+
+        public ObservableCollection<RegAssignment> RegAssignmentList
+        {
+            get { return regAssignmentList; }
+            set
+            {
+                regAssignmentList = value;
+                OnPropertyChanged(nameof(RegAssignmentList));
+            }
+
+        }
+
+        #endregion
+
 
     }
 }

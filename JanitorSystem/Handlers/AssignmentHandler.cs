@@ -25,7 +25,14 @@ namespace JanitorSystem.Handlers
             this.Vl = vl;
 
             LoadAssignmentList();
+            LoadRegAssignmentList();
         }
+
+        #region Assignments
+
+        /// <summary>
+        /// Metoder til Assignments 
+        /// </summary>
 
         public async void LoadAssignmentList()
         {
@@ -40,6 +47,29 @@ namespace JanitorSystem.Handlers
             }
         }
 
-      
+        #endregion
+
+
+        #region RegAssignments
+
+        /// <summary>
+        /// Metoder til RegAssignments 
+        /// </summary>
+
+        public async void LoadRegAssignmentList()
+        {
+            try
+            {
+                Vl.RegAssignmentList = await FacadeService.GetRegAssignmentList();
+
+            }
+            catch (Exception e)
+            {
+                Debug.Write($"Exception {e}");
+            }
+        }
+
+        #endregion
+
     }
 }

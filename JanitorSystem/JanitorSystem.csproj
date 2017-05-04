@@ -100,7 +100,6 @@
     <Compile Include="Converters\IntConverter.cs" />
     <Compile Include="Facade\FacadeService.cs" />
     <Compile Include="Handlers\AssignmentHandler.cs" />
-    <Compile Include="Handlers\EmployeeHandler.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
