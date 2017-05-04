@@ -5,27 +5,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using JanitorSystem.Model;
+using JanitorSystem.Facade;
+using JanitorSystem.Handlers;
 
 namespace JanitorSystem.ViewModel
 {
-    class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel 
     {
-        #region OnPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
+        #region Objects
+        public AssignmentHandler InstanceAssignmentHandler { get; set; }
+        
         #endregion
-
         public MainViewModel()
         {
-
+            InstanceAssignmentHandler = new AssignmentHandler(this, new ViceLists());
+           
         }
     }
 }

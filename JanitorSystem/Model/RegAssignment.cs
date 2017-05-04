@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Model
 {
-    class RegAssignment
+    public class RegAssignment
     {
         public int RegAssignId { get; set; }
 
         public string RegAssignTitle { get; set; }
 
         public string RegAssignText { get; set; }
+
+        public override string ToString()
+        {
+            return RegAssignTitle;
+        }
     }
 }

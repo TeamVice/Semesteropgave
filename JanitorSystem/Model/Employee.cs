@@ -16,9 +16,9 @@ namespace JanitorSystem.Model
 
         public string EmployeeName { get; set; }
 
-        public int Phone { get; set; }
+        public int EmployeePhone { get; set; }
 
-        public string Title { get; set; }
+        public string EmployeeTitle { get; set; }
 
         #endregion
 

@@ -5,8 +5,12 @@
     xmlns:local="using:JanitorSystem.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:JanitorSystem.ViewModel"
     mc:Ignorable="d">
 
+    <Page.DataContext>
+        <viewModel:MainViewModel/>
+    </Page.DataContext>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid x:Name="ViceAppMobile">
             <!-- General seperation of areas -->
@@ -52,7 +56,7 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView/>
+                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}"/>
                         </Border>
                     </Grid>
                     <Grid Grid.Row="4">
@@ -60,7 +64,7 @@
                     </Grid>
                     <Grid Grid.Row="5">
                         <Border Style="{StaticResource Border}">
-                            <ListView/>
+                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.RegAssignmentList}"/>
                         </Border>
                     </Grid>
                 </Grid>
