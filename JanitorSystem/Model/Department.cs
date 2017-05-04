@@ -11,7 +11,7 @@ namespace JanitorSystem.Model
     /// </summary>
     public class Department
     {
-
+        #region props
         public int DepId { get; set; }
         public string DepName { get; set; }
 
@@ -20,6 +20,7 @@ namespace JanitorSystem.Model
         public string DepCity { get; set; }
 
         public int DepZipCode { get; set; }
+#endregion
 
     }
 }

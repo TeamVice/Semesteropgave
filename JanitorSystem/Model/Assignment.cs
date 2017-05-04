@@ -8,7 +8,7 @@ namespace JanitorSystem.Model
 {
     class Assignment
     {
-       
+        #region props
         public int AssignId { get; set; }
         public string AssignTitle { get; set; }
         public string AssignText { get; set; }
@@ -16,7 +16,7 @@ namespace JanitorSystem.Model
         public DateTimeOffset Date { get; set; }
         public TimeSpan Time { get; set; }
         public int AssignRankNo { get; set; }
-
+#endregion
 
         public Assignment()
         {

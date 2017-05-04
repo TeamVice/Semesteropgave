@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Model
 {
-    class Client
+    public class Client
     {
+        #region props
         public int ClientId { get; set; }
 
         public int ClientBuildingNo { get; set; }
@@ -17,6 +18,7 @@ namespace JanitorSystem.Model
         public int ClientPhone1 { get; set; }
 
         public int ClientPhone2 { get; set; }
+#endregion
 
         public Client()
         {
