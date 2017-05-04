@@ -15,6 +15,7 @@ namespace JanitorSystem.Model
         public DateTime Datetime { get; set; } 
         public DateTimeOffset Date { get; set; }
         public TimeSpan Time { get; set; }
+        public int AssignRankNo { get; set; }
 
 
         public Assignment()
