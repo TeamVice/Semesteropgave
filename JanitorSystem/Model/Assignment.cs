@@ -12,6 +12,10 @@ namespace JanitorSystem.Model
         public int AssignId { get; set; }
         public string AssignTitle { get; set; }
         public string AssignText { get; set; }
+        public DateTime Datetime { get; set; } 
+        public DateTimeOffset Date { get; set; }
+        public TimeSpan Time { get; set; }
+
 
         public Assignment()
         {

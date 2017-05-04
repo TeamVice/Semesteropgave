@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Converters
 {
-    class DateTimeConverter
+    public class DateTimeConverter
     {
+        public static DateTime DatetimeOffsetAndTimeSetToDateTime(DateTimeOffset date, TimeSpan time)
+        {
+            return new DateTime(date.Year, date.Month, date.Day, time.Hours, time.Minutes, 0);
+        }
     }
 }
