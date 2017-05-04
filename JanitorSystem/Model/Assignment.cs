@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Model
 {
-    class Assignment
+    public class Assignment
     {
         #region props
         public int AssignId { get; set; }
