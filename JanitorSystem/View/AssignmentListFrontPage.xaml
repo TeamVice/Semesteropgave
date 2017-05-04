@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="JanitorSystem.View.AssignmentList"
+    x:Class="JanitorSystem.View.AssignmentListFrontPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:JanitorSystem.View"
@@ -81,15 +81,15 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1">
                     <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
-                    <Button Content="Mine opgaver"/>
+                    <Button Content="Mine opgaver" Click="FPToFP"/>
                 </Grid>
                 <Grid Grid.Column="3">
-                    <Button Content="Opret opgave"/>
+                    <Button Content="Opret opgave" Click="FPToAddAssign"/>
                 </Grid>
-                <Grid Grid.Column="5">
+                <!-- <Grid Grid.Column="5">
                     <Button Content="Opret fællesopgave"/>
-                </Grid>
-                <Grid Grid.Column="7">
+                </Grid> -->
+                <Grid Grid.Column="5">
                     <Button Content="Telefonbog"/>
                 </Grid>
             </Grid>
