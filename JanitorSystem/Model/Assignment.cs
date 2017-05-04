@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,16 +17,17 @@ namespace JanitorSystem.Model
         public DateTimeOffset Date { get; set; }
         public TimeSpan Time { get; set; }
         public int AssignRankNo { get; set; }
+        public ObservableCollection<Assignment> Assignments { get; set; }
 #endregion
 
         public Assignment()
-        {
+        {    
 
         }
 
-        //public override string ToString()
-        //{
-        //    return null;
-        //}
+        public override string ToString()
+        {
+            return $"{AssignTitle} ";
+        }
     }
 }
