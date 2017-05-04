@@ -26,5 +26,25 @@ namespace JanitorSystem.View
         {
             this.InitializeComponent();
         }
+
+        private void AssignInfoToFP(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AssignmentListFrontPage), null);
+        }
+
+        private void AssignInfoToAddAssign (object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AddAssignment), null);
+        }
+
+        private void AssignInfoToAddJoinAssign (object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AddJoinAssignment), null);
+        }
+
+        private void AssignInfoToPhone (object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PhoneBook), null);
+        }
     }
 }
