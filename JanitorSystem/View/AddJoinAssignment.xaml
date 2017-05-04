@@ -97,16 +97,16 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1">
                     <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
-                    <Button Content="Mine opgaver"/>
+                    <Button Content="Mine opgaver" Click="AddJoinToFP"/>
                 </Grid>
                 <Grid Grid.Column="3">
-                    <Button Content="Opret opgave"/>
+                    <Button Content="Opret opgave" Click="AddJoinToAddAssign"/>
                 </Grid>
                 <Grid Grid.Column="5">
-                    <Button Content="Opret fællesopgave"/>
+                    <Button Content="Opret fællesopgave" Click="AddJoinToAddJoin"/>
                 </Grid>
                 <Grid Grid.Column="7">
-                    <Button Content="Telefonbog"/>
+                    <Button Content="Telefonbog" Click="AddJoinToPhone"/>
                 </Grid>
             </Grid>
         </Grid>
