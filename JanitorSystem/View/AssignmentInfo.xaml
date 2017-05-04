@@ -46,37 +46,47 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="50"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="5*"/>
                         <RowDefinition Height="20"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="1">
-                        <TextBlock Style="{StaticResource LabelStyle}" Text="Opgaver"/>
+                        <TextBlock Style="{StaticResource LabelStyle}" Text="Opgaven"/>
                     </Grid>
                     <Grid Grid.Row="2">
-                        <Border Style="{StaticResource Border}">
-                            <ListView/>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.RowSpan="5" Style="{StaticResource Border}">
                         </Border>
+                        <TextBlock Grid.Row="0" Text="Linje 1" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
+                        <TextBlock Grid.Row="1" Text="Linje 2" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
+                        <TextBlock Grid.Row="2" Text="Linje 3" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
+                        <TextBlock Grid.Row="3" Text="Linje 4" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
+                        <TextBlock Grid.Row="4" Text="Linje 5" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20"/>
                     </Grid>
                     <Grid Grid.Row="4">
+                        <Border Style="{StaticResource Border}">
+                            <TextBox PlaceholderText="Kommentarer" FontSize="20"/>
+                        </Border>
+                    </Grid>
+                    <Grid Grid.Row="5">
+                        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Tilføj kommentar"/>
+                    </Grid>
+                    <Grid Grid.Row="6">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Grid Grid.Column="0">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="2*"/>
-                                <RowDefinition Height="2*"/>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-                            <TextBox Grid.Row="0" Grid.Column="0" PlaceholderText="Titel"/>
-                            <TextBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" PlaceholderText="Beskrivelse"/>
-                            <Button Grid.Row="4" Grid.Column="0" Content="Rediger" HorizontalAlignment="Left"/>
-                            <Button Grid.Row="4" Grid.Column="0" Content="Tilføj" HorizontalAlignment="Right"/>
-                        </Grid>
+                        <Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Start"/>
+                        <Button Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Afslut"/>
                     </Grid>
                 </Grid>
             </Grid>
