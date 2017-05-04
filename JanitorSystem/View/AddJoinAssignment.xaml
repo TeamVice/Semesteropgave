@@ -1,11 +1,17 @@
 ﻿<Page
-    x:Class="JanitorSystem.View.PhoneBook"
+    x:Class="JanitorSystem.View.AddJoinAssignment"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:JanitorSystem.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:JanitorSystem.ViewModel"
     mc:Ignorable="d">
+
+    <Page.DataContext>
+        <viewModel:MainViewModel/>
+    </Page.DataContext>
+    
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid x:Name="ViceAppMobile">
@@ -41,19 +47,37 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"/>
                         <RowDefinition Height="50"/>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="*"/>
                         <RowDefinition Height="20"/>
-                        <RowDefinition Height="50"/>
                         <RowDefinition Height="*"/>
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="1">
-                        <TextBlock Style="{StaticResource LabelStyle}" Text="Telefonliste" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock Style="{StaticResource LabelStyle}" Text="Opgaver"/>
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}"/>
+                            <ListView/>
                         </Border>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <TextBox Grid.Row="0" Grid.Column="0" PlaceholderText="Titel"/>
+                            <TextBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" PlaceholderText="Beskrivelse"/>
+                            <Button Grid.Row="4" Grid.Column="0" Content="Rediger" HorizontalAlignment="Left"/>
+                            <Button Grid.Row="4" Grid.Column="0" Content="Tilføj" HorizontalAlignment="Right"/>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
@@ -86,6 +110,5 @@
                 </Grid>
             </Grid>
         </Grid>
-
     </Grid>
 </Page>
