@@ -8,6 +8,84 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid x:Name="ViceAppMobile">
+            <!-- General seperation of areas -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="13*"/>
+                <RowDefinition Height="48"/>
+            </Grid.RowDefinitions>
+            <!-- Title area -->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <TextBlock Text="TeamVice Boligforening" FontSize="25" FontFamily="verdana" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Border BorderBrush="Black" BorderThickness="3">
+                        <TextBlock Text="VTM" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
+                    </Border>
+                </Grid>
+            </Grid>
+            <!-- Middle area with different things -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="30"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="1">
+                        <TextBlock Style="{StaticResource LabelStyle}" Text="Telefonliste" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Border Style="{StaticResource Border}">
+                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}"/>
+                        </Border>
+                    </Grid>
+                </Grid>
+            </Grid>
+
+            <!-- Area with menu buttons -->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1">
+                    <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
+                    <Button Content="Mine opgaver" Click="FPToFP"/>
+                </Grid>
+                <Grid Grid.Column="3">
+                    <Button Content="Opret opgave" Click="FPToAddAssign"/>
+                </Grid>
+                <Grid Grid.Column="5">
+                    <Button Content="Opret fællesopgave"/>
+                </Grid>
+                <Grid Grid.Column="7">
+                    <Button Content="Telefonbog"/>
+                </Grid>
+            </Grid>
+        </Grid>
 
     </Grid>
 </Page>
