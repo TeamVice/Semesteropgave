@@ -90,10 +90,10 @@
                 <Grid Grid.Column="3">
                     <Button Content="Opret opgave" Click="FPToAddAssign"/>
                 </Grid>
-                <!-- <Grid Grid.Column="5">
-                    <Button Content="Opret fællesopgave"/>
-                </Grid> -->
                 <Grid Grid.Column="5">
+                    <Button Content="Opret fællesopgave"/>
+                </Grid>
+                <Grid Grid.Column="7">
                     <Button Content="Telefonbog"/>
                 </Grid>
             </Grid>
