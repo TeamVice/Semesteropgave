@@ -68,15 +68,18 @@
                         <Grid Grid.Column="0">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="*"/>
-                                <RowDefinition Height="2*"/>
-                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <TextBox Grid.Row="0" Grid.Column="0" PlaceholderText="Titel"/>
-                            <TextBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" PlaceholderText="Beskrivelse"/>
-                            <Button Grid.Row="4" Grid.Column="0" Content="Rediger" HorizontalAlignment="Left"/>
-                            <Button Grid.Row="4" Grid.Column="0" Content="Tilføj" HorizontalAlignment="Right"/>
+                            <TextBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" PlaceholderText="Beskrivelse"/>
+                            <Button Grid.Row="7" Grid.Column="0" Content="Rediger" HorizontalAlignment="Left"/>
+                            <Button Grid.Row="7" Grid.Column="0" Content="Tilføj" HorizontalAlignment="Right"/>
                         </Grid>
                     </Grid>
                 </Grid>
