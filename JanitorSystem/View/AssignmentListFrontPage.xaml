@@ -59,7 +59,7 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.SelectedAssignment, Mode=TwoWay}"/>
+                            <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.SelectedAssignment, Mode=TwoWay}" SelectionChanged="FPMineOpgaverListView_SelectionChanged"/>
                         </Border>
                     </Grid>
                     <Grid Grid.Row="3">

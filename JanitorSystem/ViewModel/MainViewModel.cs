@@ -16,14 +16,15 @@ namespace JanitorSystem.ViewModel
     public class MainViewModel
     {
         
-
+        
         #region Objects
         public AssignmentHandler InstanceAssignmentHandler { get; set; }
         
         #endregion
         public MainViewModel()
         {
-            InstanceAssignmentHandler = new AssignmentHandler(this, new ViceLists());
+            InstanceAssignmentHandler = new AssignmentHandler(this, ViceLists.Instance);
+            
            
         }
     }

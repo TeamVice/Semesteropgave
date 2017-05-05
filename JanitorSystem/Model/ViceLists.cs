@@ -2,16 +2,51 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using JanitorSystem.Common;
+using JanitorSystem.Facade;
+using JanitorSystem.Handlers;
 
 namespace JanitorSystem.Model
 {
-    public class ViceLists : Inotify
+    public sealed class ViceLists : Inotify
     {
+        public ViceLists()
+        {
+            AssignmentList = new ObservableCollection<Assignment>();
 
+            LoadAssignmentList();
+            //LoadRegAssignmentList();
+
+
+        }
+        public async void LoadAssignmentList()
+        {
+            try
+            {
+                AssignmentList = await FacadeService.GetAssignmentList();
+
+            }
+            catch (Exception e)
+            {
+                Debug.Write($"Exception {e}");
+            }
+        }
+
+        private static ViceLists instance;
+
+        public static ViceLists Instance
+        {
+            get {
+                if (instance == null)
+                {
+                    instance = new ViceLists();
+                }
+                return instance;}
+        }
 
 
         #region PropAssignmentList
@@ -56,7 +91,7 @@ namespace JanitorSystem.Model
         }
 
         #endregion
-
+    
         #region SelectedAssignment
         private Assignment selectedAssignment;
 

@@ -24,8 +24,8 @@ namespace JanitorSystem.Handlers
             this.Mvm = mvm;
             this.Vl = vl;
 
-            LoadAssignmentList();
-            LoadRegAssignmentList();
+            //LoadAssignmentList();
+            //LoadRegAssignmentList();
         }
 
         #region Assignments
@@ -34,18 +34,18 @@ namespace JanitorSystem.Handlers
         /// Metoder til Assignments 
         /// </summary>
 
-        public async void LoadAssignmentList()
-        {
-            try
-            {
-                Vl.AssignmentList = await FacadeService.GetAssignmentList();
+        //public async void LoadAssignmentList()
+        //{
+        //    try
+        //    {
+        //        Vl.AssignmentList = await FacadeService.GetAssignmentList();
 
-            }
-            catch (Exception e)
-            {
-                Debug.Write($"Exception {e}");
-            }
-        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        Debug.Write($"Exception {e}");
+        //    }
+        //}
 
         #endregion
 

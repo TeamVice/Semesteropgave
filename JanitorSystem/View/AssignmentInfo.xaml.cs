@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using JanitorSystem.Model;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -46,5 +47,7 @@ namespace JanitorSystem.View
         {
             this.Frame.Navigate(typeof(PhoneBook), null);
         }
+
+
     }
 }
