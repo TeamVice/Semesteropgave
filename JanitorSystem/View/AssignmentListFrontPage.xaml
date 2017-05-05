@@ -31,7 +31,7 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <Border BorderBrush="Black" BorderThickness="3">
-                        <TextBlock Text="VTM" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
+                        <TextBlock x:Name="FPLogoTextBlock" Text="VTM" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
                     </Border>
                 </Grid>
             </Grid>
@@ -54,11 +54,11 @@
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="1">
-                        <TextBlock Style="{StaticResource LabelStyle}" Text="Mine opgaver" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBlock x:Name="FPMineOpgaverTextBlock" Style="{StaticResource LabelStyle}" Text="Mine opgaver" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}"/>
+                            <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}"/>
                         </Border>
                     </Grid>
                     <Grid Grid.Row="3">

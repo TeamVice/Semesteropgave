@@ -73,9 +73,9 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <TextBox Grid.Row="0" Grid.Column="0" PlaceholderText="Titel"/>
-                            <TextBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" PlaceholderText="Beskrivelse"/>
-                            <ComboBox Grid.Row="5" Grid.Column="0" Width="155" Height="34">
+                            <TextBox x:Name="AddAssignTitleTextBox" Grid.Row="0" Grid.Column="0" PlaceholderText="Titel"/>
+                            <TextBox x:Name="AddAssignDescriptionTextBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" PlaceholderText="Beskrivelse"/>
+                            <ComboBox x:Name="AddAssignComboBox" Grid.Row="5" Grid.Column="0" Width="155" Height="34">
                                 <ComboBoxItem Content="Ansvarlig..."/>
                                 <ComboBoxItem Content="Karsten"/>
                                 <ComboBoxItem Content="Malene"/>
@@ -96,12 +96,12 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Rectangle Grid.Row="0" Grid.RowSpan="6" Fill="White" Stroke="Black"/>
-                            <TextBox Grid.Row="0" PlaceholderText="Navn"/>
-                            <TextBox Grid.Row="1" PlaceholderText="Adresse"/>
-                            <TextBox Grid.Row="2" PlaceholderText="Postnummer"/>
-                            <TextBox Grid.Row="3" PlaceholderText="By"/>
-                            <TextBox Grid.Row="4" PlaceholderText="Primær telefon"/>
-                            <TextBox Grid.Row="5" PlaceholderText="Sekundær telefon"/>
+                            <TextBox x:Name="AddAssignNameTextBox" Grid.Row="0" PlaceholderText="Navn"/>
+                            <TextBox x:Name="AddAssignAddressTextBox" Grid.Row="1" PlaceholderText="Adresse"/>
+                            <TextBox x:Name="AddAssigZipTextBox" Grid.Row="2" PlaceholderText="Postnummer"/>
+                            <TextBox x:Name="AddAssignCityTextBox" Grid.Row="3" PlaceholderText="By"/>
+                            <TextBox x:Name="AddAssignFirstPhoneTextBox" Grid.Row="4" PlaceholderText="Primær telefon"/>
+                            <TextBox x:Name="AddAssignSecondPhoneTextBox" Grid.Row="5" PlaceholderText="Sekundær telefon"/>
                         </Grid>
                     </Grid>
                 </Grid>

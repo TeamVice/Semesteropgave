@@ -76,8 +76,8 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <TextBox Grid.Row="0" Grid.Column="0" PlaceholderText="Titel"/>
-                            <TextBox Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" PlaceholderText="Beskrivelse"/>
+                            <TextBox x:Name="AddRegAssignTitleTextBox" Grid.Row="0" Grid.Column="0" PlaceholderText="Titel"/>
+                            <TextBox x:Name="AddRegAssignDescriptionTextBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" PlaceholderText="Beskrivelse"/>
                             <Button Grid.Row="7" Grid.Column="0" Content="Rediger" HorizontalAlignment="Left"/>
                             <Button Grid.Row="7" Grid.Column="0" Content="Tilføj" HorizontalAlignment="Right"/>
                         </Grid>
