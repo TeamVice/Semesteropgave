@@ -5,22 +5,13 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JanitorSystem.Common;
 
 namespace JanitorSystem.Model
 {
-    public class ViceLists : INotifyPropertyChanged
+    public class ViceLists : Inotify
     {
-        #region OnPropertyChanged
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
-        }
-        #endregion
 
 
         #region PropAssignmentList
@@ -66,6 +57,21 @@ namespace JanitorSystem.Model
 
         #endregion
 
+        #region SelectedAssignment
+        private Assignment selectedAssignment;
+
+        public Assignment SelectedAssignment
+        {
+            get { return selectedAssignment; }
+            set
+            {
+                selectedAssignment = value;
+                OnPropertyChanged(nameof(SelectedAssignment));
+            }
+        }
+
+
+        #endregion
 
     }
 }

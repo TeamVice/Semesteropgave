@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using JanitorSystem.Common;
 using JanitorSystem.Model;
 using JanitorSystem.Facade;
 using JanitorSystem.Handlers;
 
 namespace JanitorSystem.ViewModel
 {
-    public class MainViewModel 
+    public class MainViewModel
     {
+        
 
         #region Objects
         public AssignmentHandler InstanceAssignmentHandler { get; set; }

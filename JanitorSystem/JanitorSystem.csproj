@@ -95,6 +95,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\Inotify.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Converters\DateTimeConverter.cs" />
     <Compile Include="Converters\IntConverter.cs" />

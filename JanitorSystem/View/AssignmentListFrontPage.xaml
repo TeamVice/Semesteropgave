@@ -11,7 +11,7 @@
     <Page.DataContext>
         <viewModel:MainViewModel/>
     </Page.DataContext>
-    
+
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid x:Name="ViceAppMobile">
             <!-- General seperation of areas -->
@@ -55,10 +55,11 @@
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="1">
                         <TextBlock x:Name="FPMineOpgaverTextBlock" Style="{StaticResource LabelStyle}" Text="Mine opgaver" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                       
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}"/>
+                            <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.SelectedAssignment, Mode=TwoWay}"/>
                         </Border>
                     </Grid>
                     <Grid Grid.Row="3">
@@ -81,7 +82,7 @@
                     </Grid>
                 </Grid>
             </Grid>
-            
+
             <!-- Area with menu buttons -->
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
