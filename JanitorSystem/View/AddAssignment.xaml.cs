@@ -37,9 +37,9 @@ namespace JanitorSystem.View
             this.Frame.Navigate(typeof(AddAssignment), null);
         }
 
-        private void AddAssignToAddJoinAssign (object sender, RoutedEventArgs e)
+        private void AddAssignToAddRegAssign (object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AddJoinAssignment), null);
+            this.Frame.Navigate(typeof(AddRegAssignment), null);
         }
 
         private void AddAssignToPhone (object sender, RoutedEventArgs e)

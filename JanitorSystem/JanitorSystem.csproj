@@ -114,8 +114,8 @@
     <Compile Include="View\AddAssignment.xaml.cs">
       <DependentUpon>AddAssignment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddJoinAssignment.xaml.cs">
-      <DependentUpon>AddJoinAssignment.xaml</DependentUpon>
+    <Compile Include="View\AddRegAssignment.xaml.cs">
+      <DependentUpon>AddRegAssignment.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\AssignmentInfo.xaml.cs">
       <DependentUpon>AssignmentInfo.xaml</DependentUpon>
@@ -161,7 +161,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\AddJoinAssignment.xaml">
+    <Page Include="View\AddRegAssignment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -37,9 +37,9 @@ namespace JanitorSystem.View
             this.Frame.Navigate(typeof(AssignmentListFrontPage), null);
         }
 
-        private void FPToAddJoinAssign(object sender, RoutedEventArgs e)
+        private void FPToAddRegAssign(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AddJoinAssignment), null);
+            this.Frame.Navigate(typeof(AddRegAssignment), null);
         }
 
         private void FPToPhone(object sender, RoutedEventArgs e)

@@ -20,28 +20,28 @@ namespace JanitorSystem.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AddJoinAssignment : Page
+    public sealed partial class AddRegAssignment : Page
     {
-        public AddJoinAssignment()
+        public AddRegAssignment()
         {
             this.InitializeComponent();
         }
-        public void AddJoinToFP (object sender, RoutedEventArgs e)
+        public void AddRegToFP (object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AssignmentListFrontPage), null);
         }
 
-        public void AddJoinToAddAssign (object sender, RoutedEventArgs e)
+        public void AddRegToAddAssign (object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AddAssignment), null);
         }
 
-        public void AddJoinToAddJoin (object sender, RoutedEventArgs e)
+        public void AddRegToAddReg (object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(AddJoinAssignment), null);
+            this.Frame.Navigate(typeof(AddRegAssignment), null);
         }
 
-        public void AddJoinToPhone (object sender, RoutedEventArgs e)
+        public void AddRegToPhone (object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(PhoneBook), null);
         }

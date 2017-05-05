@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="JanitorSystem.View.AddJoinAssignment"
+    x:Class="JanitorSystem.View.AddRegAssignment"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:JanitorSystem.View"
@@ -97,16 +97,16 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1">
                     <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
-                    <Button Content="Mine opgaver" Click="AddJoinToFP"/>
+                    <Button Content="Mine opgaver" Click="AddRegToFP"/>
                 </Grid>
                 <Grid Grid.Column="3">
-                    <Button Content="Opret opgave" Click="AddJoinToAddAssign"/>
+                    <Button Content="Opret opgave" Click="AddRegToAddAssign"/>
                 </Grid>
                 <Grid Grid.Column="5">
-                    <Button Content="Opret fællesopgave" Click="AddJoinToAddJoin"/>
+                    <Button Content="Opret fællesopgave" Click="AddRegToAddReg"/>
                 </Grid>
                 <Grid Grid.Column="7">
-                    <Button Content="Telefonbog" Click="AddJoinToPhone"/>
+                    <Button Content="Telefonbog" Click="AddRegToPhone"/>
                 </Grid>
             </Grid>
         </Grid>

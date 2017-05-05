@@ -79,7 +79,7 @@
                     <Button Content="Opret opgave" Click="PhoneBookToAddAssign"/>
                 </Grid>
                 <Grid Grid.Column="5">
-                    <Button Content="Opret fællesopgave" Click="PhoneBookToAddJoin"/>
+                    <Button Content="Opret fællesopgave" Click="PhoneBookToAddRegAssign"/>
                 </Grid>
                 <Grid Grid.Column="7">
                     <Button Content="Telefonbog" Click="PhonBookToPhoneBook"/>

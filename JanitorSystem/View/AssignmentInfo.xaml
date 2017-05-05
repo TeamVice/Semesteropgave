@@ -112,7 +112,7 @@
                     <Button Content="Opret opgave" Click="AssignInfoToAddAssign"/>
                 </Grid>
                 <Grid Grid.Column="5">
-                    <Button Content="Opret fællesopgave" Click="AssignInfoToAddJoinAssign"/>
+                    <Button Content="Opret fællesopgave" Click="AssignInfoToAddRegAssign"/>
                 </Grid>
                 <Grid Grid.Column="7">
                     <Button Content="Telefonbog" Click="AssignInfoToPhone"/>
