@@ -57,7 +57,7 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView/>
+                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.RegAssignmentList}" />
                         </Border>
                     </Grid>
                     <Grid Grid.Row="4">

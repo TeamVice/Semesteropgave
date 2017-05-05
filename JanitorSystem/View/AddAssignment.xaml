@@ -54,7 +54,7 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView/>
+                            <ListView />
                         </Border>
                     </Grid>
                     <Grid Grid.Row="4">
