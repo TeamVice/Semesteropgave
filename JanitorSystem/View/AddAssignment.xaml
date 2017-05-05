@@ -1,11 +1,13 @@
 ﻿<Page
-    x:Class="JanitorSystem.View.AddAssignment"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:JanitorSystem.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:JanitorSystem.ViewModel"
+    x:Class="JanitorSystem.View.AddAssignment"
     mc:Ignorable="d">
+
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid x:Name="ViceAppMobile">
@@ -16,7 +18,7 @@
                 <RowDefinition Height="13*"/>
                 <RowDefinition Height="48"/>
             </Grid.RowDefinitions>
-            
+
             <!-- Title area -->
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
@@ -40,6 +42,9 @@
                     <ColumnDefinition Width="5*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                <Grid.DataContext>
+                    <ViewModel:MainViewModel/>
+                </Grid.DataContext>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"/>
@@ -54,7 +59,7 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView />
+                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" />
                         </Border>
                     </Grid>
                     <Grid Grid.Row="4">
@@ -106,7 +111,7 @@
                     </Grid>
                 </Grid>
             </Grid>
-            
+
             <!-- Area with menu buttons -->
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
