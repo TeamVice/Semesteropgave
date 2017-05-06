@@ -23,53 +23,8 @@ namespace JanitorSystem.Handlers
         {
             this.Mvm = mvm;
             this.Vl = vl;
-
-            //LoadAssignmentList();
-            //LoadRegAssignmentList();
         }
 
-        #region Assignments
-
-        /// <summary>
-        /// Metoder til Assignments 
-        /// </summary>
-
-        //public async void LoadAssignmentList()
-        //{
-        //    try
-        //    {
-        //        Vl.AssignmentList = await FacadeService.GetAssignmentList();
-
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        Debug.Write($"Exception {e}");
-        //    }
-        //}
-
-        #endregion
-
-
-        #region RegAssignments
-
-        /// <summary>
-        /// Metoder til RegAssignments 
-        /// </summary>
-
-        public async void LoadRegAssignmentList()
-        {
-            try
-            {
-                Vl.RegAssignmentList = await FacadeService.GetRegAssignmentList();
-
-            }
-            catch (Exception e)
-            {
-                Debug.Write($"Exception {e}");
-            }
-        }
-
-        #endregion
-
+        //Vi skal finde ud af hvad handler egentligt skal håndtere
     }
 }

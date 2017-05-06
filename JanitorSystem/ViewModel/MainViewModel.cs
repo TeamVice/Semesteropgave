@@ -23,9 +23,11 @@ namespace JanitorSystem.ViewModel
         #endregion
         public MainViewModel()
         {
+            ViceLists.Instance.ClearAssignmentList();
+            ViceLists.Instance.ClearReqList();
             InstanceAssignmentHandler = new AssignmentHandler(this, ViceLists.Instance);
-            
-           
+            ViceLists.Instance.LoadAssignmentList();
+            ViceLists.Instance.LoadRegAssignmentList(); 
         }
     }
 }
