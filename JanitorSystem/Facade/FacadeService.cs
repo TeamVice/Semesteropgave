@@ -8,12 +8,17 @@ using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Diagnostics;
+using System.Collections;
+using System.ComponentModel;
+ 
 
 namespace JanitorSystem.Facade
 {
     public class FacadeService
     {
         private const string serverUrl = "http://vicewebservices20170502020205.azurewebsites.net";
+
+        #region Get Http kald
 
         public static async Task<ObservableCollection<Assignment>> GetAssignmentList()
         {
@@ -75,7 +80,29 @@ namespace JanitorSystem.Facade
             }
         }
 
+        #endregion
 
 
+        public static async Task<bool> PostAssignment(Assignment tempAssignment)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                client.DefaultRequestHeaders.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("apllication/json"));
+                
+
+                var response = await client.PostAsJsonAsync<Assignment>("api/assignments", tempAssignment);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
     }
 }
