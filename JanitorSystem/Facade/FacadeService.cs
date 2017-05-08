@@ -113,7 +113,7 @@ namespace JanitorSystem.Facade
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(serverUrl);
-                string urlString = "api/assignments" + assignmentToDelete.AssignId;
+                string urlString = "api/assignments/" + assignmentToDelete.AssignId;
                 await client.DeleteAsync(urlString);
             }
         } 
