@@ -32,7 +32,7 @@ namespace JanitorSystem.Handlers
 
         }
 
-        #region
+        #region AddAssignment Metode
 
         public void AddAssignment()
         {
@@ -49,6 +49,14 @@ namespace JanitorSystem.Handlers
             ViceLists.Instance.LoadAssignmentList();
            // tempAssignment.AssignTitle = MainViewModel.
 
+        }
+
+        #endregion
+
+        #region
+        public void DeleteAssignment()
+        {
+            ViceLists.Instance.RemoveAssignment(ViceLists.Instance.SelectedToDeleteAssignment);
         }
 
         #endregion

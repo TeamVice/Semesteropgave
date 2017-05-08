@@ -11,6 +11,7 @@
     <Page.DataContext>
         <ViewModel:AddAssignmentViewModel/>
     </Page.DataContext>
+    
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid x:Name="ViceAppMobile">
 
@@ -59,7 +60,7 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" />
+                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedToDeleteAssignment, Mode=TwoWay}" />
                         </Border>
                     </Grid>
                     <Grid Grid.Row="4">
@@ -86,7 +87,7 @@
                                 <ComboBoxItem Content="Malene"/>
                                 <ComboBoxItem Content="Karsten"/>
                             </ComboBox>
-                            <Button Grid.Row="7" Grid.Column="0" Content="Rediger" HorizontalAlignment="Left"/>
+                            <Button Grid.Row="7" Grid.Column="0" Content="Rediger" HorizontalAlignment="Left" Command="{Binding DeleteAssignemntCommand}" />
                             <Button Grid.Row="7" Grid.Column="0" Content="Tilføj" HorizontalAlignment="Right" Command="{Binding AddAssignmentCommand}"/>
                         </Grid>
                         <Grid Grid.Column="1">

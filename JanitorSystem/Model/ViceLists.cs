@@ -87,8 +87,20 @@ namespace JanitorSystem.Model
             }
         }
 
+        #endregion
+
+        #region SelectedToDeleteAssignmentProp
+        private Assignment selectedToDeleteAssignment;
+
+        public Assignment SelectedToDeleteAssignment
+        {
+            get { return selectedToDeleteAssignment; }
+            set { selectedToDeleteAssignment = value; }
+        }
 
         #endregion
+
+
 
         public ViceLists()
         {
@@ -157,6 +169,13 @@ namespace JanitorSystem.Model
         {
             await FacadeService.PostAssignment(newAssignment);
 
+        }
+
+        public async void RemoveAssignment(Assignment deleteAssignment)
+        {
+            await FacadeService.DeleteAssignment(deleteAssignment);
+            //ClearAssignmentList();
+            //LoadAssignmentList();
         }
 
         #endregion

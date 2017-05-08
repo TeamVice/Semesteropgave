@@ -105,5 +105,19 @@ namespace JanitorSystem.Facade
             }
         }
         #endregion
+
+        #region
+
+        public static async Task DeleteAssignment(Assignment assignmentToDelete)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri(serverUrl);
+                string urlString = "api/assignments" + assignmentToDelete.AssignId;
+                await client.DeleteAsync(urlString);
+            }
+        } 
+
+        #endregion
     }
 }

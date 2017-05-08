@@ -19,11 +19,14 @@ namespace JanitorSystem.ViewModel
         
         public ICommand AddAssignmentCommand { get; set; }
 
+        public ICommand DeleteAssignemntCommand { get; set; }
+
         public AddAssignmentViewModel()
         {
             InstanceAssignmentHandler = new AssignmentHandler(MainViewModel,this, ViceLists.Instance);
             Assignment = new Assignment();
             AddAssignmentCommand = new RelayCommand(InstanceAssignmentHandler.AddAssignment,null);
+            DeleteAssignemntCommand = new RelayCommand(InstanceAssignmentHandler.DeleteAssignment, null);
 
         }
 
