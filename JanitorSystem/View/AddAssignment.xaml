@@ -8,7 +8,9 @@
     x:Class="JanitorSystem.View.AddAssignment"
     mc:Ignorable="d">
 
-
+    <Page.DataContext>
+        <ViewModel:AddAssignmentViewModel/>
+    </Page.DataContext>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid x:Name="ViceAppMobile">
 
@@ -37,14 +39,12 @@
 
             <!-- Middle area with different things -->
             <Grid Grid.Row="1">
+                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="5*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Grid.DataContext>
-                    <ViewModel:MainViewModel/>
-                </Grid.DataContext>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"/>
@@ -78,8 +78,8 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <TextBox x:Name="AddAssignTitleTextBox" Grid.Row="0" Grid.Column="0" PlaceholderText="Titel"/>
-                            <TextBox x:Name="AddAssignDescriptionTextBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" PlaceholderText="Beskrivelse"/>
+                            <TextBox x:Name="AddAssignTitleTextBox" Grid.Row="0" Grid.Column="0" PlaceholderText="Titel" Text="{Binding Assignment.AssignTitle, Mode=TwoWay}"/>
+                            <TextBox x:Name="AddAssignDescriptionTextBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" PlaceholderText="Beskrivelse" Text="{Binding Assignment.AssignText, Mode=TwoWay}"/>
                             <ComboBox x:Name="AddAssignComboBox" Grid.Row="5" Grid.Column="0" Width="155" Height="34">
                                 <ComboBoxItem Content="Ansvarlig..."/>
                                 <ComboBoxItem Content="Karsten"/>
@@ -87,7 +87,7 @@
                                 <ComboBoxItem Content="Karsten"/>
                             </ComboBox>
                             <Button Grid.Row="7" Grid.Column="0" Content="Rediger" HorizontalAlignment="Left"/>
-                            <Button Grid.Row="7" Grid.Column="0" Content="Tilføj" HorizontalAlignment="Right"/>
+                            <Button Grid.Row="7" Grid.Column="0" Content="Tilføj" HorizontalAlignment="Right" Command="{Binding AddAssignmentCommand}"/>
                         </Grid>
                         <Grid Grid.Column="1">
                             <Grid.RowDefinitions>

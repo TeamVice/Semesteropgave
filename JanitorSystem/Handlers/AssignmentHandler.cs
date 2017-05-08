@@ -19,14 +19,17 @@ namespace JanitorSystem.Handlers
         public MainViewModel Mvm { get; set; }
 
         public ViceLists Vl { get; set; }
+        public Assignment Test { get; set; }
 
         public AddAssignmentViewModel Avm { get; set; }
-        public AssignmentHandler(MainViewModel mvm, ViceLists vl)
+        public AssignmentHandler(MainViewModel mvm, AddAssignmentViewModel avm, ViceLists vl)
         {
-            //AssignmentInfoViewModel avm
-            this.Mvm = mvm;
-            this.Vl = vl;
-            //this.Avm = avm;
+           
+            Mvm = mvm;
+            Vl = vl;
+            Avm = avm;
+
+
         }
 
         #region
@@ -36,7 +39,11 @@ namespace JanitorSystem.Handlers
             Assignment tempAssignment = new Assignment();
             tempAssignment.AssignTitle = Avm.Assignment.AssignTitle;
             tempAssignment.AssignText = Avm.Assignment.AssignText;
-            tempAssignment.AssignRankNo = Avm.Assignment.AssignRankNo;
+            tempAssignment.AssignRankNo = 1;
+            tempAssignment.EmployeeId = 1;
+            tempAssignment.DepId = 1;
+            
+
             ViceLists.Instance.AddAssignment(tempAssignment);
             ViceLists.Instance.ClearAssignmentList();
             ViceLists.Instance.LoadAssignmentList();

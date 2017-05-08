@@ -17,6 +17,8 @@ namespace JanitorSystem.Model
         public DateTimeOffset Date { get; set; }
         public TimeSpan Time { get; set; }
         public int AssignRankNo { get; set; }
+        public int DepId { get; set; }
+        public int EmployeeId { get; set; }
         public ObservableCollection<Assignment> Assignments { get; set; }
 #endregion
 

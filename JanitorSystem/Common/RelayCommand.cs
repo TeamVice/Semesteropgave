@@ -26,9 +26,9 @@ namespace JanitorSystem.Common
         {
             this.methodToExecute = methodToExecute;
             this.methodToDetectCanExecute = methodToDetectCanExecute;
-            this.canExecuteChangedTimer.Tick += canExecuteChangedTimer_Tick;
-            this.canExecuteChangedTimer.Interval = new TimeSpan(0, 0, 1);
-            this.canExecuteChangedTimer.Start();
+            //this.canExecuteChangedTimer.Tick += canExecuteChangedTimer_Tick;
+            //this.canExecuteChangedTimer.Interval = new TimeSpan(0, 0, 1);
+            //this.canExecuteChangedTimer.Start();
         }
 
 

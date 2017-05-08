@@ -19,13 +19,14 @@ namespace JanitorSystem.ViewModel
         
         #region Objects
         public AssignmentHandler InstanceAssignmentHandler { get; set; }
+        public AddAssignmentViewModel AddAssignmentViewModel { get; set; } = new AddAssignmentViewModel();
         
         #endregion
         public MainViewModel()
         {
             ViceLists.Instance.ClearAssignmentList();
             ViceLists.Instance.ClearReqAssignmentList();
-            InstanceAssignmentHandler = new AssignmentHandler(this, ViceLists.Instance);
+            InstanceAssignmentHandler = new AssignmentHandler(this, AddAssignmentViewModel, ViceLists.Instance);
             ViceLists.Instance.LoadAssignmentList();
             ViceLists.Instance.LoadRegAssignmentList(); 
         }
