@@ -21,7 +21,7 @@ namespace JanitorSystem.Model
 
         #region ClearListerMetoder
 
-         public void ClearReqList()
+         public void ClearReqAssignmentList()
         {
             if (RegAssignmentList != null)
             {
