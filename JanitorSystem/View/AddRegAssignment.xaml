@@ -57,7 +57,28 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.RegAssignmentList}" />
+                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.RegAssignmentList}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Style="{StaticResource ListViewBorder}">
+                                            <StackPanel>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Row="0" Text="{Binding RegAssignTitle}" />
+                                                    <TextBlock Grid.Row="1" Text="{Binding RegAssignText}"/>
+                                                </Grid>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <!-- <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.RegAssignmentList}" /> -->
                         </Border>
                     </Grid>
                     <Grid Grid.Row="4">

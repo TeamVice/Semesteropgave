@@ -45,5 +45,10 @@ namespace JanitorSystem.View
         {
             this.Frame.Navigate(typeof(PhoneBook), null);
         }
+
+        private void TextBlock_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

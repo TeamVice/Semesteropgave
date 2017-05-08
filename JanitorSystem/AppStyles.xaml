@@ -4,7 +4,7 @@
     xmlns:local="using:JanitorSystem">
 
     <Style x:Key="FontStyle" TargetType="TextBlock">
-        <Setter Property="FontFamily" Value="Verdana"/>
+        <Setter Property="FontFamily" Value="Segoe UI"/>
     </Style>
     
     <Style x:Key="LabelStyle" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
@@ -15,4 +15,14 @@
         <Setter Property="BorderBrush" Value="Black"/>
         <Setter Property="BorderThickness" Value="5"/>
     </Style>
+
+    <Style x:Key="ListViewBorder" TargetType="Border">
+        <Setter Property="BorderBrush" Value="DarkCyan"/>
+        <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Padding" Value="2,0,5,5"/>
+        <Setter Property="Margin" Value="-10,5"/>
+        <Setter Property="Background" Value="WhiteSmoke"/>
+    </Style>
+        
 </ResourceDictionary>
