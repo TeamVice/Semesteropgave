@@ -19,12 +19,32 @@ namespace JanitorSystem.Handlers
         public MainViewModel Mvm { get; set; }
 
         public ViceLists Vl { get; set; }
+
+        public AddAssignmentViewModel Avm { get; set; }
         public AssignmentHandler(MainViewModel mvm, ViceLists vl)
         {
+            //AssignmentInfoViewModel avm
             this.Mvm = mvm;
             this.Vl = vl;
+            //this.Avm = avm;
         }
 
-        //Vi skal finde ud af hvad handler egentligt skal håndtere
+        #region
+
+        public void AddAssignment()
+        {
+            Assignment tempAssignment = new Assignment();
+            tempAssignment.AssignTitle = Avm.Assignment.AssignTitle;
+            tempAssignment.AssignText = Avm.Assignment.AssignText;
+            tempAssignment.AssignRankNo = Avm.Assignment.AssignRankNo;
+            ViceLists.Instance.AddAssignment(tempAssignment);
+            ViceLists.Instance.ClearAssignmentList();
+            ViceLists.Instance.LoadAssignmentList();
+           // tempAssignment.AssignTitle = MainViewModel.
+
+        }
+
+        #endregion
+
     }
 }

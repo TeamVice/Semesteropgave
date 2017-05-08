@@ -14,78 +14,19 @@ namespace JanitorSystem.Model
 {
     public sealed class ViceLists : Inotify
     {
-        public ViceLists()
-        {
-            AssignmentList = new ObservableCollection<Assignment>();
-        }
-
-        #region ClearListerMetoder
-
-         public void ClearReqAssignmentList()
-        {
-            if (RegAssignmentList != null)
-            {
-                RegAssignmentList.Clear();
-            }
-        }
-
-        public void ClearAssignmentList()
-        {
-            if (AssignmentList != null)
-            {
-                AssignmentList.Clear();
-            }
-        }
-
-        #endregion
-
-        #region Metode til LoadAssignmentList
-        public async void LoadAssignmentList()
-        {
-            try
-            {
-                AssignmentList = await FacadeService.GetAssignmentList();
-
-            }
-            catch (Exception e)
-            {
-                Debug.Write($"Exception {e}");
-            }
-        }
-        #endregion
-
         #region Singleton
 
         private static ViceLists instance;
 
         public static ViceLists Instance
         {
-            get {
+            get
+            {
                 if (instance == null)
                 {
                     instance = new ViceLists();
                 }
-                return instance;}
-        }
-
-        #endregion
-        
-        #region RegAssignments
-
-        /// <summary>
-        /// Metoder til RegAssignments 
-        /// </summary>
-
-        public async void LoadRegAssignmentList()
-        {
-            try
-            {
-                RegAssignmentList = await FacadeService.GetRegAssignmentList();
-
-            }
-            catch (Exception e)
-            {
-                Debug.Write($"Exception {e}");
+                return instance;
             }
         }
 
@@ -132,7 +73,7 @@ namespace JanitorSystem.Model
         }
 
         #endregion
-    
+
         #region SelectedAssignment
         private Assignment selectedAssignment;
 
@@ -146,6 +87,77 @@ namespace JanitorSystem.Model
             }
         }
 
+
+        #endregion
+
+        public ViceLists()
+        {
+            AssignmentList = new ObservableCollection<Assignment>();
+        }
+
+        #region Methods
+
+        #region ClearListerMetoder
+
+        public void ClearReqAssignmentList()
+        {
+            if (RegAssignmentList != null)
+            {
+                RegAssignmentList.Clear();
+            }
+        }
+
+        public void ClearAssignmentList()
+        {
+            if (AssignmentList != null)
+            {
+                AssignmentList.Clear();
+            }
+        }
+
+        #endregion
+
+        #region LoadAssignmentList
+        public async void LoadAssignmentList()
+        {
+            try
+            {
+                AssignmentList = await FacadeService.GetAssignmentList();
+
+            }
+            catch (Exception e)
+            {
+                Debug.Write($"Exception {e}");
+            }
+        }
+        #endregion
+        
+        #region LoadRegAssignments
+
+        /// <summary>
+        /// Metoder til RegAssignments 
+        /// </summary>
+
+        public async void LoadRegAssignmentList()
+        {
+            try
+            {
+                RegAssignmentList = await FacadeService.GetRegAssignmentList();
+
+            }
+            catch (Exception e)
+            {
+                Debug.Write($"Exception {e}");
+            }
+        }
+
+        #endregion
+
+        public async void AddAssignment(Assignment newAssignment)
+        {
+            await FacadeService.PostAssignment(newAssignment);
+
+        }
 
         #endregion
 

@@ -82,7 +82,7 @@ namespace JanitorSystem.Facade
 
         #endregion
 
-
+        #region Post Http kald
         public static async Task<bool> PostAssignment(Assignment tempAssignment)
         {
             using (var client = new HttpClient())
@@ -104,5 +104,6 @@ namespace JanitorSystem.Facade
                 }
             }
         }
+        #endregion
     }
 }
