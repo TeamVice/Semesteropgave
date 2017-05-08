@@ -28,6 +28,7 @@ namespace JanitorSystem.ViewModel
             AddAssignmentCommand = new RelayCommand(InstanceAssignmentHandler.AddAssignment,null);
             DeleteAssignemntCommand = new RelayCommand(InstanceAssignmentHandler.DeleteAssignment, null);
 
+
         }
 
     }
