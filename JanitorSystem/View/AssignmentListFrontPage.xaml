@@ -54,12 +54,40 @@
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="1">
-                        <TextBlock x:Name="FPMineOpgaverTextBlock" Style="{StaticResource LabelStyle}" Text="Mine opgaver" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                       
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                            <TextBlock x:Name="FPMineOpgaverTextBlock" Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Mine opgaver" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <ComboBox Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                            <ComboBoxItem Content="Ansvarlig"/>
+                        </ComboBox>
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.SelectedAssignment, Mode=TwoWay}" SelectionChanged="FPMineOpgaverListView_SelectionChanged"/>
+                            <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.SelectedAssignment, Mode=TwoWay}" SelectionChanged="FPMineOpgaverListView_SelectionChanged">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Style="{StaticResource ListViewBorder}">
+                                            <StackPanel>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="10*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding AssignRankNo}"/>
+                                                    <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding AssignText}" TextWrapping="Wrap"/>
+                                                    <TextBlock Grid.Row="0" Text="{Binding AssignTitle}"/>
+                                                </Grid>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </Border>
                     </Grid>
                     <Grid Grid.Row="3">
@@ -67,10 +95,8 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="Sortér efter: "/>
-                        <ComboBox Grid.Column="1" HorizontalAlignment="Center">
-                            <ComboBoxItem Content="Ansvarlig"/>
-                        </ComboBox>
+                        <!--<TextBlock Grid.Column="0" Text="Sortér efter: "/> -->
+                        
                     </Grid>
                     <Grid Grid.Row="5">
                         <TextBlock Style="{StaticResource LabelStyle}" Text="Fælles opgaver" HorizontalAlignment="Left" VerticalAlignment="Center"/>
