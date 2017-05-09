@@ -67,9 +67,9 @@
                         </Grid.RowDefinitions>
                         <Border Grid.RowSpan="6" Style="{StaticResource Border}">
                         </Border>
-                        <TextBlock x:Name="AssignInfoTitleTextBlock" Grid.Row="0" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20" Text="{Binding ViceLists.Instance.SelectedAssignment.AssignTitle, Mode=TwoWay}" />
+                        <TextBlock x:Name="AssignInfoTitleTextBlock" Grid.Row="0" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20" Text="{Binding ViceLists.Instance.SelectedAssignmentMVM.AssignTitle, Mode=TwoWay}" />
                         <TextBlock x:Name="AssignInfoAddressTextBlock" Grid.Row="1" Text="Addresse" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
-                        <TextBlock x:Name="AssignInfoDescriptionTextBlock" Grid.Row="2" Text="{Binding ViceLists.Instance.SelectedAssignment.AssignText, Mode=TwoWay}" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
+                        <TextBlock x:Name="AssignInfoDescriptionTextBlock" Grid.Row="2" Text="{Binding ViceLists.Instance.SelectedAssignmentMVM.AssignText, Mode=TwoWay}" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
                         <TextBlock x:Name="AssignInfoNameTextBlock" Grid.Row="3" Text="Navn" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
                         <TextBlock x:Name="AssignInfoPhoneTextBlock" Grid.Row="4" Text="Primær telefon" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
                         <TextBlock x:Name="AssignInfoSecondPhoneTextBlock" Grid.Row="5" Text="Sekundær telefon" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20"/>

@@ -56,7 +56,7 @@ namespace JanitorSystem.Handlers
         #region Delete assignment metode
         public void DeleteAssignment()
         {
-            ViceLists.Instance.RemoveAssignment(ViceLists.Instance.SelectedToDeleteAssignment);
+            ViceLists.Instance.RemoveAssignment(ViceLists.Instance.SelectedAssignmentAddAssignVm);
 
         }
 
@@ -64,7 +64,7 @@ namespace JanitorSystem.Handlers
 
         public void EditAssignment()
         {
-            ViceLists.Instance.AlterAssignment(ViceLists.Instance.SelectedToDeleteAssignment);
+            ViceLists.Instance.AlterAssignment(ViceLists.Instance.SelectedAssignmentAddAssignVm);
         }
     }
 }

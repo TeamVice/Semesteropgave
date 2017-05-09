@@ -60,7 +60,7 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedToDeleteAssignment, Mode=TwoWay}">
+                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedAssignmentAddAssignVm, Mode=TwoWay}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Border Style="{StaticResource ListViewBorder}">
@@ -127,7 +127,7 @@
                                 <ComboBoxItem Content="50"/>
                             </ComboBox>
                             <ComboBox x:Name="AddAssignEmployeeTextBox" Grid.Row="2" PlaceholderText="Ansvarlig" Width="175" Height="34"/>
-                            <TextBox x:Name="AddAssignFirstPhoneTextBox" Grid.Row="3" PlaceholderText="Primær telefon"/>
+                            <TextBox x:Name="AddAssignFirstPhoneTextBox" Grid.Row="3" PlaceholderText="Primær telefon" Text="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedAssignmentAddAssignVm.AssignTitle, Mode=TwoWay}"/>
                             <TextBox x:Name="AddAssignSecondPhoneTextBox" Grid.Row="4" PlaceholderText="Sekundær telefon"/>
                         </Grid>
                     </Grid>

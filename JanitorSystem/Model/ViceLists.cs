@@ -74,31 +74,31 @@ namespace JanitorSystem.Model
 
         #endregion
 
-        #region SelectedAssignment
-        private Assignment selectedAssignment;
+        #region SelectedAssignmentMVM
+        private Assignment selectedAssignmentMVM;
 
-        public Assignment SelectedAssignment
+        public Assignment SelectedAssignmentMVM
         {
-            get { return selectedAssignment; }
+            get { return selectedAssignmentMVM; }
             set
             {
-                selectedAssignment = value;
-                OnPropertyChanged(nameof(SelectedAssignment));
+                selectedAssignmentMVM = value;
+                OnPropertyChanged(nameof(SelectedAssignmentMVM));
             }
         }
 
         #endregion
 
         #region SelectedToDeleteAssignmentProp
-        private Assignment selectedToDeleteAssignment;
+        private Assignment selectedAssignmentAddAssignVM;
 
-        public Assignment SelectedToDeleteAssignment
+        public Assignment SelectedAssignmentAddAssignVm
         {
-            get { return selectedToDeleteAssignment; }
+            get { return selectedAssignmentAddAssignVM; }
             set
             {
-                selectedToDeleteAssignment = value; 
-                OnPropertyChanged(nameof(SelectedToDeleteAssignment));
+                selectedAssignmentAddAssignVM = value; 
+                OnPropertyChanged(nameof(SelectedAssignmentAddAssignVm));
             }
         }
 
