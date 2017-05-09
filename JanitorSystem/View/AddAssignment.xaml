@@ -96,11 +96,10 @@
                             </Grid.RowDefinitions>
                             <TextBox x:Name="AddAssignTitleTextBox" Grid.Row="0" Grid.Column="0" PlaceholderText="Titel" Text="{Binding Assignment.AssignTitle, Mode=TwoWay}"/>
                             <TextBox x:Name="AddAssignDescriptionTextBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" PlaceholderText="Beskrivelse" Text="{Binding Assignment.AssignText, Mode=TwoWay}"/>
-                            <ComboBox x:Name="EmployeeComboBox" Grid.Row="5" Grid.Column="0" Width="155" Height="34">
-                                <ComboBoxItem Content="Ansvarlig..."/>
-                                <ComboBoxItem Content="Karsten"/>
-                                <ComboBoxItem Content="Malene"/>
-                                <ComboBoxItem Content="Karsten"/>
+                            <ComboBox x:Name="AssignRankNoComboBox" Grid.Row="5" Grid.Column="0" Width="155" Height="34" PlaceholderText="Prioritering">
+                                <ComboBoxItem Content="1"/>
+                                <ComboBoxItem Content="2"/>
+                                <ComboBoxItem Content="3"/>
                             </ComboBox>
                             <Button Grid.Row="7" Grid.Column="0" Content="Rediger" HorizontalAlignment="Left" Command="{Binding EditAssignmentCommand, Mode=TwoWay}" />
                             <Button Grid.Row="7" Grid.Column="0" Content="Tilføj" HorizontalAlignment="Right" Command="{Binding AddAssignmentCommand}"/>
@@ -117,12 +116,19 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Rectangle Grid.Row="0" Grid.RowSpan="6" Fill="White" Stroke="Black"/>
-                            <TextBox x:Name="AddAssignNameTextBox" Grid.Row="0" PlaceholderText="Navn" Text="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedToDeleteAssignment.AssignTitle, Mode=TwoWay}"/>
-                            <TextBox x:Name="AddAssignAddressTextBox" Grid.Row="1" PlaceholderText="Adresse" Text="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedToDeleteAssignment.AssignText, Mode=TwoWay}"/>
-                            <TextBox x:Name="AddAssigZipTextBox" Grid.Row="2" PlaceholderText="Postnummer"/>
-                            <TextBox x:Name="AddAssignCityTextBox" Grid.Row="3" PlaceholderText="By"/>
-                            <TextBox x:Name="AddAssignFirstPhoneTextBox" Grid.Row="4" PlaceholderText="Primær telefon"/>
-                            <TextBox x:Name="AddAssignSecondPhoneTextBox" Grid.Row="5" PlaceholderText="Sekundær telefon"/>
+                            <ComboBox x:Name="AddAssignAfdelingTextBox" Grid.Row="0" PlaceholderText="Afdeling" Width="175" Height="34" >
+                                <ComboBoxItem Content="BoligforeningViceN"/>
+                                <ComboBoxItem Content="BoligforeningViceS"/>
+                            </ComboBox>
+                            <ComboBox x:Name="AddAssignAppartNoTextBox" Grid.Row="1" PlaceholderText="Bolig Nr." Width="175" Height="34">
+                                <ComboBoxItem Content="1"/>
+                                <ComboBoxItem Content="9"/>
+                                <ComboBoxItem Content="47"/>
+                                <ComboBoxItem Content="50"/>
+                            </ComboBox>
+                            <ComboBox x:Name="AddAssignEmployeeTextBox" Grid.Row="2" PlaceholderText="Ansvarlig" Width="175" Height="34"/>
+                            <TextBox x:Name="AddAssignFirstPhoneTextBox" Grid.Row="3" PlaceholderText="Primær telefon"/>
+                            <TextBox x:Name="AddAssignSecondPhoneTextBox" Grid.Row="4" PlaceholderText="Sekundær telefon"/>
                         </Grid>
                     </Grid>
                 </Grid>
