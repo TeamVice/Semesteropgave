@@ -60,7 +60,22 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedToDeleteAssignment, Mode=TwoWay}" />
+                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedToDeleteAssignment, Mode=TwoWay}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Style="{StaticResource ListViewBorder}">
+                                            <StackPanel>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition/>
+                                                    </Grid.RowDefinitions>
+                                                    <TextBlock Grid.Row="0" Text="{Binding AssignTitle}"/>
+                                                </Grid>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </Border>
                     </Grid>
                     <Grid Grid.Row="4">

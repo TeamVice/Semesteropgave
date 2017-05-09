@@ -103,7 +103,22 @@
                     </Grid>
                     <Grid Grid.Row="6">
                         <Border Style="{StaticResource Border}">
-                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.RegAssignmentList}"/>
+                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.RegAssignmentList}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Style="{StaticResource ListViewBorder}">
+                                            <StackPanel>
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition/>
+                                                    </Grid.RowDefinitions>
+                                                    <TextBlock Grid.Row="0" Text="{Binding RegAssignTitle}"/>
+                                                </Grid>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </Border>
                     </Grid>
                 </Grid>
