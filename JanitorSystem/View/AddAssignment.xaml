@@ -96,7 +96,7 @@
                             </Grid.RowDefinitions>
                             <TextBox x:Name="AddAssignTitleTextBox" Grid.Row="0" Grid.Column="0" PlaceholderText="Titel" Text="{Binding Assignment.AssignTitle, Mode=TwoWay}"/>
                             <TextBox x:Name="AddAssignDescriptionTextBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" PlaceholderText="Beskrivelse" Text="{Binding Assignment.AssignText, Mode=TwoWay}"/>
-                            <ComboBox x:Name="AddAssignComboBox" Grid.Row="5" Grid.Column="0" Width="155" Height="34">
+                            <ComboBox x:Name="EmployeeComboBox" Grid.Row="5" Grid.Column="0" Width="155" Height="34">
                                 <ComboBoxItem Content="Ansvarlig..."/>
                                 <ComboBoxItem Content="Karsten"/>
                                 <ComboBoxItem Content="Malene"/>

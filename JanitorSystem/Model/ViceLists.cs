@@ -95,7 +95,11 @@ namespace JanitorSystem.Model
         public Assignment SelectedToDeleteAssignment
         {
             get { return selectedToDeleteAssignment; }
-            set { selectedToDeleteAssignment = value; }
+            set
+            {
+                selectedToDeleteAssignment = value; 
+                OnPropertyChanged(nameof(SelectedToDeleteAssignment));
+            }
         }
 
         #endregion
