@@ -54,6 +54,7 @@
                         <Border Style="{StaticResource Border}">
                             <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}"/>
                         </Border>
+                        <ProgressRing IsActive="{Binding }"/>
                     </Grid>
                 </Grid>
             </Grid>

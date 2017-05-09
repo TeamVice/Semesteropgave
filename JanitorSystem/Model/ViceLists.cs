@@ -147,7 +147,20 @@ namespace JanitorSystem.Model
             }
         }
         #endregion
-        
+
+        #region ProgressRing
+        private bool _isBusy;
+
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set
+            {
+                _isBusy = value;
+                OnPropertyChanged(nameof(IsBusy));
+            }
+        }
+        #endregion
         #region LoadRegAssignments
 
         /// <summary>
@@ -158,12 +171,17 @@ namespace JanitorSystem.Model
         {
             try
             {
-                RegAssignmentList = await FacadeService.GetRegAssignmentList();
+                IsBusy = true;
 
+                RegAssignmentList = await FacadeService.GetRegAssignmentList();
             }
             catch (Exception e)
             {
                 Debug.Write($"Exception {e}");
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
 

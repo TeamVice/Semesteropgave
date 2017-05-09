@@ -13,10 +13,10 @@ using JanitorSystem.Handlers;
 
 namespace JanitorSystem.ViewModel
 {
-    public class MainViewModel
+    public class MainViewModel : Inotify
     {
-        
-        
+
+
         #region Objects
         public AssignmentHandler InstanceAssignmentHandler { get; set; }
         public AddAssignmentViewModel AddAssignmentViewModel { get; set; } = new AddAssignmentViewModel();

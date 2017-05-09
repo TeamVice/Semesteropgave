@@ -78,8 +78,8 @@
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
-                            <!-- <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.RegAssignmentList}" /> -->
                         </Border>
+                        <ProgressRing IsActive="{Binding InstanceAssignmentHandler.Vl.IsBusy, Mode=TwoWay}" Height="150" Width="150" Foreground="#FFD08817" BorderBrush="#FF233B89"/>
                     </Grid>
                     <Grid Grid.Row="4">
                         <Grid.ColumnDefinitions>
