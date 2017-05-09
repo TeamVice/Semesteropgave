@@ -53,13 +53,18 @@ namespace JanitorSystem.Handlers
 
         #endregion
 
-        #region
+        #region Delete assignment metode
         public void DeleteAssignment()
         {
             ViceLists.Instance.RemoveAssignment(ViceLists.Instance.SelectedToDeleteAssignment);
+
         }
 
         #endregion
 
+        public void EditAssignment()
+        {
+            ViceLists.Instance.AlterAssignment(ViceLists.Instance.SelectedToDeleteAssignment);
+        }
     }
 }

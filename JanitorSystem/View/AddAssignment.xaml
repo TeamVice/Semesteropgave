@@ -87,7 +87,7 @@
                                 <ComboBoxItem Content="Malene"/>
                                 <ComboBoxItem Content="Karsten"/>
                             </ComboBox>
-                            <Button Grid.Row="7" Grid.Column="0" Content="Rediger" HorizontalAlignment="Left" Command="{Binding DeleteAssignemntCommand}" />
+                            <Button Grid.Row="7" Grid.Column="0" Content="Rediger" HorizontalAlignment="Left" Command="{Binding EditAssignmentCommand, Mode=TwoWay}" />
                             <Button Grid.Row="7" Grid.Column="0" Content="Tilføj" HorizontalAlignment="Right" Command="{Binding AddAssignmentCommand}"/>
                         </Grid>
                         <Grid Grid.Column="1">
@@ -102,8 +102,8 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Rectangle Grid.Row="0" Grid.RowSpan="6" Fill="White" Stroke="Black"/>
-                            <TextBox x:Name="AddAssignNameTextBox" Grid.Row="0" PlaceholderText="Navn"/>
-                            <TextBox x:Name="AddAssignAddressTextBox" Grid.Row="1" PlaceholderText="Adresse"/>
+                            <TextBox x:Name="AddAssignNameTextBox" Grid.Row="0" PlaceholderText="Navn" Text="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedToDeleteAssignment.AssignTitle, Mode=TwoWay}"/>
+                            <TextBox x:Name="AddAssignAddressTextBox" Grid.Row="1" PlaceholderText="Adresse" Text="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedToDeleteAssignment.AssignText, Mode=TwoWay}"/>
                             <TextBox x:Name="AddAssigZipTextBox" Grid.Row="2" PlaceholderText="Postnummer"/>
                             <TextBox x:Name="AddAssignCityTextBox" Grid.Row="3" PlaceholderText="By"/>
                             <TextBox x:Name="AddAssignFirstPhoneTextBox" Grid.Row="4" PlaceholderText="Primær telefon"/>

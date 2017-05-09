@@ -20,6 +20,7 @@ namespace JanitorSystem.ViewModel
         public ICommand AddAssignmentCommand { get; set; }
 
         public ICommand DeleteAssignemntCommand { get; set; }
+        public ICommand EditAssignmentCommand { get; set; }
 
         public AddAssignmentViewModel()
         {
@@ -27,6 +28,7 @@ namespace JanitorSystem.ViewModel
             Assignment = new Assignment();
             AddAssignmentCommand = new RelayCommand(InstanceAssignmentHandler.AddAssignment,null);
             DeleteAssignemntCommand = new RelayCommand(InstanceAssignmentHandler.DeleteAssignment, null);
+            EditAssignmentCommand = new RelayCommand(InstanceAssignmentHandler.EditAssignment, null);
 
 
         }

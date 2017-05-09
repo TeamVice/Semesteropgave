@@ -168,6 +168,7 @@ namespace JanitorSystem.Model
         public async void AddAssignment(Assignment newAssignment)
         {
             await FacadeService.PostAssignment(newAssignment);
+            
 
         }
 
@@ -180,5 +181,13 @@ namespace JanitorSystem.Model
 
         #endregion
 
+        #region EditAssignment
+
+        public async void AlterAssignment(Assignment editAssignment)
+        {
+            await FacadeService.EditAssignment(editAssignment);
+        }
+
+        #endregion
     }
 }
