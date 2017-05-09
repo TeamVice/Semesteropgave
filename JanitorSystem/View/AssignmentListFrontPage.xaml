@@ -89,7 +89,7 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </Border>
-                        <ProgressRing IsActive="{Binding InstanceAssignmentHandler.Vl.IsBusy}" Height="100" Width="100" Foreground="#FFD08817" BorderBrush="#FF233B89"/>
+                        <ProgressRing IsActive="{Binding InstanceAssignmentHandler.Vl.IsBusy}" Style="{StaticResource ProgressRingStyle}"/>
                     </Grid>
                     <Grid Grid.Row="3">
                         <Grid.ColumnDefinitions>
@@ -121,7 +121,7 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </Border>
-                        <ProgressRing IsActive="{Binding InstanceAssignmentHandler.Vl.IsBusy}" Height="100" Width="100" Foreground="#FFD08817" BorderBrush="#FF233B89"/>
+                        <ProgressRing IsActive="{Binding InstanceAssignmentHandler.Vl.IsBusy}" Style="{StaticResource ProgressRingStyle}"/>
                     </Grid>
                 </Grid>
             </Grid>
