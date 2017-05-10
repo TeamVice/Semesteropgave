@@ -80,6 +80,36 @@ namespace JanitorSystem.Facade
             }
         }
 
+        public static async Task<ObservableCollection<Employee>> GetEmployeeList()
+        {
+            ObservableCollection<Employee> tempList = new ObservableCollection<Employee>();
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(serverUrl);
+
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync("api/Employees");
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        tempList = await response.Content.ReadAsAsync<ObservableCollection<Employee>>();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.Write($"Exception {e} ");
+                    tempList = null;
+                }
+
+                return tempList;
+
+            }
+        }
+
         #endregion
 
         #region Post Http kald

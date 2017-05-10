@@ -37,10 +37,11 @@ namespace JanitorSystem.Handlers
         public void AddAssignment()
         {
             Assignment tempAssignment = new Assignment();
+            
             tempAssignment.AssignTitle = Avm.Assignment.AssignTitle;
             tempAssignment.AssignText = Avm.Assignment.AssignText;
             tempAssignment.AssignRankNo = 1;
-            tempAssignment.EmployeeId = 1;
+            tempAssignment.EmployeeId = ViceLists.Instance.SelectedEmployeeId.EmployeeId;
             tempAssignment.DepId = 1;
             
 

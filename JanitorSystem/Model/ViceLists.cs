@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.ApplicationModel.Appointments.DataProvider;
 using JanitorSystem.Common;
 using JanitorSystem.Facade;
 using JanitorSystem.Handlers;
@@ -74,6 +75,20 @@ namespace JanitorSystem.Model
 
         #endregion
 
+        #region PropEmployeeList
+
+        private ObservableCollection<Employee> employeeList;
+
+        public ObservableCollection<Employee> EmployeeList
+        {
+            get { return employeeList; }
+            set { employeeList = value; OnPropertyChanged(nameof(EmployeeList)); }
+        }
+
+
+
+        #endregion
+
         #region SelectedAssignmentMVM
         private Assignment selectedAssignmentMVM;
 
@@ -104,11 +119,27 @@ namespace JanitorSystem.Model
 
         #endregion
 
+        #region SelectedEmployeeId
+        /// <summary>
+        /// This select will give the neccecary ID associated with the employer that is picked in the combobox, it will then be used in AddAssignment() to pass on the ID to a tempassigment.
+        /// </summary>
+        private Employee selectedEmployeeId;
 
+        public Employee SelectedEmployeeId
+        {
+            get { return selectedEmployeeId; }
+            set
+            {
+                selectedEmployeeId = value;
+                OnPropertyChanged(nameof(SelectedEmployeeId));
+            }
+        }
+        #endregion
 
         public ViceLists()
         {
             AssignmentList = new ObservableCollection<Assignment>();
+            EmployeeList = new ObservableCollection<Employee>();
         }
 
         #region Methods
@@ -211,5 +242,23 @@ namespace JanitorSystem.Model
         }
 
         #endregion
+
+        #region LoadEmployeeList
+
+        public async void LoadEmployeeList()
+        {
+            try
+            {
+               EmployeeList = await FacadeService.GetEmployeeList();
+
+            }
+            catch (Exception e)
+            {
+                Debug.Write($"Exception {e}");
+            }
+        }
+
+        #endregion
+
     }
 }
