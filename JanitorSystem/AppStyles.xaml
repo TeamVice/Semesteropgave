@@ -28,7 +28,6 @@
     <Style x:Key="ProgressRingStyle" TargetType="ProgressRing">
         <Setter Property="Height" Value="100"/>
         <Setter Property="Width" Value="100"/>
-        <Setter Property="BorderBrush" Value="Gray"/>
-        <Setter Property="Foreground" Value="Gray"/>
-    </Style>        
+    </Style>       
+    
 </ResourceDictionary>
