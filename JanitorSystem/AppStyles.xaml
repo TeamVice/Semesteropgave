@@ -3,14 +3,47 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:JanitorSystem">
 
+    <!-- Textblocks -->
     <Style x:Key="FontStyle" TargetType="TextBlock">
         <Setter Property="FontFamily" Value="Segoe UI"/>
     </Style>
+
+    
     
     <Style x:Key="LabelStyle" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
         <Setter Property="FontSize" Value="25"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 
+    <Style x:Key="ListViewText" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+
+    <Style x:Key="ListViewTitle" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
+        <Setter Property="FontSize" Value="20"/>
+    </Style>
+    
+    <!-- Title Textblock -->
+    <Style x:Key="Title" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    
+    <!-- LOGO textblock and border -->
+    <Style x:Key="LogoTextBlock" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="25"/>
+    </Style>
+
+    <Style x:Key="LogoBorder" TargetType="Border">
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="3"/>
+    </Style>
+
+    <!-- Borders -->
     <Style x:Key="Border" TargetType="Border">
         <Setter Property="BorderBrush" Value="Black"/>
         <Setter Property="BorderThickness" Value="5"/>
@@ -25,9 +58,12 @@
         <Setter Property="Background" Value="WhiteSmoke"/>
     </Style>
 
+    <!-- Progress Ring-->
     <Style x:Key="ProgressRingStyle" TargetType="ProgressRing">
         <Setter Property="Height" Value="100"/>
         <Setter Property="Width" Value="100"/>
-    </Style>       
+    </Style>
+
+    
     
 </ResourceDictionary>

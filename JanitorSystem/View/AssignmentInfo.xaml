@@ -27,11 +27,11 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <TextBlock Text="TeamVice Boligforening" FontSize="25" FontFamily="verdana" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="TeamVice Boligforening" Style="{StaticResource Title}"/>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Border BorderBrush="Black" BorderThickness="3">
-                        <TextBlock Text="VTM" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
+                    <Border Style="{StaticResource LogoBorder}">
+                        <TextBlock Text="VTM" Style="{StaticResource LogoTextBlock}"/>
                     </Border>
                 </Grid>
             </Grid>

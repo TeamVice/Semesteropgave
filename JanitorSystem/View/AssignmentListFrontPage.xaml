@@ -27,11 +27,11 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <TextBlock Text="TeamVice Boligforening" FontSize="25" FontFamily="verdana" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="TeamVice Boligforening" Style="{StaticResource Title}"/>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Border BorderBrush="Black" BorderThickness="3">
-                        <TextBlock x:Name="FPLogoTextBlock" Text="VTM" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25"/>
+                    <Border Style="{StaticResource LogoBorder}">
+                        <TextBlock x:Name="FPLogoTextBlock" Text="VTM" Style="{StaticResource LogoTextBlock}"/>
                     </Border>
                 </Grid>
             </Grid>
@@ -44,21 +44,20 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="10*"/>
-                        <RowDefinition Height="*"/>
                         <RowDefinition Height="20"/>
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="5*"/>
-                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="10"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="4*"/>
                             <ColumnDefinition Width="3*"/>
                         </Grid.ColumnDefinitions>
-                            <TextBlock x:Name="FPMineOpgaverTextBlock" Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Mine opgaver" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <TextBlock Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Mine opgaver"/>
                         <ComboBox Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                             <ComboBoxItem Content="Ansvarlig"/>
                         </ComboBox>
@@ -79,9 +78,9 @@
                                                         <ColumnDefinition Width="10*"/>
                                                         <ColumnDefinition Width="*"/>
                                                     </Grid.ColumnDefinitions>
-                                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding AssignRankNo}"/>
-                                                    <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding AssignText}" TextWrapping="Wrap"/>
-                                                    <TextBlock Grid.Row="0" Text="{Binding AssignTitle}"/>
+                                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding AssignRankNo}" Style="{StaticResource ListViewText}"/>
+                                                    <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding AssignText}" TextWrapping="Wrap" Style="{StaticResource ListViewText}"/>
+                                                    <TextBlock Grid.Row="0" Text="{Binding AssignTitle}" Style="{StaticResource ListViewTitle}"/>
                                                 </Grid>
                                             </StackPanel>
                                         </Border>
@@ -91,18 +90,11 @@
                         </Border>
                         <ProgressRing IsActive="{Binding InstanceAssignmentHandler.Vl.IsBusy}" Style="{StaticResource ProgressRingStyle}"/>
                     </Grid>
-                    <Grid Grid.Row="3">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
                         <!--<TextBlock Grid.Column="0" Text="Sortér efter: "/> -->
-                        
+                    <Grid Grid.Row="4">
+                        <TextBlock Style="{StaticResource LabelStyle}" Text="Fælles opgaver"/>
                     </Grid>
                     <Grid Grid.Row="5">
-                        <TextBlock Style="{StaticResource LabelStyle}" Text="Fælles opgaver" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                    </Grid>
-                    <Grid Grid.Row="6">
                         <Border Style="{StaticResource Border}">
                             <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.RegAssignmentList}">
                                 <ListView.ItemTemplate>
@@ -113,7 +105,7 @@
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition/>
                                                     </Grid.RowDefinitions>
-                                                    <TextBlock Grid.Row="0" Text="{Binding RegAssignTitle}"/>
+                                                    <TextBlock Grid.Row="0" Text="{Binding RegAssignTitle}" Style="{StaticResource ListViewTitle}"/>
                                                 </Grid>
                                             </StackPanel>
                                         </Border>
