@@ -27,5 +27,10 @@ namespace JanitorSystem.Model
         {
 
         }
+
+        public override string ToString()
+        {
+            return $"{EmployeeName}";
+        }
     }
 }
