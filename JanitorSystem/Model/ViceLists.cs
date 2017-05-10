@@ -119,7 +119,22 @@ namespace JanitorSystem.Model
 
         #endregion
 
+        #region SelectedEmployeeId
+        /// <summary>
+        /// This select will give the neccecary ID associated with the employer that is picked in the combobox, it will then be used in AddAssignment() to pass on the ID to a tempassigment.
+        /// </summary>
+        private Employee selectedEmployeeId;
 
+        public Employee SelectedEmployeeId
+        {
+            get { return selectedEmployeeId; }
+            set
+            {
+                selectedEmployeeId = value;
+                OnPropertyChanged(nameof(SelectedEmployeeId));
+            }
+        }
+        #endregion
 
         public ViceLists()
         {

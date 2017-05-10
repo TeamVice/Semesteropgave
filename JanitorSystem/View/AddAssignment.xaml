@@ -127,7 +127,7 @@
                                 <ComboBoxItem Content="47"/>
                                 <ComboBoxItem Content="50"/>
                             </ComboBox>
-                            <ComboBox x:Name="AddAssignEmployeeTextBox" Grid.Row="2" PlaceholderText="Ansvarlig" Width="175" Height="34" ItemsSource="{Binding InstanceAssignmentHandler.Vl.Instance.EmployeeList, Mode=TwoWay}"/>
+                            <ComboBox x:Name="AddAssignEmployeeTextBox" Grid.Row="2" PlaceholderText="Ansvarlig" Width="175" Height="34" ItemsSource="{Binding InstanceAssignmentHandler.Vl.Instance.EmployeeList, Mode=TwoWay}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.SelectedEmployeeId, Mode=TwoWay}"/>
                             <TextBox x:Name="AddAssignFirstPhoneTextBox" Grid.Row="3" PlaceholderText="Primær telefon" Text="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedAssignmentAddAssignVm.AssignTitle, Mode=TwoWay}"/>
                             <TextBox x:Name="AddAssignSecondPhoneTextBox" Grid.Row="4" PlaceholderText="Sekundær telefon"/>
                         </Grid>
