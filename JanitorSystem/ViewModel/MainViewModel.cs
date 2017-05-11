@@ -13,7 +13,7 @@ using JanitorSystem.Handlers;
 
 namespace JanitorSystem.ViewModel
 {
-    public class MainViewModel : Inotify
+    public class MainViewModel : ViewPropertyChanged
     {
 
 

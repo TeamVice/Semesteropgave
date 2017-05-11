@@ -13,7 +13,7 @@ using JanitorSystem.Handlers;
 
 namespace JanitorSystem.Model
 {
-    public sealed class ViceLists : Inotify
+    public sealed class ViceLists : ViewPropertyChanged
     {
         #region Singleton
 

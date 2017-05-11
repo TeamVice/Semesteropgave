@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Common
 {
-    public class Inotify : INotifyPropertyChanged
+    public class ViewPropertyChanged : INotifyPropertyChanged
     {
         // Just notifypropertychangestuff
         public event PropertyChangedEventHandler PropertyChanged;
