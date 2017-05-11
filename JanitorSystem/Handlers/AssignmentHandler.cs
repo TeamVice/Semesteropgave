@@ -16,16 +16,16 @@ namespace JanitorSystem.Handlers
     public class AssignmentHandler
     {
 
-        public MainViewModel Mvm { get; set; }
+        //public MainViewModel Mvm { get; set; }
 
         public ViceLists Vl { get; set; }
-        public Assignment Test { get; set; }
+        
 
         public AddAssignmentViewModel Avm { get; set; }
-        public AssignmentHandler(MainViewModel mvm, AddAssignmentViewModel avm, ViceLists vl)
+        public AssignmentHandler(AddAssignmentViewModel avm, ViceLists vl)
         {
            
-            Mvm = mvm;
+            //Mvm = mvm;
             Vl = vl;
             Avm = avm;
 
@@ -41,8 +41,10 @@ namespace JanitorSystem.Handlers
             tempAssignment.AssignTitle = Avm.Assignment.AssignTitle;
             tempAssignment.AssignText = Avm.Assignment.AssignText;
             tempAssignment.AssignRankNo = 1;
+            //tempAssignment.AppartNo =?????
             tempAssignment.EmployeeId = ViceLists.Instance.SelectedEmployeeId.EmployeeId;
             tempAssignment.DepId = ViceLists.Instance.SelectedDepartmentId.DepId;
+           
             
             
 

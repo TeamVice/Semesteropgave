@@ -26,7 +26,7 @@ namespace JanitorSystem.ViewModel
         {
             ViceLists.Instance.ClearAssignmentList();
             ViceLists.Instance.ClearReqAssignmentList();
-            InstanceAssignmentHandler = new AssignmentHandler(this, AddAssignmentViewModel, ViceLists.Instance);
+            InstanceAssignmentHandler = new AssignmentHandler(AddAssignmentViewModel, ViceLists.Instance);
             ViceLists.Instance.LoadAssignmentList();
             ViceLists.Instance.LoadRegAssignmentList(); 
         }

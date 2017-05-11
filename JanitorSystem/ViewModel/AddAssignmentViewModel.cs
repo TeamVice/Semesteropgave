@@ -24,7 +24,7 @@ namespace JanitorSystem.ViewModel
 
         public AddAssignmentViewModel()
         {
-            InstanceAssignmentHandler = new AssignmentHandler(MainViewModel,this, ViceLists.Instance);
+            InstanceAssignmentHandler = new AssignmentHandler(this, ViceLists.Instance);
             ViceLists.Instance.LoadEmployeeList();
             ViceLists.Instance.LoadDepartmentList();
             ViceLists.Instance.LoadAppartmentList();
