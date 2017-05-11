@@ -26,6 +26,9 @@ namespace JanitorSystem.ViewModel
         {
             InstanceAssignmentHandler = new AssignmentHandler(MainViewModel,this, ViceLists.Instance);
             ViceLists.Instance.LoadEmployeeList();
+            ViceLists.Instance.LoadDepartmentList();
+            ViceLists.Instance.LoadAppartmentList();
+            
             Assignment = new Assignment();
             AddAssignmentCommand = new RelayCommand(InstanceAssignmentHandler.AddAssignment,null);
             DeleteAssignemntCommand = new RelayCommand(InstanceAssignmentHandler.DeleteAssignment, null);

@@ -24,5 +24,10 @@ namespace JanitorSystem.Model
         {
 
         }
+
+        public override string ToString()
+        {
+            return $"{ClientPhone1}";
+        }
     }
 }

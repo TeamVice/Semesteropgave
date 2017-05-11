@@ -89,6 +89,29 @@ namespace JanitorSystem.Model
 
         #endregion
 
+        #region PropAppartmentList
+
+        private ObservableCollection<Appartment> appartmentList;
+
+        public ObservableCollection<Appartment> AppartmentList
+        {
+            get { return appartmentList; }
+            set { appartmentList = value; OnPropertyChanged(nameof(AppartmentList)); }
+        }
+
+        #endregion
+
+        #region PropDepartmentList
+        private ObservableCollection<Department> departmentsList;
+
+        public ObservableCollection<Department> DepartmentsList
+        {
+            get { return departmentsList; }
+            set { departmentsList = value; OnPropertyChanged(nameof(DepartmentsList)); }
+        }
+
+        #endregion
+
         #region SelectedAssignmentMVM
         private Assignment selectedAssignmentMVM;
 
@@ -136,10 +159,46 @@ namespace JanitorSystem.Model
         }
         #endregion
 
+        #region SelectedDepartmentId
+        /// <summary>
+        /// This select will give the neccecary ID associated with the Department that is picked in the combobox, it will then be used in AddAssignment() to pass on the ID to a tempassigment.
+        /// </summary>
+        private Department selectedDepartmentId;
+
+        public Department SelectedDepartmentId
+        {
+            get { return selectedDepartmentId; }
+            set
+            {
+                selectedDepartmentId = value;
+                OnPropertyChanged(nameof(SelectedDepartmentId));
+            }
+        }
+
+        #endregion
+
+        #region SelectedAppartmentId
+
+        private Appartment selectedAppartmentId;
+
+        public Appartment SelectedAppartmentId
+        {
+            get { return selectedAppartmentId; }
+            set
+            {
+                selectedAppartmentId = value;
+                OnPropertyChanged(nameof(SelectedAppartmentId));
+            }
+        }
+
+        #endregion
+
         public ViceLists()
         {
             AssignmentList = new ObservableCollection<Assignment>();
             EmployeeList = new ObservableCollection<Employee>();
+            DepartmentsList = new ObservableCollection<Department>();
+            AppartmentList = new ObservableCollection<Appartment>();
         }
 
         #region Methods
@@ -260,5 +319,39 @@ namespace JanitorSystem.Model
 
         #endregion
 
+        #region LoadAppartmentList
+
+        public async void LoadAppartmentList()
+        {
+            try
+            {
+                AppartmentList = await FacadeService.GetAppartmentList();
+
+            }
+            catch (Exception e)
+            {
+                Debug.Write($"Exception {e}");
+            }
+        }
+
+        #endregion
+
+        #region LoadDepartmentList
+
+        public async void LoadDepartmentList()
+        {
+            try
+            {
+                DepartmentsList = await FacadeService.GetDepartmentList();
+
+            }
+            catch (Exception e)
+            {
+                Debug.Write($"Exception {e}");
+            }
+        }
+
+        #endregion
+        
     }
 }

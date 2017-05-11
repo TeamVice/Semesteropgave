@@ -42,7 +42,8 @@ namespace JanitorSystem.Handlers
             tempAssignment.AssignText = Avm.Assignment.AssignText;
             tempAssignment.AssignRankNo = 1;
             tempAssignment.EmployeeId = ViceLists.Instance.SelectedEmployeeId.EmployeeId;
-            tempAssignment.DepId = 1;
+            tempAssignment.DepId = ViceLists.Instance.SelectedDepartmentId.DepId;
+            
             
 
             ViceLists.Instance.AddAssignment(tempAssignment);

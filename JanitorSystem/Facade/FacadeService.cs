@@ -112,6 +112,76 @@ namespace JanitorSystem.Facade
 
         #endregion
 
+
+        #region GetAppartments
+
+        public static async Task<ObservableCollection<Appartment>> GetAppartmentList()
+        {
+            ObservableCollection<Appartment> tempList = new ObservableCollection<Appartment>();
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(serverUrl);
+
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync("api/Appartments");
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        tempList = await response.Content.ReadAsAsync<ObservableCollection<Appartment>>();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.Write($"Exception {e} ");
+                    tempList = null;
+                }
+
+                return tempList;
+
+            }
+        }
+
+
+        #endregion
+
+        #region GetDepartment
+
+        public static async Task<ObservableCollection<Department>> GetDepartmentList()
+        {
+            ObservableCollection<Department> tempList = new ObservableCollection<Department>();
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(serverUrl);
+
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync("api/Departments");
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        tempList = await response.Content.ReadAsAsync<ObservableCollection<Department>>();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.Write($"Exception {e} ");
+                    tempList = null;
+                }
+
+                return tempList;
+
+            }
+        }
+
+        #endregion
+
         #region Post Http kald
         public static async Task<bool> PostAssignment(Assignment tempAssignment)
         {

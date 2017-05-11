@@ -22,5 +22,10 @@ namespace JanitorSystem.Model
         public int DepZipCode { get; set; }
 #endregion
 
+        public override string ToString()
+        {
+            return $"{DepName}";
+        }
     }
+   
 }
