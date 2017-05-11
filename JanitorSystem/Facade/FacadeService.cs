@@ -16,7 +16,7 @@ namespace JanitorSystem.Facade
 {
     public class FacadeService
     {
-        private const string serverUrl = "http://vicewebservice20170509030408.azurewebsites.net";
+        private const string serverUrl = "http://vicewebservice20170511113133.azurewebsites.net";
 
         #region Get Http kald
 
