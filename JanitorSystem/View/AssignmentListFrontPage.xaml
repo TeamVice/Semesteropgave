@@ -78,7 +78,7 @@
                                                         <ColumnDefinition Width="10*"/>
                                                         <ColumnDefinition Width="*"/>
                                                     </Grid.ColumnDefinitions>
-                                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding AssignRankNo}" Style="{StaticResource ListViewText}"/>
+                                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding AssignRankNo}" Style="{StaticResource ListViewRank}"/>
                                                     <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding AssignText}" TextWrapping="Wrap" Style="{StaticResource ListViewText}"/>
                                                     <TextBlock Grid.Row="0" Text="{Binding AssignTitle}" Style="{StaticResource ListViewTitle}"/>
                                                 </Grid>
