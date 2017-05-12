@@ -11,20 +11,19 @@ namespace JanitorSystem.Handlers
 {
     public class DeleteAssignmentHandler
     {
+        #region Properties
+
         public AssignmentInfoViewModel Aiv { get; set; }
 
-        public DeleteAssignmentHandler()
-        {
-            //aiv = Aiv;
-        }
-
+        #endregion
+        
         #region Method to delete assignemtns
 
         public void DeleteAssignment()
         {
-            ViceLists.Instance.RemoveAssignment(ViceLists.Instance.SelectedAssignmentMVM);
-            ViceLists.Instance.ClearAssignmentList();
-            ViceLists.Instance.LoadAssignmentList();
+            ViceListsSingleton.Instance.RemoveAssignment(ViceListsSingleton.Instance.SelectedAssignmentMVM);
+            ViceListsSingleton.Instance.ClearAssignmentList();
+            ViceListsSingleton.Instance.LoadAssignmentList();
         }
 
         #endregion

@@ -6,9 +6,6 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Model
 {
-    /// <summary>
-    /// Denne klasse indeholde 2 tabeller i databasen "Department" og "DepZipCode"
-    /// </summary>
     public class Department
     {
         #region Properties

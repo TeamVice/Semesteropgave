@@ -14,7 +14,7 @@ namespace JanitorSystem.ViewModel
     {
         public AssignmentInfoViewModel()
         {
-            Singleton = ViceLists.Instance;
+            Singleton = ViceListsSingleton.Instance;
             HandlerDelete = new DeleteAssignmentHandler();
             FinishAssignmentCommand = new RelayCommand(HandlerDelete.DeleteAssignment,null);
         } // constructor
@@ -28,7 +28,7 @@ namespace JanitorSystem.ViewModel
         #region Properties
         public DeleteAssignmentHandler HandlerDelete { get; set; }
         
-        public ViceLists Singleton { get; }
+        public ViceListsSingleton Singleton { get; }
 
         #endregion
     }

@@ -17,7 +17,7 @@ namespace JanitorSystem.ViewModel
     {
         public MainViewModel()
         {
-            Singleton = ViceLists.Instance;
+            Singleton = ViceListsSingleton.Instance;
             #region Iniates Clear methods // To avoid a bug when changing from assignmentinfo view to AssignmentListFrontPage
 
             Singleton.ClearAssignmentList();
@@ -29,7 +29,7 @@ namespace JanitorSystem.ViewModel
         } // constructor
 
         #region Properties
-        public ViceLists Singleton { get; set; }
+        public ViceListsSingleton Singleton { get; set; }
 
         #endregion
     }

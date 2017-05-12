@@ -14,7 +14,7 @@ namespace JanitorSystem.ViewModel
     {
         public AddAssignmentViewModel()
         {
-            Singleton = ViceLists.Instance;
+            Singleton = ViceListsSingleton.Instance;
             InstanceAssignmentHandler = new AssignmentHandler(this);          
             Assignment = new Assignment();
             AddAssignmentCommand = new RelayCommand(InstanceAssignmentHandler.AddAssignment,null);
@@ -23,7 +23,7 @@ namespace JanitorSystem.ViewModel
         #region Properties
          public Assignment Assignment { get; set; }
         public AssignmentHandler InstanceAssignmentHandler { get; set; }
-        public ViceLists Singleton { get; set; }
+        public ViceListsSingleton Singleton { get; set; }
         #endregion
        
         #region ICommands

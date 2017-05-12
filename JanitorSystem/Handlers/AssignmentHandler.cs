@@ -15,12 +15,16 @@ namespace JanitorSystem.Handlers
 {
     public class AssignmentHandler
     {
-
-        public AddAssignmentViewModel Avm { get; set; }
         public AssignmentHandler(AddAssignmentViewModel avm)
         {
             Avm = avm;
         }
+
+        #region Properties
+
+        public AddAssignmentViewModel Avm { get; set; }
+
+        #endregion
 
         #region AddAssignment Method
 
@@ -44,7 +48,7 @@ namespace JanitorSystem.Handlers
         #region Delete assignment method
         public void DeleteAssignment()
         {
-            Avm.Singleton.RemoveAssignment(ViceLists.Instance.SelectedAssignmentMVM);
+            Avm.Singleton.RemoveAssignment(ViceListsSingleton.Instance.SelectedAssignmentMVM);
         }
 
         #endregion

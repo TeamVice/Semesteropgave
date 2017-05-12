@@ -13,10 +13,10 @@ using JanitorSystem.Handlers;
 
 namespace JanitorSystem.Model
 {
-    public sealed class ViceLists : ViewPropertyChanged
+    public sealed class ViceListsSingleton : ViewPropertyChanged
     {
         #region Singleton // Constructor
-        private ViceLists()
+        private ViceListsSingleton()
         {
             AssignmentList = new ObservableCollection<Assignment>();
             EmployeeList = new ObservableCollection<Employee>();
@@ -29,8 +29,8 @@ namespace JanitorSystem.Model
             LoadDepartmentList();
             
         } // constructor 
-        private static readonly ViceLists instance = new ViceLists();
-        public static ViceLists Instance
+        private static readonly ViceListsSingleton instance = new ViceListsSingleton();
+        public static ViceListsSingleton Instance
         {
             get { return instance; }
         }

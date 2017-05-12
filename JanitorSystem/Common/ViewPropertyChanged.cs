@@ -10,11 +10,17 @@ namespace JanitorSystem.Common
 {
     public class ViewPropertyChanged : INotifyPropertyChanged
     {
-        // Just notifypropertychangestuff
-        public event PropertyChangedEventHandler PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        #region Method to handle updating the view
+
+         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        #endregion
+       
+        #region Properties
+        public event PropertyChangedEventHandler PropertyChanged;
+        #endregion
     }
 }
