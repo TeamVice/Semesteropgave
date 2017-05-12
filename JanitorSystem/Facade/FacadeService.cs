@@ -54,7 +54,6 @@ namespace JanitorSystem.Facade
 
         #endregion
         
-
         #region GetRegularAssignments
 
         public static async Task<ObservableCollection<RegAssignment>> GetRegAssignmentList()
@@ -89,7 +88,6 @@ namespace JanitorSystem.Facade
 
         #endregion
         
-
         #region GetEmployees
 
         public static async Task<ObservableCollection<Employee>> GetEmployeeList()
@@ -121,10 +119,8 @@ namespace JanitorSystem.Facade
 
             }
         }
-
         #endregion
-        
-       
+
         #region GetAppartments
 
         public static async Task<ObservableCollection<Appartment>> GetAppartmentList()
@@ -158,8 +154,40 @@ namespace JanitorSystem.Facade
         }
 
 
+
         #endregion
 
+        #region GetAppartmentOwners
+
+        public static async Task<Appartment> GetAppartmentOwners(int appID)
+        {
+
+            using (var client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                client.DefaultRequestHeaders.Clear();
+                client.BaseAddress = new Uri(serverUrl);
+
+                try
+                {
+                    HttpResponseMessage response = await client.GetAsync("api/Appartments/" + appID);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return await response.Content.ReadAsAsync<Appartment>();
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.Write($"Exception {e} ");
+                }
+
+                return null;
+            }
+        }
+
+        #endregion
+        
         #region GetDepartment
 
         public static async Task<ObservableCollection<Department>> GetDepartmentList()
@@ -233,4 +261,5 @@ namespace JanitorSystem.Facade
 
         #endregion
     }
+
 }

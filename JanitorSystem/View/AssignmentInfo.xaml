@@ -71,9 +71,9 @@
                         <TextBlock x:Name="AssignInfoTitleTextBlock" Grid.Row="0" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20" Text="{Binding Singleton.SelectedAssignmentMVM.AssignTitle}" />
                         <TextBlock x:Name="AssignInfoAddressTextBlock" Grid.Row="1" Text="{Binding Singleton.SelectedAssignmentMVM.AppartNo}" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
                         <TextBlock x:Name="AssignInfoDescriptionTextBlock" Grid.Row="2" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20" Text="{Binding Singleton.SelectedAssignmentMVM.AssignText}" />
-                        <TextBlock x:Name="AssignInfoNameTextBlock" Grid.Row="3" Text="Navn" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
-                        <TextBlock x:Name="AssignInfoPhoneTextBlock" Grid.Row="4" Text="Primær telefon" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
-                        <TextBlock x:Name="AssignInfoSecondPhoneTextBlock" Grid.Row="5" Text="Sekundær telefon" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20"/>
+                        <TextBlock x:Name="AssignInfoNameTextBlock" Grid.Row="3" Text="{Binding SelectedAppartment.AppartmentOwner, Mode=TwoWay}" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
+                        <TextBlock x:Name="AssignInfoPhoneTextBlock" Grid.Row="4" Text="{Binding SelectedAppartment.AppartmentPhone1}" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
+                        <TextBlock x:Name="AssignInfoSecondPhoneTextBlock" Grid.Row="5" Text="{Binding SelectedAppartment.AppartmentPhone2}" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20"/>
                     </Grid>
                     <Grid Grid.Row="4">
                         <Border Style="{StaticResource Border}">

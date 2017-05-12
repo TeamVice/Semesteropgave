@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Appointments.DataProvider;
@@ -22,12 +23,15 @@ namespace JanitorSystem.Model
             EmployeeList = new ObservableCollection<Employee>();
             DepartmentsList = new ObservableCollection<Department>();
             AppartmentList = new ObservableCollection<Appartment>();
+            #region LoadLists
+
             LoadAssignmentList();
             LoadRegAssignmentList();
             LoadEmployeeList();
             LoadAppartmentList();
             LoadDepartmentList();
-            
+
+            #endregion
         } // constructor 
         private static readonly ViceListsSingleton instance = new ViceListsSingleton();
         public static ViceListsSingleton Instance
@@ -171,6 +175,7 @@ namespace JanitorSystem.Model
         #endregion
         
         #region Methods to Load lists
+
         #region LoadAssignmentList
         public async void LoadAssignmentList()
         {
@@ -289,5 +294,5 @@ namespace JanitorSystem.Model
 
 
         #endregion
-    }
+         }
 }
