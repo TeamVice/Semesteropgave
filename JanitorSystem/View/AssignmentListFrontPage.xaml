@@ -88,7 +88,7 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </Border>
-                        <ProgressRing  Style="{StaticResource ProgressRingStyle}"/>
+                        <ProgressRing IsActive="{Binding Singleton.IsBusy}"  Style="{StaticResource ProgressRingStyle}"/>
                     </Grid>
                         <!--<TextBlock Grid.Column="0" Text="Sortér efter: "/> -->
                     <Grid Grid.Row="4">
@@ -113,7 +113,7 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </Border>
-                        <ProgressRing  Style="{StaticResource ProgressRingStyle}"/>
+                        <ProgressRing IsActive="{Binding Singleton.IsBusy}" Style="{StaticResource ProgressRingStyle}"/>
                     </Grid>
                 </Grid>
             </Grid>

@@ -20,7 +20,7 @@ namespace JanitorSystem.Model
 
         public override string ToString()
         {
-            return RegAssignTitle;
+            return $"{RegAssignTitle}";
         }
     }
 }
