@@ -17,19 +17,31 @@ namespace JanitorSystem.Model
     {
         #region Singleton
 
-        private static ViceLists instance;
+        private static readonly ViceLists instance = new ViceLists();
 
+        //static ViceLists()
+        //{
+            
+        //}
+
+        private ViceLists()
+        {
+            AssignmentList = new ObservableCollection<Assignment>();
+            EmployeeList = new ObservableCollection<Employee>();
+            DepartmentsList = new ObservableCollection<Department>();
+            AppartmentList = new ObservableCollection<Appartment>();
+            LoadAssignmentList();
+            LoadRegAssignmentList();
+            LoadEmployeeList();
+            LoadAppartmentList();
+            LoadDepartmentList();
+            
+        }
         public static ViceLists Instance
         {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new ViceLists();
-                }
-                return instance;
-            }
+            get { return instance; }
         }
+     
 
         #endregion
 
@@ -51,6 +63,7 @@ namespace JanitorSystem.Model
             }
 
         }
+
 
         #endregion
 
@@ -127,79 +140,35 @@ namespace JanitorSystem.Model
 
         #endregion
 
-        #region SelectedToDeleteAssignmentProp
-        private Assignment selectedAssignmentAddAssignVM;
+        //#region SelectedToDeleteAssignmentProp
+        //private Assignment selectedAssignmentAddAssignVM;
 
-        public Assignment SelectedAssignmentAddAssignVm
-        {
-            get { return selectedAssignmentAddAssignVM; }
-            set
-            {
-                selectedAssignmentAddAssignVM = value; 
-                OnPropertyChanged(nameof(SelectedAssignmentAddAssignVm));
-            }
-        }
+        //public Assignment SelectedAssignmentAddAssignVm
+        //{
+        //    get { return selectedAssignmentAddAssignVM; }
+        //    set
+        //    {
+        //        selectedAssignmentAddAssignVM = value; 
+        //        OnPropertyChanged(nameof(SelectedAssignmentAddAssignVm));
+        //    }
+        //}
 
-        #endregion
+        //#endregion
 
-        #region SelectedEmployeeId
-        /// <summary>
-        /// This select will give the neccecary ID associated with the employer that is picked in the combobox, it will then be used in AddAssignment() to pass on the ID to a tempassigment.
-        /// </summary>
-        private Employee selectedEmployeeId;
+   
 
-        public Employee SelectedEmployeeId
-        {
-            get { return selectedEmployeeId; }
-            set
-            {
-                selectedEmployeeId = value;
-                OnPropertyChanged(nameof(SelectedEmployeeId));
-            }
-        }
-        #endregion
+        //#endregion
 
-        #region SelectedDepartmentId
-        /// <summary>
-        /// This select will give the neccecary ID associated with the Department that is picked in the combobox, it will then be used in AddAssignment() to pass on the ID to a tempassigment.
-        /// </summary>
-        private Department selectedDepartmentId;
-
-        public Department SelectedDepartmentId
-        {
-            get { return selectedDepartmentId; }
-            set
-            {
-                selectedDepartmentId = value;
-                OnPropertyChanged(nameof(SelectedDepartmentId));
-            }
-        }
-
-        #endregion
-
-        #region SelectedAppartmentId
-
-        private Appartment selectedAppartmentId;
-
-        public Appartment SelectedAppartmentId
-        {
-            get { return selectedAppartmentId; }
-            set
-            {
-                selectedAppartmentId = value;
-                OnPropertyChanged(nameof(SelectedAppartmentId));
-            }
-        }
-
-        #endregion
-
-        public ViceLists()
-        {
-            AssignmentList = new ObservableCollection<Assignment>();
-            EmployeeList = new ObservableCollection<Employee>();
-            DepartmentsList = new ObservableCollection<Department>();
-            AppartmentList = new ObservableCollection<Appartment>();
-        }
+        //public ViceLists()
+        //{
+        //    AssignmentList = new ObservableCollection<Assignment>();
+        //    EmployeeList = new ObservableCollection<Employee>();
+        //    DepartmentsList = new ObservableCollection<Department>();
+        //    AppartmentList = new ObservableCollection<Appartment>();
+        //    LoadAssignmentList();
+        //    LoadRegAssignmentList();
+   
+        //}
 
         #region Methods
 
@@ -287,8 +256,6 @@ namespace JanitorSystem.Model
         public async void RemoveAssignment(Assignment deleteAssignment)
         {
             await FacadeService.DeleteAssignment(deleteAssignment);
-            //ClearAssignmentList();
-            //LoadAssignmentList();
         }
 
         #endregion
@@ -352,6 +319,7 @@ namespace JanitorSystem.Model
         }
 
         #endregion
-        
+
+
     }
 }

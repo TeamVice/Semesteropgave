@@ -60,7 +60,7 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedAssignmentAddAssignVm, Mode=TwoWay}">
+                            <ListView ItemsSource="{Binding Singleton.AssignmentList}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedAssignmentAddAssignVm, Mode=TwoWay}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Border Style="{StaticResource ListViewBorder}">
@@ -117,9 +117,9 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <Rectangle Grid.Row="0" Grid.RowSpan="5" Fill="White" Stroke="Black"/>
-                            <ComboBox x:Name="AddAssignAfdelingTextBox" Grid.Row="0" PlaceholderText="Afdeling" Width="175" Height="34" ItemsSource="{Binding InstanceAssignmentHandler.Vl.Instance.DepartmentsList, Mode=TwoWay}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.SelectedDepartmentId, Mode=TwoWay}"/>
-                            <ComboBox x:Name="AddAssignAppartNoTextBox" Grid.Row="1" PlaceholderText="Bolig Nr." Width="175" Height="34" ItemsSource="{Binding InstanceAssignmentHandler.Vl.Instance.AppartmentList, Mode=TwoWay}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.SelectedAppartmentId, Mode=TwoWay}"/>
-                                <ComboBox x:Name="AddAssignEmployeeTextBox" Grid.Row="2" PlaceholderText="Ansvarlig" Width="175" Height="34" ItemsSource="{Binding InstanceAssignmentHandler.Vl.Instance.EmployeeList, Mode=TwoWay}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.SelectedEmployeeId, Mode=TwoWay}"/>
+                            <ComboBox x:Name="AddAssignAfdelingTextBox" Grid.Row="0" PlaceholderText="Afdeling" Width="175" Height="34" ItemsSource="{Binding Singleton.DepartmentsList}" SelectedItem="{Binding SelectedDepartmentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <ComboBox x:Name="AddAssignAppartNoTextBox" Grid.Row="1" PlaceholderText="Bolig Nr." Width="175" Height="34" ItemsSource="{Binding Singleton.AppartmentList}" SelectedItem="{Binding SelectedAppartmentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <ComboBox x:Name="AddAssignEmployeeTextBox" Grid.Row="2" PlaceholderText="Ansvarlig" Width="175" Height="34" ItemsSource="{Binding Singleton.EmployeeList}" SelectedItem="{Binding SelectedEmployeeId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                             <TextBox x:Name="AddAssignFirstPhoneTextBox" Grid.Row="3" PlaceholderText="Primær telefon" Text="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedAssignmentAddAssignVm.AssignTitle, Mode=TwoWay}"/>
                             <TextBox x:Name="AddAssignSecondPhoneTextBox" Grid.Row="4" PlaceholderText="Sekundær telefon"/>
                         </Grid>

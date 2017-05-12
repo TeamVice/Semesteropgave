@@ -15,20 +15,20 @@ namespace JanitorSystem.ViewModel
 {
     public class MainViewModel : ViewPropertyChanged
     {
-
-
-        #region Objects
-        public AssignmentHandler InstanceAssignmentHandler { get; set; }
-        public AddAssignmentViewModel AddAssignmentViewModel { get; set; } = new AddAssignmentViewModel();
-        
-        #endregion
         public MainViewModel()
         {
-            ViceLists.Instance.ClearAssignmentList();
-            ViceLists.Instance.ClearReqAssignmentList();
-            InstanceAssignmentHandler = new AssignmentHandler(AddAssignmentViewModel, ViceLists.Instance);
-            ViceLists.Instance.LoadAssignmentList();
-            ViceLists.Instance.LoadRegAssignmentList(); 
+            Singleton = ViceLists.Instance;
+            Singleton.LoadAssignmentList();
+            Singleton.LoadRegAssignmentList();
         }
+        public ViceLists Singleton { get; set; }
+
+
+        
+
+
+
+
+
     }
 }

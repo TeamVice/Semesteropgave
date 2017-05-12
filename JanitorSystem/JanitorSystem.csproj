@@ -101,12 +101,12 @@
     <Compile Include="Converters\IntConverter.cs" />
     <Compile Include="Facade\FacadeService.cs" />
     <Compile Include="Handlers\AssignmentHandler.cs" />
+    <Compile Include="Handlers\DeleteAssignmentHandler.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Appartment.cs" />
     <Compile Include="Model\Assignment.cs" />
-    <Compile Include="Model\Client.cs" />
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\RegAssignment.cs" />

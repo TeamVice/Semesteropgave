@@ -64,7 +64,7 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.SelectedAssignmentMVM, Mode=TwoWay}" SelectionChanged="FPMineOpgaverListView_SelectionChanged">
+                            <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding Singleton.AssignmentList}" SelectionChanged="FPMineOpgaverListView_SelectionChanged" SelectedItem="{Binding Singleton.SelectedAssignmentMVM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Border Style="{StaticResource ListViewBorder}">
@@ -88,7 +88,7 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </Border>
-                        <ProgressRing IsActive="{Binding InstanceAssignmentHandler.Vl.IsBusy}" Style="{StaticResource ProgressRingStyle}"/>
+                        <ProgressRing  Style="{StaticResource ProgressRingStyle}"/>
                     </Grid>
                         <!--<TextBlock Grid.Column="0" Text="Sortér efter: "/> -->
                     <Grid Grid.Row="4">
@@ -96,7 +96,7 @@
                     </Grid>
                     <Grid Grid.Row="5">
                         <Border Style="{StaticResource Border}">
-                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.RegAssignmentList}">
+                   <ListView ItemsSource="{Binding Singleton.RegAssignmentList}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Border Style="{StaticResource ListViewBorder}">
@@ -113,7 +113,7 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </Border>
-                        <ProgressRing IsActive="{Binding InstanceAssignmentHandler.Vl.IsBusy}" Style="{StaticResource ProgressRingStyle}"/>
+                        <ProgressRing  Style="{StaticResource ProgressRingStyle}"/>
                     </Grid>
                 </Grid>
             </Grid>

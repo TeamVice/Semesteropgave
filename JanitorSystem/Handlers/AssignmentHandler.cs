@@ -16,20 +16,10 @@ namespace JanitorSystem.Handlers
     public class AssignmentHandler
     {
 
-        //public MainViewModel Mvm { get; set; }
-
-        public ViceLists Vl { get; set; }
-        
-
         public AddAssignmentViewModel Avm { get; set; }
-        public AssignmentHandler(AddAssignmentViewModel avm, ViceLists vl)
+        public AssignmentHandler(AddAssignmentViewModel avm)
         {
-           
-            //Mvm = mvm;
-            Vl = vl;
             Avm = avm;
-
-
         }
 
         #region AddAssignment Metode
@@ -41,18 +31,11 @@ namespace JanitorSystem.Handlers
             tempAssignment.AssignTitle = Avm.Assignment.AssignTitle;
             tempAssignment.AssignText = Avm.Assignment.AssignText;
             tempAssignment.AssignRankNo = 1;
-            //tempAssignment.AppartNo =?????
-            tempAssignment.EmployeeId = ViceLists.Instance.SelectedEmployeeId.EmployeeId;
-            tempAssignment.DepId = ViceLists.Instance.SelectedDepartmentId.DepId;
-           
-            
-            
-
+            tempAssignment.AppartNo = Avm.SelectedAppartmentId.AppartNo;
+            tempAssignment.DepId = Avm.SelectedDepartmentId.DepId;
+            tempAssignment.EmployeeId = Avm.SelectedEmployeeId.EmployeeId;
             ViceLists.Instance.AddAssignment(tempAssignment);
-            ViceLists.Instance.ClearAssignmentList();
             ViceLists.Instance.LoadAssignmentList();
-           // tempAssignment.AssignTitle = MainViewModel.
-
         }
 
         #endregion
@@ -60,15 +43,15 @@ namespace JanitorSystem.Handlers
         #region Delete assignment metode
         public void DeleteAssignment()
         {
-            ViceLists.Instance.RemoveAssignment(ViceLists.Instance.SelectedAssignmentAddAssignVm);
+            ViceLists.Instance.RemoveAssignment(ViceLists.Instance.SelectedAssignmentMVM);
 
         }
 
         #endregion
 
-        public void EditAssignment()
-        {
-            ViceLists.Instance.AlterAssignment(ViceLists.Instance.SelectedAssignmentAddAssignVm);
-        }
+        //public void EditAssignment()
+        //{
+        //    ViceLists.Instance.AlterAssignment(ViceLists.Instance.SelectedAssignmentAddAssignVm);
+        //}
     }
 }
