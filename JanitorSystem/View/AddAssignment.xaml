@@ -60,7 +60,7 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView ItemsSource="{Binding Singleton.AssignmentList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedAssignmentAddAssignVm, Mode=TwoWay}">
+                            <ListView ItemsSource="{Binding Singleton.AssignmentList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Singleton.SelectedAssignmentMVM, Mode=TwoWay}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Border Style="{StaticResource ListViewBorder}">
@@ -77,7 +77,7 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </Border>
-                        <ProgressRing IsActive="{Binding InstanceAssignmentHandler.Vl.IsBusy}" Style="{StaticResource ProgressRingStyle}"/>
+                        <ProgressRing IsActive="{Binding Singleton.IsBusy}" Style="{StaticResource ProgressRingStyle}"/>
                     </Grid>
                     <Grid Grid.Row="4">
                         <Grid.ColumnDefinitions>
@@ -120,8 +120,8 @@
                             <ComboBox x:Name="AddAssignAfdelingTextBox" Grid.Row="0" PlaceholderText="Afdeling" Width="175" Height="34" ItemsSource="{Binding Singleton.DepartmentsList}" SelectedItem="{Binding SelectedDepartmentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                             <ComboBox x:Name="AddAssignAppartNoTextBox" Grid.Row="1" PlaceholderText="Bolig Nr." Width="175" Height="34" ItemsSource="{Binding Singleton.AppartmentList}" SelectedItem="{Binding SelectedAppartmentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 <ComboBox x:Name="AddAssignEmployeeTextBox" Grid.Row="2" PlaceholderText="Ansvarlig" Width="175" Height="34" ItemsSource="{Binding Singleton.EmployeeList}" SelectedItem="{Binding SelectedEmployeeId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <TextBox x:Name="AddAssignFirstPhoneTextBox" Grid.Row="3" PlaceholderText="Primær telefon" Text="{Binding InstanceAssignmentHandler.Vl.Instance.SelectedAssignmentAddAssignVm.AssignTitle, Mode=TwoWay}"/>
-                            <TextBox x:Name="AddAssignSecondPhoneTextBox" Grid.Row="4" PlaceholderText="Sekundær telefon"/>
+                            <TextBox x:Name="AddAssignFirstPhoneTextBox" Grid.Row="3" PlaceholderText="Primær telefon" Text="{Binding SelectedAppartmentId.AppartmentPhone1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBox x:Name="AddAssignSecondPhoneTextBox" Grid.Row="4" PlaceholderText="Sekundær telefon" Text="{Binding SelectedAppartmentId.AppartmentPhone2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         </Grid>
                     </Grid>
                 </Grid>
