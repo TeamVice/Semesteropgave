@@ -97,8 +97,6 @@
     </Compile>
     <Compile Include="Common\ViewPropertyChanged.cs" />
     <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Converters\DateTimeConverter.cs" />
-    <Compile Include="Converters\IntConverter.cs" />
     <Compile Include="Facade\FacadeService.cs" />
     <Compile Include="Handlers\AssignmentHandler.cs" />
     <Compile Include="Handlers\DeleteAssignmentHandler.cs" />

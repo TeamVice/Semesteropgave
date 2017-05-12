@@ -12,15 +12,24 @@ namespace JanitorSystem.ViewModel
 {
     public class AssignmentInfoViewModel
     {
+        public AssignmentInfoViewModel()
+        {
+            Singleton = ViceLists.Instance;
+            HandlerDelete = new DeleteAssignmentHandler();
+            FinishAssignmentCommand = new RelayCommand(HandlerDelete.DeleteAssignment,null);
+        } // constructor
+
+        #region ICommands
+
         public ICommand FinishAssignmentCommand { get; set; }
+
+        #endregion
+
+        #region Properties
         public DeleteAssignmentHandler HandlerDelete { get; set; }
         
         public ViceLists Singleton { get; }
-        public AssignmentInfoViewModel()
-        { 
-            HandlerDelete = new DeleteAssignmentHandler(this);
-           Singleton = ViceLists.Instance;
-            FinishAssignmentCommand = new RelayCommand(HandlerDelete.DeleteAssignment,null);
-        }
+
+        #endregion
     }
 }

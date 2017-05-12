@@ -15,15 +15,7 @@ namespace JanitorSystem.Model
 {
     public sealed class ViceLists : ViewPropertyChanged
     {
-        #region Singleton
-
-        private static readonly ViceLists instance = new ViceLists();
-
-        //static ViceLists()
-        //{
-            
-        //}
-
+        #region Singleton // Constructor
         private ViceLists()
         {
             AssignmentList = new ObservableCollection<Assignment>();
@@ -36,15 +28,35 @@ namespace JanitorSystem.Model
             LoadAppartmentList();
             LoadDepartmentList();
             
-        }
+        } // constructor 
+        private static readonly ViceLists instance = new ViceLists();
         public static ViceLists Instance
         {
             get { return instance; }
         }
-     
+
+        
+
 
         #endregion
 
+        #region ProgressRing
+        private bool _isBusy;
+
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set
+            {
+                _isBusy = value;
+                OnPropertyChanged(nameof(IsBusy));
+            }
+        }
+        #endregion
+
+        #region Lister
+
+        
         #region PropAssignmentList
 
         /// <summary>
@@ -125,6 +137,8 @@ namespace JanitorSystem.Model
 
         #endregion
 
+        #endregion
+
         #region SelectedAssignmentMVM
         private Assignment selectedAssignmentMVM;
 
@@ -140,58 +154,23 @@ namespace JanitorSystem.Model
 
         #endregion
 
-        //#region SelectedToDeleteAssignmentProp
-        //private Assignment selectedAssignmentAddAssignVM;
+        #region Methods to add and remove assignments
 
-        //public Assignment SelectedAssignmentAddAssignVm
-        //{
-        //    get { return selectedAssignmentAddAssignVM; }
-        //    set
-        //    {
-        //        selectedAssignmentAddAssignVM = value; 
-        //        OnPropertyChanged(nameof(SelectedAssignmentAddAssignVm));
-        //    }
-        //}
-
-        //#endregion
-
-   
-
-        //#endregion
-
-        //public ViceLists()
-        //{
-        //    AssignmentList = new ObservableCollection<Assignment>();
-        //    EmployeeList = new ObservableCollection<Employee>();
-        //    DepartmentsList = new ObservableCollection<Department>();
-        //    AppartmentList = new ObservableCollection<Appartment>();
-        //    LoadAssignmentList();
-        //    LoadRegAssignmentList();
-   
-        //}
-
-        #region Methods
-
-        #region ClearListerMetoder
-
-        public void ClearReqAssignmentList()
+        public async void AddAssignment(Assignment newAssignment)
         {
-            if (RegAssignmentList != null)
-            {
-                RegAssignmentList.Clear();
-            }
+            await FacadeService.PostAssignment(newAssignment);
+            
+
         }
 
-        public void ClearAssignmentList()
+        public async void RemoveAssignment(Assignment deleteAssignment)
         {
-            if (AssignmentList != null)
-            {
-                AssignmentList.Clear();
-            }
+            await FacadeService.DeleteAssignment(deleteAssignment);
         }
 
         #endregion
-
+        
+        #region Methods to Load lists
         #region LoadAssignmentList
         public async void LoadAssignmentList()
         {
@@ -207,19 +186,6 @@ namespace JanitorSystem.Model
         }
         #endregion
 
-        #region ProgressRing
-        private bool _isBusy;
-
-        public bool IsBusy
-        {
-            get { return _isBusy; }
-            set
-            {
-                _isBusy = value;
-                OnPropertyChanged(nameof(IsBusy));
-            }
-        }
-        #endregion
         #region LoadRegAssignments
 
         /// <summary>
@@ -242,29 +208,6 @@ namespace JanitorSystem.Model
             {
                 IsBusy = false;
             }
-        }
-
-        #endregion
-
-        public async void AddAssignment(Assignment newAssignment)
-        {
-            await FacadeService.PostAssignment(newAssignment);
-            
-
-        }
-
-        public async void RemoveAssignment(Assignment deleteAssignment)
-        {
-            await FacadeService.DeleteAssignment(deleteAssignment);
-        }
-
-        #endregion
-
-        #region EditAssignment
-
-        public async void AlterAssignment(Assignment editAssignment)
-        {
-            await FacadeService.EditAssignment(editAssignment);
         }
 
         #endregion
@@ -319,7 +262,32 @@ namespace JanitorSystem.Model
         }
 
         #endregion
+        #endregion
+        
+        #region Methods to clear lists
+
+        #region ClearListerMetoder
+
+        public void ClearReqAssignmentList()
+        {
+            if (RegAssignmentList != null)
+            {
+                RegAssignmentList.Clear();
+            }
+        }
+
+        public void ClearAssignmentList()
+        {
+            if (AssignmentList != null)
+            {
+                AssignmentList.Clear();
+            }
+        }
+
+        #endregion
 
 
+
+        #endregion
     }
 }

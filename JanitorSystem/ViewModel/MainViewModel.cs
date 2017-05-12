@@ -18,17 +18,19 @@ namespace JanitorSystem.ViewModel
         public MainViewModel()
         {
             Singleton = ViceLists.Instance;
+            #region Iniates Clear methods // To avoid a bug when changing from assignmentinfo view to AssignmentListFrontPage
+
+            Singleton.ClearAssignmentList();
+            Singleton.ClearReqAssignmentList();
+
+            #endregion
             Singleton.LoadAssignmentList();
             Singleton.LoadRegAssignmentList();
-        }
+        } // constructor
+
+        #region Properties
         public ViceLists Singleton { get; set; }
 
-
-        
-
-
-
-
-
+        #endregion
     }
 }

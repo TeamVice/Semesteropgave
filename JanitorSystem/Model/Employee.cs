@@ -22,12 +22,6 @@ namespace JanitorSystem.Model
 
         #endregion
 
-        // ctor
-        public Employee()
-        {
-
-        }
-
         public override string ToString()
         {
             return $"{EmployeeName}";

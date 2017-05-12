@@ -9,7 +9,7 @@ namespace JanitorSystem.Model
 {
     public class Assignment
     {
-        #region props
+        #region Properties
         public int AssignId { get; set; }
         public string AssignTitle { get; set; }
         public string AssignText { get; set; }
@@ -19,11 +19,6 @@ namespace JanitorSystem.Model
         public int AppartNo { get; set; }
         public ObservableCollection<Assignment> Assignments { get; set; }
 #endregion
-
-        public Assignment()
-        {    
-
-        }
 
         public override string ToString()
         {

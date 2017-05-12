@@ -22,7 +22,7 @@ namespace JanitorSystem.Handlers
             Avm = avm;
         }
 
-        #region AddAssignment Metode
+        #region AddAssignment Method
 
         public void AddAssignment()
         {
@@ -34,24 +34,19 @@ namespace JanitorSystem.Handlers
             tempAssignment.AppartNo = Avm.SelectedAppartmentId.AppartNo;
             tempAssignment.DepId = Avm.SelectedDepartmentId.DepId;
             tempAssignment.EmployeeId = Avm.SelectedEmployeeId.EmployeeId;
-            ViceLists.Instance.AddAssignment(tempAssignment);
-            ViceLists.Instance.LoadAssignmentList();
+            Avm.Singleton.AddAssignment(tempAssignment);
+            Avm.Singleton.ClearAssignmentList();
+            Avm.Singleton.LoadAssignmentList();
         }
 
         #endregion
 
-        #region Delete assignment metode
+        #region Delete assignment method
         public void DeleteAssignment()
         {
-            ViceLists.Instance.RemoveAssignment(ViceLists.Instance.SelectedAssignmentMVM);
-
+            Avm.Singleton.RemoveAssignment(ViceLists.Instance.SelectedAssignmentMVM);
         }
 
         #endregion
-
-        //public void EditAssignment()
-        //{
-        //    ViceLists.Instance.AlterAssignment(ViceLists.Instance.SelectedAssignmentAddAssignVm);
-        //}
     }
 }

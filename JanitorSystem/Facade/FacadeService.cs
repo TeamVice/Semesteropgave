@@ -20,6 +20,8 @@ namespace JanitorSystem.Facade
 
         #region Get Http kald
 
+        #region GetAssignments
+
         public static async Task<ObservableCollection<Assignment>> GetAssignmentList()
         {
             ObservableCollection<Assignment> tempList = new ObservableCollection<Assignment>();
@@ -50,6 +52,11 @@ namespace JanitorSystem.Facade
             }
         }
 
+        #endregion
+        
+
+        #region GetRegularAssignments
+
         public static async Task<ObservableCollection<RegAssignment>> GetRegAssignmentList()
         {
             ObservableCollection<RegAssignment> tempList = new ObservableCollection<RegAssignment>();
@@ -79,6 +86,11 @@ namespace JanitorSystem.Facade
 
             }
         }
+
+        #endregion
+        
+
+        #region GetEmployees
 
         public static async Task<ObservableCollection<Employee>> GetEmployeeList()
         {
@@ -111,8 +123,8 @@ namespace JanitorSystem.Facade
         }
 
         #endregion
-
-
+        
+       
         #region GetAppartments
 
         public static async Task<ObservableCollection<Appartment>> GetAppartmentList()
@@ -181,6 +193,7 @@ namespace JanitorSystem.Facade
         }
 
         #endregion
+        #endregion
 
         #region Post Http kald
         public static async Task<bool> PostAssignment(Assignment tempAssignment)
@@ -204,32 +217,6 @@ namespace JanitorSystem.Facade
                 }
             }
         }
-        #endregion
-
-        #region Edit/Put Http kald
-
-        public static async Task<bool> EditAssignment(Assignment assignmentEdit)
-        {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri(serverUrl);
-                client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                string urlString = "api/assignments/" + assignmentEdit.AssignId;
-
-                var response = await client.PutAsJsonAsync(urlString, assignmentEdit);
-
-                if (response.IsSuccessStatusCode)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-        }
-
         #endregion
 
         #region Delete Http kald

@@ -11,7 +11,7 @@ namespace JanitorSystem.Model
     /// </summary>
     public class Department
     {
-        #region props
+        #region Properties
         public int DepId { get; set; }
         public string DepName { get; set; }
 
@@ -27,5 +27,4 @@ namespace JanitorSystem.Model
             return $"{DepName}";
         }
     }
-   
 }
