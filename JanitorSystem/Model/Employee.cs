@@ -9,8 +9,6 @@ namespace JanitorSystem.Model
     public class Employee
     {
         #region Properties
-   
-        
         
         public int EmployeeId { get; set; }
 

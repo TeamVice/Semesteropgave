@@ -118,7 +118,7 @@
                             </Grid.RowDefinitions>
                             <Rectangle Grid.Row="0" Grid.RowSpan="5" Fill="White" Stroke="Black"/>
                             <ComboBox x:Name="AddAssignAfdelingTextBox" Grid.Row="0" PlaceholderText="Afdeling" Width="175" Height="34" ItemsSource="{Binding Singleton.DepartmentsList}" SelectedItem="{Binding SelectedDepartmentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            <ComboBox x:Name="AddAssignAppartNoTextBox" Grid.Row="1" PlaceholderText="Bolig Nr." Width="175" Height="34" ItemsSource="{Binding Singleton.AppartmentList}" SelectedItem="{Binding SelectedAppartmentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            <ComboBox x:Name="AddAssignAppartNoTextBox" Grid.Row="1" PlaceholderText="Lejligheds Nr." Width="175" Height="34" ItemsSource="{Binding Singleton.AppartmentList}" SelectedItem="{Binding SelectedAppartmentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 <ComboBox x:Name="AddAssignEmployeeTextBox" Grid.Row="2" PlaceholderText="Ansvarlig" Width="175" Height="34" ItemsSource="{Binding Singleton.EmployeeList}" SelectedItem="{Binding SelectedEmployeeId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                             <TextBox x:Name="AddAssignFirstPhoneTextBox" Grid.Row="3" PlaceholderText="Primær telefon" Text="{Binding SelectedAppartmentId.AppartmentPhone1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                             <TextBox x:Name="AddAssignSecondPhoneTextBox" Grid.Row="4" PlaceholderText="Sekundær telefon" Text="{Binding SelectedAppartmentId.AppartmentPhone2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>

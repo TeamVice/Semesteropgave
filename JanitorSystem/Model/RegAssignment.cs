@@ -10,7 +10,7 @@ namespace JanitorSystem.Model
     {
         #region Properties
 
-         public int RegAssignId { get; set; }
+        public int RegAssignId { get; set; }
 
         public string RegAssignTitle { get; set; }
 

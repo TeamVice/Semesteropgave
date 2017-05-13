@@ -33,7 +33,9 @@ namespace JanitorSystem.Model
 
             #endregion
         } // constructor 
+
         private static readonly ViceListsSingleton instance = new ViceListsSingleton();
+
         public static ViceListsSingleton Instance
         {
             get { return instance; }

@@ -18,10 +18,10 @@ namespace JanitorSystem.ViewModel
             HandlerDelete = new DeleteAssignmentHandler(this);
             FinishAssignmentCommand = new RelayCommand(HandlerDelete.DeleteAssignment,null);
 
-            LoadEmpData();
+            LoadAppartData();
         } // constructor
 
-        public async void LoadEmpData()
+        public async void LoadAppartData()
         {
             SelectedAppartment = await HandlerDelete.GetAppartmentOwner();
         }

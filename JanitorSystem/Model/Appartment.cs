@@ -19,7 +19,7 @@ namespace JanitorSystem.Model
 
         public override string ToString()
         {
-            return $"{AppartBuildingNo}";
+            return $"{AppartNo}";
         }
     }
 }
