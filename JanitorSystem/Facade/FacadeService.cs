@@ -273,6 +273,7 @@ namespace JanitorSystem.Facade
 
         #endregion
 
+
         #region Delete Http kald
 
         public static async Task DeleteAssignment(Assignment assignmentToDelete)
