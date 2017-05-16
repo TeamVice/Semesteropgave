@@ -99,7 +99,7 @@
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Facade\FacadeService.cs" />
     <Compile Include="Handlers\AssignmentHandler.cs" />
-    <Compile Include="Handlers\DeleteAssignmentHandler.cs" />
+    <Compile Include="Handlers\AssignmentInfoHandler.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -124,9 +124,6 @@
     </Compile>
     <Compile Include="View\AssignmentListFrontPage.xaml.cs">
       <DependentUpon>AssignmentListFrontPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PhoneBook.xaml.cs">
-      <DependentUpon>PhoneBook.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -172,10 +169,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AssignmentListFrontPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\PhoneBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

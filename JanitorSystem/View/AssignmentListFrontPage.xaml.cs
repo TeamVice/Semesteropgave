@@ -42,11 +42,6 @@ namespace JanitorSystem.View
             this.Frame.Navigate(typeof(AddRegAssignment), null);
         }
 
-        private void FPToPhone(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(PhoneBook), null);
-        }
-
         private void FPMineOpgaverListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             this.Frame.Navigate(typeof(AssignmentInfo), null);

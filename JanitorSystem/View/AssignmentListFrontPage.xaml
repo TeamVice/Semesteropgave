@@ -141,9 +141,6 @@
                 <Grid Grid.Column="5">
                     <Button Content="Opret fællesopgave" Click="FPToAddRegAssign"/>
                 </Grid>
-                <Grid Grid.Column="7">
-                    <Button Content="Telefonbog" Click="FPToPhone"/>
-                </Grid>
             </Grid>
         </Grid>
     </Grid>

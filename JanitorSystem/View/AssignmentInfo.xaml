@@ -76,19 +76,19 @@
                     </Grid>
                     <Grid Grid.Row="4">
                         <Border Style="{StaticResource Border}">
-                            <TextBox PlaceholderText="Kommentarer" FontSize="20"/>
+                            <TextBox PlaceholderText="Kommentarer" FontSize="20" Text="{Binding Singleton.SelectedAssignmentMVM.AssignComment, Mode=TwoWay}"/>
                         </Border>
                     </Grid>
                     <Grid Grid.Row="5">
-                        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Tilføj kommentar"/>
+                        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Opdater Kommentar" Command="{Binding EditAssignCommentCommand}" />
                     </Grid>
                     <Grid Grid.Row="6">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Start"/>
-                        <Button Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Afslut" Command="{Binding FinishAssignmentCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <!--<Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Start"/>-->
+                        <Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Afslut opgaven" Command="{Binding FinishAssignmentCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                 </Grid>
             </Grid>
@@ -115,9 +115,6 @@
                 </Grid>
                 <Grid Grid.Column="5">
                     <Button Content="Opret fællesopgave" Click="AssignInfoToAddRegAssign"/>
-                </Grid>
-                <Grid Grid.Column="7">
-                    <Button Content="Telefonbog" Click="AssignInfoToPhone"/>
                 </Grid>
             </Grid>
         </Grid>

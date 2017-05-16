@@ -129,9 +129,7 @@
                 <Grid Grid.Column="5">
                     <Button Content="Opret fællesopgave" Click="AddRegToAddReg"/>
                 </Grid>
-                <Grid Grid.Column="7">
-                    <Button Content="Telefonbog" Click="AddRegToPhone"/>
-                </Grid>
+                <Grid Grid.Column="7"/>
             </Grid>
         </Grid>
     </Grid>

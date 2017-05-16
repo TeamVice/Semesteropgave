@@ -41,11 +41,6 @@ namespace JanitorSystem.View
             this.Frame.Navigate(typeof(AddRegAssignment), null);
         }
 
-        public void AddRegToPhone (object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(PhoneBook), null);
-        }
-
         private void TextBlock_GotFocus(object sender, RoutedEventArgs e)
         {
 

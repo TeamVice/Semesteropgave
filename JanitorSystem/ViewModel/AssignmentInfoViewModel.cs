@@ -15,25 +15,30 @@ namespace JanitorSystem.ViewModel
         public AssignmentInfoViewModel()
         {
             Singleton = ViceListsSingleton.Instance;
-            HandlerDelete = new DeleteAssignmentHandler(this);
-            FinishAssignmentCommand = new RelayCommand(HandlerDelete.DeleteAssignment,null);
+
+            HandlerInfoAssign = new AssignmentInfoHandler(this);
+            EditAssignCommentCommand = new RelayCommand(HandlerInfoAssign.UpdateAssignComment,null);
+
+            //FinishAssignmentCommand = new RelayCommand(HandlerDelete.DeleteAssignment,null);
 
             LoadAppartData();
         } // constructor
 
         public async void LoadAppartData()
         {
-            SelectedAppartment = await HandlerDelete.GetAppartmentOwner();
+            SelectedAppartment = await HandlerInfoAssign.GetAppartmentOwner();
         }
 
         #region ICommands
+
+        public ICommand EditAssignCommentCommand { get; set; }
 
         public ICommand FinishAssignmentCommand { get; set; }
 
         #endregion
 
         #region Properties
-        public DeleteAssignmentHandler HandlerDelete { get; set; }
+        public AssignmentInfoHandler HandlerInfoAssign { get; set; }
         public ViceListsSingleton Singleton { get; }
 
         private Appartment selectedAppartment;

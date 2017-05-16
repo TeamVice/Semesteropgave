@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using JanitorSystem.Model;
 using JanitorSystem.View;
 using JanitorSystem.ViewModel;
+using JanitorSystem.Facade;
 
 namespace JanitorSystem.Handlers
 {
-    public class DeleteAssignmentHandler
+    public class AssignmentInfoHandler
     {
-        public DeleteAssignmentHandler(AssignmentInfoViewModel vm)
+        public AssignmentInfoHandler(AssignmentInfoViewModel vm)
         {
             this.Aiv = vm;
         } // constructor
@@ -26,7 +27,16 @@ namespace JanitorSystem.Handlers
 
         public async Task<Appartment> GetAppartmentOwner()
         {
-            return await Facade.FacadeService.GetAppartmentOwners(Aiv.Singleton.SelectedAssignmentMVM.AppartNo);
+            return await FacadeService.GetAppartmentOwners(Aiv.Singleton.SelectedAssignmentMVM.AppartNo);
+        }
+
+        #endregion
+
+        #region Method to update assignment comment
+
+        public void UpdateAssignComment()
+        {
+            Aiv.Singleton.EditAssignComment(Aiv.Singleton.SelectedAssignmentMVM);
         }
 
         #endregion

@@ -169,6 +169,11 @@ namespace JanitorSystem.Model
 
         }
 
+        public async void EditAssignComment(Assignment assignCommentToEdit)
+        {
+            await FacadeService.PutAssignComment(assignCommentToEdit);
+        }
+
         public async void RemoveAssignment(Assignment deleteAssignment)
         {
             await FacadeService.DeleteAssignment(deleteAssignment);

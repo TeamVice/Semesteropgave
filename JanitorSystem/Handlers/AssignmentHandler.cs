@@ -36,6 +36,7 @@ namespace JanitorSystem.Handlers
             tempAssignment.AssignText = Avm.Assignment.AssignText;
             tempAssignment.AssignRankNo = 1;
             tempAssignment.AppartNo = Avm.SelectedAppartmentId.AppartNo;
+            tempAssignment.AssignComment = "Kommentar: ";
             tempAssignment.DepId = Avm.SelectedDepartmentId.DepId;
             tempAssignment.EmployeeId = Avm.SelectedEmployeeId.EmployeeId;
             Avm.Singleton.AddAssignment(tempAssignment);

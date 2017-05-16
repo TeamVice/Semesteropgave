@@ -230,10 +230,10 @@ namespace JanitorSystem.Facade
             {
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("apllication/json"));
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 
 
-                var response = await client.PostAsJsonAsync<Assignment>("api/assignments", tempAssignment);
+                var response = await client.PostAsJsonAsync<Assignment>("api/Assignments", tempAssignment);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -249,7 +249,7 @@ namespace JanitorSystem.Facade
 
         #region Edit/Put Http kald
 
-        public static async Task<bool> EditAssignComment(Assignment assignCommentEdit)
+        public static async Task<bool> PutAssignComment(Assignment assignCommentEdit)
         {
             using (var client = new HttpClient())
             {
