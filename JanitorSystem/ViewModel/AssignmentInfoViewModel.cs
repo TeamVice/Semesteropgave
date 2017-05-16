@@ -24,7 +24,7 @@ namespace JanitorSystem.ViewModel
             LoadAppartData();
         } // constructor
 
-        public async void LoadAppartData()
+        public async Task LoadAppartData()
         {
             SelectedAppartment = await HandlerInfoAssign.GetAppartmentOwner();
         }
