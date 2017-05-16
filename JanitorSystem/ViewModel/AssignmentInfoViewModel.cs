@@ -20,8 +20,8 @@ namespace JanitorSystem.ViewModel
             EditAssignCommentCommand = new RelayCommand(HandlerInfoAssign.UpdateAssignComment,null);
 
             //FinishAssignmentCommand = new RelayCommand(HandlerDelete.DeleteAssignment,null);
-
             LoadAppartData();
+            //var result = LoadAppartData();
         } // constructor
 
         public async Task LoadAppartData()
