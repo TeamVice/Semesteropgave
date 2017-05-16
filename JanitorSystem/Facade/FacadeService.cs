@@ -16,7 +16,7 @@ namespace JanitorSystem.Facade
 {
     public class FacadeService
     {
-        private const string serverUrl = "http://vicewebservice20170511113133.azurewebsites.net";
+        private const string serverUrl = "http://teamvicewebservice20170516115934.azurewebsites.net";
 
         #region Get Http kald
 
@@ -249,16 +249,16 @@ namespace JanitorSystem.Facade
 
         #region Edit/Put Http kald
 
-        public static async Task<bool> EditAssignment(Assignment assignmentEdit)
+        public static async Task<bool> EditAssignComment(Assignment assignCommentEdit)
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(serverUrl);
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                string urlString = "api/assignments/" + assignmentEdit.AssignId;
+                string urlString = "api/assignments/" + assignCommentEdit.AssignId;
 
-                var response = await client.PutAsJsonAsync(urlString, assignmentEdit);
+                var response = await client.PutAsJsonAsync(urlString, assignCommentEdit);
 
                 if (response.IsSuccessStatusCode)
                 {
