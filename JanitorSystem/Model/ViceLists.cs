@@ -112,6 +112,18 @@ namespace JanitorSystem.Model
 
         #endregion
 
+        #region PropPhoneList
+
+        private int phoneBookList;
+
+        public int PhoneBookList
+        {
+            get { return phoneBookList; }
+            set { phoneBookList = value; }
+        }
+
+        #endregion
+
         #region SelectedAssignmentMVM
         private Assignment selectedAssignmentMVM;
 
@@ -276,6 +288,7 @@ namespace JanitorSystem.Model
         }
 
         #endregion
+
 
         public async void AddAssignment(Assignment newAssignment)
         {

@@ -51,9 +51,14 @@
                         <TextBlock Style="{StaticResource LabelStyle}" Text="Telefonliste" />
                     </Grid>
                     <Grid Grid.Row="2">
-                        <Border Style="{StaticResource Border}">
-                            <ListView ItemsSource="{Binding InstanceAssignmentHandler.Vl.AssignmentList}"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.ColumnSpan="2" Style="{StaticResource Border}">
                         </Border>
+                        <ListView Grid.Column="0"/>
+                        <ListView Grid.Column="1"/>
                         <ProgressRing IsActive="{Binding }"/>
                     </Grid>
                 </Grid>
