@@ -20,7 +20,9 @@ namespace JanitorSystem.ViewModel
             EditAssignCommentCommand = new RelayCommand(HandlerInfoAssign.UpdateAssignComment,null);
 
             //FinishAssignmentCommand = new RelayCommand(HandlerDelete.DeleteAssignment,null);
+#pragma warning disable 4014
             LoadAppartData();
+#pragma warning restore 4014
             //var result = LoadAppartData();
         } // constructor
 
