@@ -97,21 +97,19 @@
     </Compile>
     <Compile Include="Common\ViewPropertyChanged.cs" />
     <Compile Include="Common\RelayCommand.cs" />
-    <Compile Include="Converters\DateTimeConverter.cs" />
-    <Compile Include="Converters\IntConverter.cs" />
     <Compile Include="Facade\FacadeService.cs" />
     <Compile Include="Handlers\AssignmentHandler.cs" />
+    <Compile Include="Handlers\AssignmentInfoHandler.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Appartment.cs" />
     <Compile Include="Model\Assignment.cs" />
-    <Compile Include="Model\Client.cs" />
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\Phone.cs" />
     <Compile Include="Model\RegAssignment.cs" />
-    <Compile Include="Model\ViceLists.cs" />
+    <Compile Include="Model\ViceListsSingleton.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\AddAssignmentViewModel.cs" />
     <Compile Include="ViewModel\AssignmentInfoViewModel.cs" />
@@ -128,9 +126,6 @@
     </Compile>
     <Compile Include="View\AssignmentListFrontPage.xaml.cs">
       <DependentUpon>AssignmentListFrontPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\PhoneBook.xaml.cs">
-      <DependentUpon>PhoneBook.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -176,10 +171,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AssignmentListFrontPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\PhoneBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

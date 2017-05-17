@@ -5,11 +5,11 @@
     xmlns:local="using:JanitorSystem.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:viewModel="using:JanitorSystem.ViewModel"
+    xmlns:ViewModel="using:JanitorSystem.ViewModel"
     mc:Ignorable="d">
 
     <Page.DataContext>
-        <viewModel:AssignmentInfoViewModel/>
+        <ViewModel:AssignmentInfoViewModel/>
     </Page.DataContext>
     
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -65,30 +65,30 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Border Grid.RowSpan="6" Style="{StaticResource Border}">
-                        </Border>
-                        <TextBlock x:Name="AssignInfoTitleTextBlock" Grid.Row="0" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20" Text="{Binding ViceLists.Instance.SelectedAssignmentMVM.AssignTitle, Mode=TwoWay}" />
-                        <TextBlock x:Name="AssignInfoAddressTextBlock" Grid.Row="1" Text="Addresse" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
-                        <TextBlock x:Name="AssignInfoDescriptionTextBlock" Grid.Row="2" Text="{Binding ViceLists.Instance.SelectedAssignmentMVM.AssignText, Mode=TwoWay}" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
-                        <TextBlock x:Name="AssignInfoNameTextBlock" Grid.Row="3" Text="Navn" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
-                        <TextBlock x:Name="AssignInfoPhoneTextBlock" Grid.Row="4" Text="Primær telefon" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
-                        <TextBlock x:Name="AssignInfoSecondPhoneTextBlock" Grid.Row="5" Text="Sekundær telefon" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20"/>
+                        <Border Grid.RowSpan="6" Style="{StaticResource Border}"/>
+                        <!--</Border>-->
+                        <TextBlock x:Name="AssignInfoTitleTextBlock" Grid.Row="0" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20" Text="{Binding Singleton.SelectedAssignmentMVM.AssignTitle}"/>
+                        <TextBlock x:Name="AssignInfoAddressTextBlock" Grid.Row="1" Text="{Binding Singleton.SelectedAssignmentMVM.AppartNo}" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
+                        <TextBlock x:Name="AssignInfoDescriptionTextBlock" Grid.Row="2" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20" Text="{Binding Singleton.SelectedAssignmentMVM.AssignText}"/>
+                        <TextBlock x:Name="AssignInfoNameTextBlock" Grid.Row="3" Text="{Binding SelectedAppartment.AppartmentOwner}" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
+                        <TextBlock x:Name="AssignInfoPhoneTextBlock" Grid.Row="4" Text="{Binding SelectedAppartment.AppartmentPhone1}" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
+                        <TextBlock x:Name="AssignInfoSecondPhoneTextBlock" Grid.Row="5" Text="{Binding SelectedAppartment.AppartmentPhone2}" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20"/>
                     </Grid>
                     <Grid Grid.Row="4">
                         <Border Style="{StaticResource Border}">
-                            <TextBox PlaceholderText="Kommentarer" FontSize="20"/>
+                            <TextBox PlaceholderText="Kommentarer" FontSize="20" Text="{Binding Singleton.SelectedAssignmentMVM.AssignComment, Mode=TwoWay}"/>
                         </Border>
                     </Grid>
                     <Grid Grid.Row="5">
-                        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Tilføj kommentar"/>
+                        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Opdater Kommentar" Command="{Binding EditAssignCommentCommand}" />
                     </Grid>
                     <Grid Grid.Row="6">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Start"/>
-                        <Button Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Afslut"/>
+                        <!--<Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Start"/>-->
+                        <Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Afslut opgaven" Command="{Binding FinishAssignmentCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                 </Grid>
             </Grid>
@@ -115,9 +115,6 @@
                 </Grid>
                 <Grid Grid.Column="5">
                     <Button Content="Opret fællesopgave" Click="AssignInfoToAddRegAssign"/>
-                </Grid>
-                <Grid Grid.Column="7">
-                    <Button Content="Telefonbog" Click="AssignInfoToPhone"/>
                 </Grid>
             </Grid>
         </Grid>

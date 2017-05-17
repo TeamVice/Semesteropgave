@@ -8,15 +8,19 @@ namespace JanitorSystem.Model
 {
     public class RegAssignment
     {
+        #region Properties
+
         public int RegAssignId { get; set; }
 
         public string RegAssignTitle { get; set; }
 
         public string RegAssignText { get; set; }
 
+        #endregion
+
         public override string ToString()
         {
-            return RegAssignTitle;
+            return $"{RegAssignTitle}";
         }
     }
 }

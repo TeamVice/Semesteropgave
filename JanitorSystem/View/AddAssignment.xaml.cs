@@ -42,10 +42,7 @@ namespace JanitorSystem.View
             this.Frame.Navigate(typeof(AddRegAssignment), null);
         }
 
-        private void AddAssignToPhone (object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(PhoneBook), null);
-        }
+      
 
     }
 }

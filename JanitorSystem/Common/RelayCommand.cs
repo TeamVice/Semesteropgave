@@ -10,18 +10,6 @@ namespace JanitorSystem.Common
 {
     public class RelayCommand : ICommand
     {
-        /// <summary>
-        /// Props til relaycommand klassen.
-        /// </summary>
-        public event EventHandler CanExecuteChanged;
-
-        private Action methodToExecute = null;
-
-        private Func<bool> methodToDetectCanExecute = null;
-
-        private DispatcherTimer canExecuteChangedTimer = null;
-         
-
         public RelayCommand(Action methodToExecute, Func<bool> methodToDetectCanExecute)
         {
             this.methodToExecute = methodToExecute;
@@ -29,13 +17,28 @@ namespace JanitorSystem.Common
             //this.canExecuteChangedTimer.Tick += canExecuteChangedTimer_Tick;
             //this.canExecuteChangedTimer.Interval = new TimeSpan(0, 0, 1);
             //this.canExecuteChangedTimer.Start();
-        }
+        } // constructor
 
+        #region Properties
+        public event EventHandler CanExecuteChanged;
+
+        private Action methodToExecute = null;
+
+        private Func<bool> methodToDetectCanExecute = null;
+
+        private DispatcherTimer canExecuteChangedTimer = null;
+        #endregion
+
+        #region Method to execute
 
         public void Execute(object parameter)
         {
             this.methodToExecute();
         }
+
+        #endregion
+
+        #region Method to CanExecute
 
         public bool CanExecute(object parameter)
         {
@@ -50,12 +53,19 @@ namespace JanitorSystem.Common
         }
 
 
-        private void canExecuteChangedTimer_Tick(object sender, object e)
+        #endregion
+
+        #region Method we may use to make a button unclickable
+
+         private void canExecuteChangedTimer_Tick(object sender, object e)
         {
             if (this.CanExecuteChanged != null)
             {
                 this.CanExecuteChanged(this, EventArgs.Empty);
             }
         }
+
+        #endregion
+       
     }
 }

@@ -15,20 +15,22 @@ namespace JanitorSystem.ViewModel
 {
     public class MainViewModel : ViewPropertyChanged
     {
-
-
-        #region Objects
-        public AssignmentHandler InstanceAssignmentHandler { get; set; }
-        public AddAssignmentViewModel AddAssignmentViewModel { get; set; } = new AddAssignmentViewModel();
-        
-        #endregion
         public MainViewModel()
         {
-            ViceLists.Instance.ClearAssignmentList();
-            ViceLists.Instance.ClearReqAssignmentList();
-            InstanceAssignmentHandler = new AssignmentHandler(AddAssignmentViewModel, ViceLists.Instance);
-            ViceLists.Instance.LoadAssignmentList();
-            ViceLists.Instance.LoadRegAssignmentList(); 
-        }
+            Singleton = ViceListsSingleton.Instance;
+            #region Iniates Clear methods // To avoid a bug when changing from assignmentinfo view to AssignmentListFrontPage
+
+            Singleton.ClearAssignmentList();
+            Singleton.ClearReqAssignmentList();
+
+            #endregion
+            Singleton.LoadAssignmentList();
+            Singleton.LoadRegAssignmentList();
+        } // constructor
+
+        #region Properties
+        public ViceListsSingleton Singleton { get; set; }
+
+        #endregion
     }
 }

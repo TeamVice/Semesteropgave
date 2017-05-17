@@ -9,8 +9,6 @@ namespace JanitorSystem.Model
     public class Employee
     {
         #region Properties
-   
-        
         
         public int EmployeeId { get; set; }
 
@@ -21,12 +19,6 @@ namespace JanitorSystem.Model
         public string EmployeeTitle { get; set; }
 
         #endregion
-
-        // ctor
-        public Employee()
-        {
-
-        }
 
         public override string ToString()
         {

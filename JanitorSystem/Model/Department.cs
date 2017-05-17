@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Model
 {
-    /// <summary>
-    /// Denne klasse indeholde 2 tabeller i databasen "Department" og "DepZipCode"
-    /// </summary>
     public class Department
     {
-        #region props
+        #region Properties
         public int DepId { get; set; }
         public string DepName { get; set; }
 
@@ -20,12 +17,11 @@ namespace JanitorSystem.Model
         public string DepCity { get; set; }
 
         public int DepZipCode { get; set; }
-#endregion
+        #endregion
 
         public override string ToString()
         {
             return $"{DepName}";
         }
     }
-   
 }

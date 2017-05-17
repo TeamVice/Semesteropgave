@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Appointments.DataProvider;
@@ -13,26 +14,55 @@ using JanitorSystem.Handlers;
 
 namespace JanitorSystem.Model
 {
-    public sealed class ViceLists : ViewPropertyChanged
+    public sealed class ViceListsSingleton : ViewPropertyChanged
     {
-        #region Singleton
-
-        private static ViceLists instance;
-
-        public static ViceLists Instance
+        #region Singleton // Constructor
+        private ViceListsSingleton()
         {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new ViceLists();
-                }
-                return instance;
-            }
+            AssignmentList = new ObservableCollection<Assignment>();
+            EmployeeList = new ObservableCollection<Employee>();
+            DepartmentsList = new ObservableCollection<Department>();
+            AppartmentList = new ObservableCollection<Appartment>();
+            #region LoadLists
+
+            LoadAssignmentList();
+            LoadRegAssignmentList();
+            LoadEmployeeList();
+            LoadAppartmentList();
+            LoadDepartmentList();
+
+            #endregion
+        } // constructor 
+
+        private static readonly ViceListsSingleton instance = new ViceListsSingleton();
+
+        public static ViceListsSingleton Instance
+        {
+            get { return instance; }
         }
+
+        
+
 
         #endregion
 
+        #region ProgressRing
+        private bool _isBusy;
+
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set
+            {
+                _isBusy = value;
+                OnPropertyChanged(nameof(IsBusy));
+            }
+        }
+        #endregion
+
+        #region Lister
+
+        
         #region PropAssignmentList
 
         /// <summary>
@@ -51,6 +81,7 @@ namespace JanitorSystem.Model
             }
 
         }
+
 
         #endregion
 
@@ -112,16 +143,6 @@ namespace JanitorSystem.Model
 
         #endregion
 
-        #region PropPhoneList
-
-        private int phoneBookList;
-
-        public int PhoneBookList
-        {
-            get { return phoneBookList; }
-            set { phoneBookList = value; }
-        }
-
         #endregion
 
         #region SelectedAssignmentMVM
@@ -139,101 +160,28 @@ namespace JanitorSystem.Model
 
         #endregion
 
-        #region SelectedToDeleteAssignmentProp
-        private Assignment selectedAssignmentAddAssignVM;
+        #region Methods to add and remove assignments
 
-        public Assignment SelectedAssignmentAddAssignVm
+        public async void AddAssignment(Assignment newAssignment)
         {
-            get { return selectedAssignmentAddAssignVM; }
-            set
-            {
-                selectedAssignmentAddAssignVM = value; 
-                OnPropertyChanged(nameof(SelectedAssignmentAddAssignVm));
-            }
+            await FacadeService.PostAssignment(newAssignment);
+            
+
+        }
+
+        public async void EditAssignComment(Assignment assignCommentToEdit)
+        {
+            await FacadeService.PutAssignComment(assignCommentToEdit);
+        }
+
+        public async void RemoveAssignment(Assignment deleteAssignment)
+        {
+            await FacadeService.DeleteAssignment(deleteAssignment);
         }
 
         #endregion
-
-        #region SelectedEmployeeId
-        /// <summary>
-        /// This select will give the neccecary ID associated with the employer that is picked in the combobox, it will then be used in AddAssignment() to pass on the ID to a tempassigment.
-        /// </summary>
-        private Employee selectedEmployeeId;
-
-        public Employee SelectedEmployeeId
-        {
-            get { return selectedEmployeeId; }
-            set
-            {
-                selectedEmployeeId = value;
-                OnPropertyChanged(nameof(SelectedEmployeeId));
-            }
-        }
-        #endregion
-
-        #region SelectedDepartmentId
-        /// <summary>
-        /// This select will give the neccecary ID associated with the Department that is picked in the combobox, it will then be used in AddAssignment() to pass on the ID to a tempassigment.
-        /// </summary>
-        private Department selectedDepartmentId;
-
-        public Department SelectedDepartmentId
-        {
-            get { return selectedDepartmentId; }
-            set
-            {
-                selectedDepartmentId = value;
-                OnPropertyChanged(nameof(SelectedDepartmentId));
-            }
-        }
-
-        #endregion
-
-        #region SelectedAppartmentId
-
-        private Appartment selectedAppartmentId;
-
-        public Appartment SelectedAppartmentId
-        {
-            get { return selectedAppartmentId; }
-            set
-            {
-                selectedAppartmentId = value;
-                OnPropertyChanged(nameof(SelectedAppartmentId));
-            }
-        }
-
-        #endregion
-
-        public ViceLists()
-        {
-            AssignmentList = new ObservableCollection<Assignment>();
-            EmployeeList = new ObservableCollection<Employee>();
-            DepartmentsList = new ObservableCollection<Department>();
-            AppartmentList = new ObservableCollection<Appartment>();
-        }
-
-        #region Methods
-
-        #region ClearListerMetoder
-
-        public void ClearReqAssignmentList()
-        {
-            if (RegAssignmentList != null)
-            {
-                RegAssignmentList.Clear();
-            }
-        }
-
-        public void ClearAssignmentList()
-        {
-            if (AssignmentList != null)
-            {
-                AssignmentList.Clear();
-            }
-        }
-
-        #endregion
+        
+        #region Methods to Load lists
 
         #region LoadAssignmentList
         public async void LoadAssignmentList()
@@ -250,19 +198,6 @@ namespace JanitorSystem.Model
         }
         #endregion
 
-        #region ProgressRing
-        private bool _isBusy;
-
-        public bool IsBusy
-        {
-            get { return _isBusy; }
-            set
-            {
-                _isBusy = value;
-                OnPropertyChanged(nameof(IsBusy));
-            }
-        }
-        #endregion
         #region LoadRegAssignments
 
         /// <summary>
@@ -285,32 +220,6 @@ namespace JanitorSystem.Model
             {
                 IsBusy = false;
             }
-        }
-
-        #endregion
-
-
-        public async void AddAssignment(Assignment newAssignment)
-        {
-            await FacadeService.PostAssignment(newAssignment);
-            
-
-        }
-
-        public async void RemoveAssignment(Assignment deleteAssignment)
-        {
-            await FacadeService.DeleteAssignment(deleteAssignment);
-            //ClearAssignmentList();
-            //LoadAssignmentList();
-        }
-
-        #endregion
-
-        #region EditAssignment
-
-        public async void AlterAssignment(Assignment editAssignment)
-        {
-            await FacadeService.EditAssignment(editAssignment);
         }
 
         #endregion
@@ -365,6 +274,32 @@ namespace JanitorSystem.Model
         }
 
         #endregion
+        #endregion
         
+        #region Methods to clear lists
+
+        #region ClearListerMetoder
+
+        public void ClearReqAssignmentList()
+        {
+            if (RegAssignmentList != null)
+            {
+                RegAssignmentList.Clear();
+            }
+        }
+
+        public void ClearAssignmentList()
+        {
+            if (AssignmentList != null)
+            {
+                AssignmentList.Clear();
+            }
+        }
+
+        #endregion
+
+
+
+        #endregion
     }
 }

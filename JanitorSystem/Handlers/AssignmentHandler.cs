@@ -15,24 +15,18 @@ namespace JanitorSystem.Handlers
 {
     public class AssignmentHandler
     {
-
-        //public MainViewModel Mvm { get; set; }
-
-        public ViceLists Vl { get; set; }
-        
-
-        public AddAssignmentViewModel Avm { get; set; }
-        public AssignmentHandler(AddAssignmentViewModel avm, ViceLists vl)
+        public AssignmentHandler(AddAssignmentViewModel avm)
         {
-           
-            //Mvm = mvm;
-            Vl = vl;
             Avm = avm;
-
-
         }
 
-        #region AddAssignment Metode
+        #region Properties
+
+        public AddAssignmentViewModel Avm { get; set; }
+
+        #endregion
+
+        #region AddAssignment Method
 
         public void AddAssignment()
         {
@@ -41,34 +35,23 @@ namespace JanitorSystem.Handlers
             tempAssignment.AssignTitle = Avm.Assignment.AssignTitle;
             tempAssignment.AssignText = Avm.Assignment.AssignText;
             tempAssignment.AssignRankNo = 1;
-            //tempAssignment.AppartNo =?????
-            tempAssignment.EmployeeId = ViceLists.Instance.SelectedEmployeeId.EmployeeId;
-            tempAssignment.DepId = ViceLists.Instance.SelectedDepartmentId.DepId;
-           
-            
-            
-
-            ViceLists.Instance.AddAssignment(tempAssignment);
-            ViceLists.Instance.ClearAssignmentList();
-            ViceLists.Instance.LoadAssignmentList();
-           // tempAssignment.AssignTitle = MainViewModel.
-
+            tempAssignment.AppartNo = Avm.SelectedAppartmentId.AppartNo;
+            tempAssignment.AssignComment = "Kommentar: ";
+            tempAssignment.DepId = Avm.SelectedDepartmentId.DepId;
+            tempAssignment.EmployeeId = Avm.SelectedEmployeeId.EmployeeId;
+            Avm.Singleton.AddAssignment(tempAssignment);
+            Avm.Singleton.ClearAssignmentList();
+            Avm.Singleton.LoadAssignmentList();
         }
 
         #endregion
 
-        #region Delete assignment metode
+        #region Delete assignment method
         public void DeleteAssignment()
         {
-            ViceLists.Instance.RemoveAssignment(ViceLists.Instance.SelectedAssignmentAddAssignVm);
-
+            Avm.Singleton.RemoveAssignment(ViceListsSingleton.Instance.SelectedAssignmentMVM);
         }
 
         #endregion
-
-        public void EditAssignment()
-        {
-            ViceLists.Instance.AlterAssignment(ViceLists.Instance.SelectedAssignmentAddAssignVm);
-        }
     }
 }
