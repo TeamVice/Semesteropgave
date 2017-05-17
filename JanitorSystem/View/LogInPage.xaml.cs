@@ -32,5 +32,14 @@ namespace JanitorSystem.View
             this.Frame.Navigate(typeof(LogInPage), null);
         }
 
+        private void JanitorButton(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AssignmentListFrontPage), null);
+        }
+
+        private void DLAButton (object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(AddAssignment), null);
+        }
     }
 }
