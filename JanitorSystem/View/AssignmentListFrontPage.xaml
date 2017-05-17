@@ -109,7 +109,7 @@
                     <Button Content="Tid/indmelt" Click="FPToFP"/>
                 </Grid>
                 <Grid Grid.Column="3">
-                    <Button Content="Building" Command="{Binding SortByBuildingCommand, Mode=TwoWay}" />
+                    <Button Content="Appartment" Command="{Binding SortDepAndApparCommand, Mode=TwoWay}" />
                 </Grid>
                 <Grid Grid.Column="5">
                     <Button Content="Akut" Command="{Binding SortAssignListByRankCommand, Mode=TwoWay}"/>

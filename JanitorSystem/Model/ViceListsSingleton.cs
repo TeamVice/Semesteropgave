@@ -192,12 +192,17 @@ namespace JanitorSystem.Model
 
         #endregion
 
-        #region
+        #region SorterMetoder
 
-        public void LoadOrderedRankList()
+        public void OrderedRankList()
         {
             AssignmentList = new ObservableCollection<Assignment>(AssignmentList.OrderBy(i => i.AssignRankNo));
            
+        }
+
+        public void OrderedAppartNo()
+        {
+            AssignmentList = new ObservableCollection<Assignment>(AssignmentList.OrderBy(i => i.AppartNo));
         }
 
         #endregion

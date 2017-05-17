@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.ServiceModel;
 using System.Windows.Input;
 using JanitorSystem.Common;
 using JanitorSystem.Model;
@@ -26,7 +27,9 @@ namespace JanitorSystem.ViewModel
             #endregion
             Singleton.LoadAssignmentList();
 
-            SortAssignListByRankCommand = new RelayCommand(Singleton.LoadOrderedRankList, null);
+            SortAssignListByRankCommand = new RelayCommand(Singleton.OrderedRankList, null);
+            SortDepAndApparCommand = new RelayCommand(Singleton.OrderedAppartNo, null);
+
             
         } // constructor
 
@@ -39,7 +42,7 @@ namespace JanitorSystem.ViewModel
 
         public ICommand SortAssignListByRankCommand { get; set; }
 
-       
+       public ICommand SortDepAndApparCommand { get; set; }
 
 
 
