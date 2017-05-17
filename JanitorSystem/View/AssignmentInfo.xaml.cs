@@ -39,10 +39,6 @@ namespace JanitorSystem.View
             this.Frame.Navigate(typeof(AddAssignment), null);
         }
 
-        private void AssignInfoToAddRegAssign (object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AddRegAssignment), null);
-        }
 
         private void VTMClick(object sender, PointerRoutedEventArgs e)
         {

@@ -22,15 +22,11 @@ namespace JanitorSystem.ViewModel
             #region Iniates Clear methods // To avoid a bug when changing from assignmentinfo view to AssignmentListFrontPage
 
             Singleton.ClearAssignmentList();
-            Singleton.ClearReqAssignmentList();
 
             #endregion
             Singleton.LoadAssignmentList();
-            Singleton.LoadRegAssignmentList();
 
             SortAssignListByRankCommand = new RelayCommand(Singleton.LoadOrderedRankList, null);
-
-            //SortByBuildingCommand = new RelayCommand(Singleton.LoadBuildingOrderList, null);
             
         } // constructor
 
@@ -43,7 +39,7 @@ namespace JanitorSystem.ViewModel
 
         public ICommand SortAssignListByRankCommand { get; set; }
 
-        public ICommand SortByBuildingCommand { get; set; }
+       
 
 
 

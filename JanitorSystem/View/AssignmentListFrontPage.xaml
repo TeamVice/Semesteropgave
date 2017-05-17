@@ -58,12 +58,9 @@
                             <ColumnDefinition Width="3*"/>
                         </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Mine opgaver"/>
-                        <ComboBox Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                            <ComboBoxItem Content="Ansvarlig"/>
-                        </ComboBox>
                     </Grid>
                     <Grid Grid.Row="2">
-                        <Border Style="{StaticResource Border}">
+                        <Border Style="{StaticResource Border}" Margin="0,0,0,-188">
                             <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding Singleton.AssignmentList}" SelectionChanged="FPMineOpgaverListView_SelectionChanged" SelectedItem="{Binding Singleton.SelectedAssignmentMVM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
@@ -91,30 +88,6 @@
                         <ProgressRing IsActive="{Binding Singleton.IsBusy}"  Style="{StaticResource ProgressRingStyle}"/>
                     </Grid>
                         <!--<TextBlock Grid.Column="0" Text="Sortér efter: "/> -->
-                    <Grid Grid.Row="4">
-                        <TextBlock Style="{StaticResource LabelStyle}" Text="Fælles opgaver"/>
-                    </Grid>
-                    <Grid Grid.Row="5">
-                        <Border Style="{StaticResource Border}">
-                   <ListView ItemsSource="{Binding Singleton.TestBuildings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <Border Style="{StaticResource ListViewBorder}">
-                                            <StackPanel>
-                                                <Grid>
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition/>
-                                                    </Grid.RowDefinitions>
-                                                    <TextBlock Grid.Row="0" Text="{Binding RegAssignTitle}" Style="{StaticResource ListViewTitle}"/>
-                                                </Grid>
-                                            </StackPanel>
-                                        </Border>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </Border>
-                        <ProgressRing IsActive="{Binding Singleton.IsBusy}" Style="{StaticResource ProgressRingStyle}"/>
-                    </Grid>
                 </Grid>
             </Grid>
 
@@ -133,7 +106,7 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1">
                     <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
-                    <Button Content="Opgaver" Click="FPToFP"/>
+                    <Button Content="Tid/indmelt" Click="FPToFP"/>
                 </Grid>
                 <Grid Grid.Column="3">
                     <Button Content="Building" Command="{Binding SortByBuildingCommand, Mode=TwoWay}" />

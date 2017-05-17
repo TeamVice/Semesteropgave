@@ -13,7 +13,6 @@ namespace JanitorSystem.Model
         public string AppartmentOwner { get; set; }
         public int AppartmentPhone1 { get; set; }
         public int AppartmentPhone2 { get; set; }
-        public int AppartBuildingNo { get; set; }
         public int DepId { get; set; }
         #endregion
 
