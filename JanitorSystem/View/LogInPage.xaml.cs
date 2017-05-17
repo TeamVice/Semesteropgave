@@ -26,5 +26,11 @@ namespace JanitorSystem.View
         {
             this.InitializeComponent();
         }
+
+        private void VTMClick(object sender, PointerRoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(LogInPage), null);
+        }
+
     }
 }
