@@ -20,33 +20,17 @@ namespace JanitorSystem.View
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class AddAssignment : Page
+    public sealed partial class LogInPage : Page
     {
-        public AddAssignment()
+        public LogInPage()
         {
             this.InitializeComponent();
-        }
-
-        private void AddAssignToFP(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AssignmentListFrontPage), null);
-        }
-
-        private void AddAssignToAddAssign (object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AddAssignment), null);
-        }
-
-        private void AddAssignToAddRegAssign (object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AddRegAssignment), null);
         }
 
         private void VTMClick(object sender, PointerRoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(LogInPage), null);
         }
-
 
     }
 }

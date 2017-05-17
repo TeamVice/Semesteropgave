@@ -31,7 +31,7 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <Border Style="{StaticResource LogoBorder}">
-                        <TextBlock Text="VTM" Style="{StaticResource LogoTextBlock}"/>
+                        <TextBlock Text="VTM" Style="{StaticResource LogoTextBlock}" PointerPressed="VTMClick"/>
                     </Border>
                 </Grid>
             </Grid>
