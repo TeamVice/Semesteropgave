@@ -8,6 +8,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Appointments.DataProvider;
+using Windows.UI.Composition;
 using JanitorSystem.Common;
 using JanitorSystem.Facade;
 using JanitorSystem.Handlers;
@@ -81,7 +82,7 @@ namespace JanitorSystem.Model
             }
 
         }
-
+        
 
         #endregion
 
@@ -143,6 +144,9 @@ namespace JanitorSystem.Model
 
         #endregion
 
+
+
+
         #endregion
 
         #region SelectedAssignmentMVM
@@ -189,14 +193,29 @@ namespace JanitorSystem.Model
             try
             {
                 AssignmentList = await FacadeService.GetAssignmentList();
-
+               
+                //AppartmentList = new ObservableCollection<Appartment>(AppartmentList.OrderBy(j => j.AppartBuildingNo ));
             }
             catch (Exception e)
             {
                 Debug.Write($"Exception {e}");
             }
         }
+
+
         #endregion
+
+        #region
+
+        public void LoadOrderedRankList()
+        {
+            AssignmentList = new ObservableCollection<Assignment>(AssignmentList.OrderBy(i => i.AssignRankNo));
+           
+        }
+
+        #endregion
+
+
 
         #region LoadRegAssignments
 

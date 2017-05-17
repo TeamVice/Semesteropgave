@@ -22,6 +22,7 @@ namespace JanitorSystem.Model
 
         #endregion
 
+
         public override string ToString()
         {
             return $"{AssignTitle} ";

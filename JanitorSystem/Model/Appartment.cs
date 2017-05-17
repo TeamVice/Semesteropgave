@@ -17,6 +17,8 @@ namespace JanitorSystem.Model
         public int DepId { get; set; }
         #endregion
 
+        
+
         public override string ToString()
         {
             return $"{AppartNo}";

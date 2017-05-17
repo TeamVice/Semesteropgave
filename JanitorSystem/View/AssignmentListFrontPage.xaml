@@ -96,7 +96,7 @@
                     </Grid>
                     <Grid Grid.Row="5">
                         <Border Style="{StaticResource Border}">
-                   <ListView ItemsSource="{Binding Singleton.RegAssignmentList}">
+                   <ListView ItemsSource="{Binding Singleton.TestBuildings, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Border Style="{StaticResource ListViewBorder}">
@@ -133,13 +133,13 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1">
                     <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
-                    <Button Content="Mine opgaver" Click="FPToFP"/>
+                    <Button Content="Opgaver" Click="FPToFP"/>
                 </Grid>
                 <Grid Grid.Column="3">
-                    <Button Content="Opret opgave" Click="FPToAddAssign"/>
+                    <Button Content="Building" Command="{Binding SortByBuildingCommand, Mode=TwoWay}" />
                 </Grid>
                 <Grid Grid.Column="5">
-                    <Button Content="Opret fællesopgave" Click="FPToAddRegAssign"/>
+                    <Button Content="Akut" Command="{Binding SortAssignListByRankCommand, Mode=TwoWay}"/>
                 </Grid>
             </Grid>
         </Grid>

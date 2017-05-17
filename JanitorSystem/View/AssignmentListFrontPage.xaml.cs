@@ -27,20 +27,20 @@ namespace JanitorSystem.View
             this.InitializeComponent();
         }
 
-        private void FPToAddAssign(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AddAssignment), null);
-        }
+        //private void FPToAddAssign(object sender, RoutedEventArgs e)
+        //{
+        //    this.Frame.Navigate(typeof(AddAssignment), null);
+        //}
 
         private void FPToFP(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AssignmentListFrontPage), null);
         }
 
-        private void FPToAddRegAssign(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AddRegAssignment), null);
-        }
+        //private void FPToAddRegAssign(object sender, RoutedEventArgs e)
+        //{
+        //    this.Frame.Navigate(typeof(AddRegAssignment), null);
+        //}
 
         private void FPMineOpgaverListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
