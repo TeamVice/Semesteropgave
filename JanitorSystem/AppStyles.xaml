@@ -8,14 +8,17 @@
         <Setter Property="FontFamily" Value="Segoe UI"/>
     </Style>
 
-    
-    
     <Style x:Key="LabelStyle" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
         <Setter Property="FontSize" Value="25"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
 
+    <Style x:Key="TextStyle" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
+        <Setter Property="FontSize" Value="28"/>
+    </Style>
+
+    <!-- List TextBlocks -->
     <Style x:Key="ListViewText" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
         <Setter Property="FontSize" Value="15"/>
     </Style>
@@ -69,7 +72,8 @@
         <Setter Property="Height" Value="100"/>
         <Setter Property="Width" Value="100"/>
     </Style>
-
+    
+    <!-- Buttons -->
     
     
 </ResourceDictionary>
