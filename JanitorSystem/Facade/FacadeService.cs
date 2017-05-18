@@ -16,7 +16,7 @@ namespace JanitorSystem.Facade
 {
     public class FacadeService
     {
-        private const string serverUrl = "http://janitorwebservice20170517060428.azurewebsites.net";
+        private const string serverUrl = "http://teamvicewebservice20170518050703.azurewebsites.net";
 
         #region Get Http kald
 
@@ -126,7 +126,7 @@ namespace JanitorSystem.Facade
 
         #region GetAppartmentOwners
 
-        public static async Task<Appartment> GetAppartmentOwners(int appID)
+        public static async Task<AssignmentSorting> GetAppartmentOwners(int appID)
         {
 
             using (var client = new HttpClient())
@@ -141,7 +141,7 @@ namespace JanitorSystem.Facade
 
                     if (response.IsSuccessStatusCode)
                     {
-                        return await response.Content.ReadAsAsync<Appartment>();
+                        return await response.Content.ReadAsAsync<AssignmentSorting>();
                     }
                 }
                 catch (Exception e)
@@ -216,7 +216,7 @@ namespace JanitorSystem.Facade
 
         #region Edit/Put Http kald
 
-        public static async Task<bool> PutAssignComment(Assignment assignCommentEdit)
+        public static async Task<bool> PutAssignComment(AssignmentSorting assignCommentEdit)
         {
             using (var client = new HttpClient())
             {
@@ -243,7 +243,7 @@ namespace JanitorSystem.Facade
 
         #region Delete Http kald
 
-        public static async Task DeleteAssignment(Assignment assignmentToDelete)
+        public static async Task DeleteAssignment(AssignmentSorting assignmentToDelete)
         {
             using (var client = new HttpClient())
             {

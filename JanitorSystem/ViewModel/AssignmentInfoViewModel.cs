@@ -43,9 +43,9 @@ namespace JanitorSystem.ViewModel
         public AssignmentInfoHandler HandlerInfoAssign { get; set; }
         public ViceListsSingleton Singleton { get; }
 
-        private Appartment selectedAppartment;
+        private AssignmentSorting selectedAppartment;
 
-        public Appartment SelectedAppartment
+        public AssignmentSorting SelectedAppartment
         {
             get { return selectedAppartment; }
             set

@@ -23,7 +23,8 @@ namespace JanitorSystem.ViewModel
             #region Iniates Clear methods // To avoid a bug when changing from assignmentinfo view to AssignmentListFrontPage
 
             
-
+            Singleton.ClearAssignmentList();
+            Singleton.LoadAssignmentList();
             #endregion
             Singleton.Testy();
 

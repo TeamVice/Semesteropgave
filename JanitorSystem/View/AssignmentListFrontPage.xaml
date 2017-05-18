@@ -61,7 +61,7 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}" Margin="0,0,0,-188">
-                            <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding Singleton.C}" SelectionChanged="FPMineOpgaverListView_SelectionChanged" SelectedItem="{Binding Singleton.SelectedAssignmentMVM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                            <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding Singleton.SortingList}" SelectionChanged="FPMineOpgaverListView_SelectionChanged" SelectedItem="{Binding Singleton.SelectedAssignmentMVM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Border Style="{StaticResource ListViewBorder}">
@@ -109,7 +109,7 @@
                     <Button Content="Tid/indmelt" Click="FPToFP"/>
                 </Grid>
                 <Grid Grid.Column="3">
-                    <Button Content="Appartment" Command="{Binding SortDepAndApparCommand, Mode=TwoWay}" />
+                    <Button Content="Bygning" Command="{Binding SortDepAndApparCommand, Mode=TwoWay}" />
                 </Grid>
                 <Grid Grid.Column="5">
                     <Button Content="Akut" Command="{Binding SortAssignListByRankCommand, Mode=TwoWay}"/>

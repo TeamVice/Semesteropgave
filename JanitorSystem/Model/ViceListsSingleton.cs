@@ -24,13 +24,15 @@ namespace JanitorSystem.Model
             EmployeeList = new ObservableCollection<Employee>();
             DepartmentsList = new ObservableCollection<Department>();
             AppartmentList = new ObservableCollection<Appartment>();
-            C = new ObservableCollection<CombinedTablesView>();
+            SortingList = new ObservableCollection<AssignmentSorting>();
+
             #region LoadLists
             
             LoadAssignmentList();
             LoadEmployeeList();
             LoadAppartmentList();
             LoadDepartmentList();
+            
             Testy();
             #endregion
         } // constructor 
@@ -82,15 +84,15 @@ namespace JanitorSystem.Model
             }
 
         }
-        private ObservableCollection<CombinedTablesView> c;
+        private ObservableCollection<AssignmentSorting> sortingList;
 
-        public ObservableCollection<CombinedTablesView> C
+        public ObservableCollection<AssignmentSorting> SortingList
         {
-            get { return c; }
+            get { return sortingList; }
             set
             {
-                c = value;
-                OnPropertyChanged(nameof(C));
+                sortingList = value;
+                OnPropertyChanged(nameof(SortingList));
             }
         }
 
@@ -149,9 +151,9 @@ namespace JanitorSystem.Model
         #endregion
 
         #region SelectedAssignmentMVM
-        private Assignment selectedAssignmentMVM;
+        private AssignmentSorting selectedAssignmentMVM;
 
-        public Assignment SelectedAssignmentMVM
+        public AssignmentSorting SelectedAssignmentMVM
         {
             get { return selectedAssignmentMVM; }
             set
@@ -172,12 +174,12 @@ namespace JanitorSystem.Model
 
         }
 
-        public async void EditAssignComment(Assignment assignCommentToEdit)
+        public async void EditAssignComment(AssignmentSorting assignCommentToEdit)
         {
             await FacadeService.PutAssignComment(assignCommentToEdit);
         }
 
-        public async void RemoveAssignment(Assignment deleteAssignment)
+        public async void RemoveAssignment(AssignmentSorting deleteAssignment)
         {
             await FacadeService.DeleteAssignment(deleteAssignment);
         }
@@ -192,7 +194,8 @@ namespace JanitorSystem.Model
             try
             {
                 AssignmentList = await FacadeService.GetAssignmentList();
-               
+                Testy();
+                
                 //AppartmentList = new ObservableCollection<Appartment>(AppartmentList.OrderBy(j => j.AppartBuildingNo ));
             }
             catch (Exception e)
@@ -204,27 +207,44 @@ namespace JanitorSystem.Model
 
         #endregion
 
+        public void Testy()
+        {
+
+            ObservableCollection<AssignmentSorting> res = new ObservableCollection<AssignmentSorting>(
+                AssignmentList.Join(AppartmentList, p => p.AppartNo, g => g.AppartNo,
+                    (p, g) => new AssignmentSorting()
+                    {
+                        AssignTitle = p.AssignTitle,
+                        AssignText = p.AssignText,
+                        DepId = p.DepId,
+                        BuildingNo = g.BuildingNo,
+                        AssignRankNo = p.AssignRankNo,
+                        AppartNo = p.AppartNo,
+                        AppartmentOwner = g.AppartmentOwner,
+                        AppartmentPhone1 = g.AppartmentPhone1,
+                        AppartmentPhone2 = g.AppartmentPhone2,
+                        AssignComment = p.AssignComment,
+                        EmployeeId = p.EmployeeId,
+                        AssignId = p.AssignId
+                    }));
+            SortingList = res;
+        }
+
         #region SorterMetoder
 
         public void OrderedRankList()
         {
-            C = new ObservableCollection<CombinedTablesView>(C.OrderBy(i => i.AssignRankNo));
+            SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.AssignRankNo));
 
         }
 
         public void OrderedAppartNo()
         {
-           C = new ObservableCollection<CombinedTablesView>(C.OrderBy(i => i.AppartNo));
+           SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.BuildingNo));
         }
 
         #endregion
-        public void Testy()
-        {
-            ObservableCollection<CombinedTablesView> res = new ObservableCollection<CombinedTablesView>(
-                AssignmentList.Join(AppartmentList, p => p.AppartNo, g => g.AppartNo,
-                    (p, g) => new CombinedTablesView() { AssignTitle = p.AssignTitle, AppartmentOwner = g.AppartmentOwner, AssignRankNo = p.AssignRankNo}));
-            C = res;
-        }
+      
 
 
         #region LoadEmployeeList

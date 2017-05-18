@@ -25,7 +25,7 @@ namespace JanitorSystem.Handlers
 
         #region Http call to get AppartmentOwner // this cannot be in vicelist duo to await operator.
 
-        public async Task<Appartment> GetAppartmentOwner()
+        public async Task<AssignmentSorting> GetAppartmentOwner()
         {
             return await FacadeService.GetAppartmentOwners(Aiv.Singleton.SelectedAssignmentMVM.AppartNo);
         }
