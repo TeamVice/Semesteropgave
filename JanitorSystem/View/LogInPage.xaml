@@ -52,7 +52,7 @@
                 </Grid.RowDefinitions>
                 <Border Grid.RowSpan="3" Style="{StaticResource Border}"/>
                 <TextBlock Grid.Row="0" Text="Hvem er du?" Style="{StaticResource TextStyle}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Button Grid.Row="1" Content="Vicevært" HorizontalAlignment="Center" VerticalAlignment="Center" Click="JanitorButton"/>
+                <Button Grid.Row="1" Content="Vicevært" HorizontalAlignment="Center" VerticalAlignment="Center" Click="JanitorButton" />
                 <Button Grid.Row="2" Content="Daglig leder assistent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="DLAButton"/>
             </Grid>
         </Grid>
