@@ -8,6 +8,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Appointments.DataProvider;
+using Windows.UI.Composition;
 using JanitorSystem.Common;
 using JanitorSystem.Facade;
 using JanitorSystem.Handlers;
@@ -23,10 +24,10 @@ namespace JanitorSystem.Model
             EmployeeList = new ObservableCollection<Employee>();
             DepartmentsList = new ObservableCollection<Department>();
             AppartmentList = new ObservableCollection<Appartment>();
+           
             #region LoadLists
 
             LoadAssignmentList();
-            LoadRegAssignmentList();
             LoadEmployeeList();
             LoadAppartmentList();
             LoadDepartmentList();
@@ -82,29 +83,16 @@ namespace JanitorSystem.Model
 
         }
 
-
-        #endregion
-
-        #region PropRegAssignmentList
-
-        /// <summary>
-        /// Denne prop er initieseret af assignmenthandler.
-        /// </summary>
-
-        private ObservableCollection<RegAssignment> regAssignmentList;
-
-        public ObservableCollection<RegAssignment> RegAssignmentList
+        public void opdater()
         {
-            get { return regAssignmentList; }
-            set
-            {
-                regAssignmentList = value;
-                OnPropertyChanged(nameof(RegAssignmentList));
-            }
-
+            ClearAssignmentList();
+            LoadAssignmentList();
         }
+        
 
         #endregion
+
+ 
 
         #region PropEmployeeList
 
@@ -142,6 +130,9 @@ namespace JanitorSystem.Model
         }
 
         #endregion
+
+
+
 
         #endregion
 
@@ -189,40 +180,35 @@ namespace JanitorSystem.Model
             try
             {
                 AssignmentList = await FacadeService.GetAssignmentList();
-
+               
+                //AppartmentList = new ObservableCollection<Appartment>(AppartmentList.OrderBy(j => j.AppartBuildingNo ));
             }
             catch (Exception e)
             {
                 Debug.Write($"Exception {e}");
             }
         }
+
+
         #endregion
 
-        #region LoadRegAssignments
+        #region SorterMetoder
 
-        /// <summary>
-        /// Metoder til RegAssignments 
-        /// </summary>
-
-        public async void LoadRegAssignmentList()
+        public void OrderedRankList()
         {
-            try
-            {
-                IsBusy = true;
+            AssignmentList = new ObservableCollection<Assignment>(AssignmentList.OrderBy(i => i.AssignRankNo));
+           
+        }
 
-                RegAssignmentList = await FacadeService.GetRegAssignmentList();
-            }
-            catch (Exception e)
-            {
-                Debug.Write($"Exception {e}");
-            }
-            finally
-            {
-                IsBusy = false;
-            }
+        public void OrderedAppartNo()
+        {
+            AssignmentList = new ObservableCollection<Assignment>(AssignmentList.OrderBy(i => i.AppartNo));
         }
 
         #endregion
+
+
+
 
         #region LoadEmployeeList
 
@@ -280,14 +266,6 @@ namespace JanitorSystem.Model
 
         #region ClearListerMetoder
 
-        public void ClearReqAssignmentList()
-        {
-            if (RegAssignmentList != null)
-            {
-                RegAssignmentList.Clear();
-            }
-        }
-
         public void ClearAssignmentList()
         {
             if (AssignmentList != null)
@@ -301,5 +279,11 @@ namespace JanitorSystem.Model
 
 
         #endregion
+
+        //var hotelList10 = from r in AssignmentList
+        //    join h in AppartmentList
+        //    on r.AppartNo equals h.AppartNo
+        //    where h.AppartNo.Equals(9)
+        //    select r.AssignTitle;
     }
 }

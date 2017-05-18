@@ -85,10 +85,10 @@
                     <Grid Grid.Row="6">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
+                            
                         </Grid.ColumnDefinitions>
                         <!--<Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Start"/>-->
-                        <Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Afslut opgaven" Command="{Binding FinishAssignmentCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Button Content="Tilbage til opgaver" HorizontalAlignment="Center" Click="AssignInfoToFP"/>
                     </Grid>
                 </Grid>
             </Grid>
@@ -96,26 +96,14 @@
             <!-- Area with menu buttons -->
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="5"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1">
+                    
                     <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
-                    <Button Content="Mine opgaver" Click="AssignInfoToFP"/>
+                    <Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Afslut opgaven" Command="{Binding FinishAssignmentCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </Grid>
-                <Grid Grid.Column="3">
-                    <Button Content="Opret opgave" Click="AssignInfoToAddAssign" Margin="0,8,0,0" VerticalAlignment="Top" HorizontalAlignment="Stretch"/>
-                </Grid>
-                <Grid Grid.Column="5">
-                    <Button Content="Opret fællesopgave" Click="AssignInfoToAddRegAssign"/>
-                </Grid>
+
             </Grid>
         </Grid>
     </Grid>

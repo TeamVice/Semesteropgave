@@ -18,6 +18,7 @@ namespace JanitorSystem.ViewModel
             InstanceAssignmentHandler = new AssignmentHandler(this);          
             Assignment = new Assignment();
             AddAssignmentCommand = new RelayCommand(InstanceAssignmentHandler.AddAssignment,null);
+            OpdaterAssignemntCommand = new RelayCommand(Singleton.opdater,null);
         } // constructor
 
         #region Properties
@@ -29,8 +30,7 @@ namespace JanitorSystem.ViewModel
         #region ICommands
         public ICommand AddAssignmentCommand { get; set; }
 
-        public ICommand DeleteAssignemntCommand { get; set; }
-        public ICommand EditAssignmentCommand { get; set; }
+        public ICommand OpdaterAssignemntCommand { get; set; }
         #endregion
 
         #region SelectedEmployeeId

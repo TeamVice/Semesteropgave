@@ -27,19 +27,10 @@ namespace JanitorSystem.View
             this.InitializeComponent();
         }
 
-        private void AddAssignToFP(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AssignmentListFrontPage), null);
-        }
 
         private void AddAssignToAddAssign (object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(AddAssignment), null);
-        }
-
-        private void AddAssignToAddRegAssign (object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AddRegAssignment), null);
         }
 
         private void VTMClick(object sender, PointerRoutedEventArgs e)
