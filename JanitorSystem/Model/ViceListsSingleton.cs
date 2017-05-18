@@ -24,14 +24,14 @@ namespace JanitorSystem.Model
             EmployeeList = new ObservableCollection<Employee>();
             DepartmentsList = new ObservableCollection<Department>();
             AppartmentList = new ObservableCollection<Appartment>();
-           
+            C = new ObservableCollection<CombinedTablesView>();
             #region LoadLists
-
+            
             LoadAssignmentList();
             LoadEmployeeList();
             LoadAppartmentList();
             LoadDepartmentList();
-
+            Testy();
             #endregion
         } // constructor 
 
@@ -82,6 +82,18 @@ namespace JanitorSystem.Model
             }
 
         }
+        private ObservableCollection<CombinedTablesView> c;
+
+        public ObservableCollection<CombinedTablesView> C
+        {
+            get { return c; }
+            set
+            {
+                c = value;
+                OnPropertyChanged(nameof(C));
+            }
+        }
+
 
         public void opdater()
         {
@@ -196,18 +208,23 @@ namespace JanitorSystem.Model
 
         public void OrderedRankList()
         {
-            AssignmentList = new ObservableCollection<Assignment>(AssignmentList.OrderBy(i => i.AssignRankNo));
-           
+            C = new ObservableCollection<CombinedTablesView>(C.OrderBy(i => i.AssignRankNo));
+
         }
 
         public void OrderedAppartNo()
         {
-            AssignmentList = new ObservableCollection<Assignment>(AssignmentList.OrderBy(i => i.AppartNo));
+           C = new ObservableCollection<CombinedTablesView>(C.OrderBy(i => i.AppartNo));
         }
 
         #endregion
-
-
+        public void Testy()
+        {
+            ObservableCollection<CombinedTablesView> res = new ObservableCollection<CombinedTablesView>(
+                AssignmentList.Join(AppartmentList, p => p.AppartNo, g => g.AppartNo,
+                    (p, g) => new CombinedTablesView() { AssignTitle = p.AssignTitle, AppartmentOwner = g.AppartmentOwner, AssignRankNo = p.AssignRankNo}));
+            C = res;
+        }
 
 
         #region LoadEmployeeList
