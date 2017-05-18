@@ -33,7 +33,7 @@ namespace JanitorSystem.Model
             LoadAppartmentList();
             LoadDepartmentList();
             
-            Testy();
+            LoadSortingList();
             #endregion
         } // constructor 
 
@@ -194,7 +194,7 @@ namespace JanitorSystem.Model
             try
             {
                 AssignmentList = await FacadeService.GetAssignmentList();
-                Testy();
+                LoadSortingList();
                 
                 //AppartmentList = new ObservableCollection<Appartment>(AppartmentList.OrderBy(j => j.AppartBuildingNo ));
             }
@@ -207,7 +207,7 @@ namespace JanitorSystem.Model
 
         #endregion
 
-        public void Testy()
+        public void LoadSortingList()
         {
 
             ObservableCollection<AssignmentSorting> res = new ObservableCollection<AssignmentSorting>(
@@ -231,14 +231,17 @@ namespace JanitorSystem.Model
         }
 
         #region SorterMetoder
-
+       public void OrderedTimeDB()
+        {
+            SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.AssignId));
+        }
         public void OrderedRankList()
         {
             SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.AssignRankNo));
 
         }
 
-        public void OrderedAppartNo()
+        public void OrderByBuildingNo()
         {
            SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.BuildingNo));
         }

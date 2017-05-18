@@ -26,11 +26,12 @@ namespace JanitorSystem.ViewModel
             Singleton.ClearAssignmentList();
             Singleton.LoadAssignmentList();
             #endregion
-            Singleton.Testy();
+            Singleton.LoadSortingList();
 
-            SortAssignListByRankCommand = new RelayCommand(Singleton.OrderedRankList, null);
-            SortDepAndApparCommand = new RelayCommand(Singleton.OrderedAppartNo, null);
-            SortOwnerAndCommentCommand = new RelayCommand(Singleton.Testy,null);
+            SortByTimeDbCommand = new RelayCommand(Singleton.OrderedTimeDB,null);
+            SortByRankNoCommand = new RelayCommand(Singleton.OrderedRankList, null);
+            SortByBuildingNoCommand = new RelayCommand(Singleton.OrderByBuildingNo, null);
+            UpdateSortingListCommand = new RelayCommand(Singleton.LoadSortingList,null);
             
         } // constructor
 
@@ -40,12 +41,12 @@ namespace JanitorSystem.ViewModel
         #endregion
 
         #region ICommands
+        public ICommand SortByTimeDbCommand { get; set; }
+        public ICommand SortByRankNoCommand { get; set; }
 
-        public ICommand SortAssignListByRankCommand { get; set; }
+       public ICommand SortByBuildingNoCommand { get; set; }
 
-       public ICommand SortDepAndApparCommand { get; set; }
-
-        public ICommand SortOwnerAndCommentCommand { get; set; }
+        public ICommand UpdateSortingListCommand { get; set; }
 
         #endregion
     }
