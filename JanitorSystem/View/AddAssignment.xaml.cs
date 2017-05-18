@@ -28,10 +28,7 @@ namespace JanitorSystem.View
         }
 
 
-        private void AddAssignToAddAssign (object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(AddAssignment), null);
-        }
+        
 
         private void VTMClick(object sender, PointerRoutedEventArgs e)
         {

@@ -58,9 +58,9 @@
                             <ColumnDefinition Width="3*"/>
                         </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Mine opgaver"/>
-                        <ComboBox Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                        <!--<ComboBox Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                             <ComboBoxItem Content="Ansvarlig"/>
-                        </ComboBox>
+                        </ComboBox>-->
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
@@ -136,10 +136,10 @@
                     <Button Content="Mine opgaver" Click="FPToFP"/>
                 </Grid>
                 <Grid Grid.Column="3">
-                    <Button Content="Opret opgave" Click="FPToAddAssign"/>
+                    <!--<Button Content="Opret opgave" Click="FPToAddAssign"/>-->
                 </Grid>
                 <Grid Grid.Column="5">
-                    <Button Content="Opret fællesopgave" Click="FPToAddRegAssign" />
+                    <!--<Button Content="Opret fællesopgave" Click="FPToAddRegAssign" />-->
                 </Grid>
             </Grid>
         </Grid>
