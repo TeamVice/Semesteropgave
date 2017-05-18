@@ -74,6 +74,10 @@
     </Style>
     
     <!-- Buttons -->
-    
+    <Style x:Key="ButtonStyle" TargetType="Button">
+        <Setter Property="FontSize" Value="50">
+            
+        </Setter>
+    </Style>    
     
 </ResourceDictionary>
