@@ -36,7 +36,7 @@
                     <TextBlock Text="Vice Task Manager" Style="{StaticResource Title}"/>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Border Style="{StaticResource LogoBorder}">
+                    <Border Style="{StaticResource LogoBorder}" Width="100">
                         <TextBlock Text="VTM" Style="{StaticResource LogoTextBlock}" PointerPressed="VTMClick"/>
                     </Border>
                 </Grid>

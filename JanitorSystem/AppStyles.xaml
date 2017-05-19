@@ -38,7 +38,7 @@
         <Setter Property="FontSize" Value="38"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Foreground" Value="#FF00C0FF"/>
+        <Setter Property="Foreground" Value="#FF007399"/>
     </Style>
     
     <!-- LOGO textblock and border -->
@@ -46,13 +46,14 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="38"/>
-        <Setter Property="Foreground" Value="#FF00C0FF"/>
+        <Setter Property="Foreground" Value="#FF007399"/>
     </Style>
 
     <Style x:Key="LogoBorder" TargetType="Border">
         <Setter Property="BorderBrush" Value="Black"/>
         <Setter Property="BorderThickness" Value="3"/>
         <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
 
     <!-- Borders -->
@@ -67,7 +68,9 @@
         <Setter Property="CornerRadius" Value="5"/>
         <Setter Property="Padding" Value="2,0,5,5"/>
         <Setter Property="Margin" Value="-10,5"/>
-        <Setter Property="Background" Value="WhiteSmoke"/>
+        <Setter Property="Background" Value="White"/>
+        <!--<Setter Property="HorizontalAlignment" Value="Stretch"/>-->
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
     </Style>
 
     <!-- Progress Ring-->
