@@ -12,7 +12,7 @@
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="White" Offset="0"/>
-                <GradientStop Color="#FFA4A4A4" Offset="1"/>
+                <GradientStop Color="#FFBFBFBF" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
 
@@ -38,28 +38,29 @@
         </Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.DataContext>
                 <ViewModel:MainViewModel/>
             </Grid.DataContext>
-            <Grid Grid.Row="1" Grid.Column="1">
+            <Grid Grid.Row="2" Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Border Grid.RowSpan="3" Style="{StaticResource Border}"/>
-                <TextBlock Grid.Row="0" Text="Hvem er du?" Style="{StaticResource TextStyle}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                <Button Grid.Row="1" Content="Vicevært" HorizontalAlignment="Center" VerticalAlignment="Center" Click="JanitorButton" />
-                <Button Grid.Row="2" Content="Daglig leder assistent" HorizontalAlignment="Center" VerticalAlignment="Center" Click="DLAButton"/>
+                <TextBlock Grid.Row="0" Text="Hvem er du?" Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="44"/>
+                <Button Grid.Row="1" Content="Vicevært" HorizontalAlignment="Center" VerticalAlignment="Center" Click="JanitorButton" Width="200" Height="80" FontSize="40"/>
+                <Button Grid.Row="2" Content="DLA" HorizontalAlignment="Center" VerticalAlignment="Center" Click="DLAButton" Width="200" Height="80" FontSize="40" />
             </Grid>
         </Grid>
     </Grid>
