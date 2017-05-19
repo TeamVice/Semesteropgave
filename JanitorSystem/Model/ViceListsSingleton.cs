@@ -24,14 +24,16 @@ namespace JanitorSystem.Model
             EmployeeList = new ObservableCollection<Employee>();
             DepartmentsList = new ObservableCollection<Department>();
             AppartmentList = new ObservableCollection<Appartment>();
-           
-            #region LoadLists
+            SortingList = new ObservableCollection<AssignmentSorting>();
 
+            #region LoadLists
+            
             LoadAssignmentList();
             LoadEmployeeList();
             LoadAppartmentList();
             LoadDepartmentList();
-
+            
+            LoadSortingList();
             #endregion
         } // constructor 
 
@@ -82,6 +84,18 @@ namespace JanitorSystem.Model
             }
 
         }
+        private ObservableCollection<AssignmentSorting> sortingList;
+
+        public ObservableCollection<AssignmentSorting> SortingList
+        {
+            get { return sortingList; }
+            set
+            {
+                sortingList = value;
+                OnPropertyChanged(nameof(SortingList));
+            }
+        }
+
 
         public void opdater()
         {
@@ -137,9 +151,9 @@ namespace JanitorSystem.Model
         #endregion
 
         #region SelectedAssignmentMVM
-        private Assignment selectedAssignmentMVM;
+        private AssignmentSorting selectedAssignmentMVM;
 
-        public Assignment SelectedAssignmentMVM
+        public AssignmentSorting SelectedAssignmentMVM
         {
             get { return selectedAssignmentMVM; }
             set
@@ -160,12 +174,12 @@ namespace JanitorSystem.Model
 
         }
 
-        public async void EditAssignComment(Assignment assignCommentToEdit)
+        public async void EditAssignComment(AssignmentSorting assignCommentToEdit)
         {
             await FacadeService.PutAssignComment(assignCommentToEdit);
         }
 
-        public async void RemoveAssignment(Assignment deleteAssignment)
+        public async void RemoveAssignment(AssignmentSorting deleteAssignment)
         {
             await FacadeService.DeleteAssignment(deleteAssignment);
         }
@@ -180,7 +194,8 @@ namespace JanitorSystem.Model
             try
             {
                 AssignmentList = await FacadeService.GetAssignmentList();
-               
+                LoadSortingList();
+                
                 //AppartmentList = new ObservableCollection<Appartment>(AppartmentList.OrderBy(j => j.AppartBuildingNo ));
             }
             catch (Exception e)
@@ -192,22 +207,47 @@ namespace JanitorSystem.Model
 
         #endregion
 
-        #region SorterMetoder
-
-        public void OrderedRankList()
+        public void LoadSortingList()
         {
-            AssignmentList = new ObservableCollection<Assignment>(AssignmentList.OrderBy(i => i.AssignRankNo));
-           
+
+            ObservableCollection<AssignmentSorting> res = new ObservableCollection<AssignmentSorting>(
+                AssignmentList.Join(AppartmentList, p => p.AppartNo, g => g.AppartNo,
+                    (p, g) => new AssignmentSorting()
+                    {
+                        AssignTitle = p.AssignTitle,
+                        AssignText = p.AssignText,
+                        DepId = p.DepId,
+                        BuildingNo = g.BuildingNo,
+                        AssignRankNo = p.AssignRankNo,
+                        AppartNo = p.AppartNo,
+                        AppartmentOwner = g.AppartmentOwner,
+                        AppartmentPhone1 = g.AppartmentPhone1,
+                        AppartmentPhone2 = g.AppartmentPhone2,
+                        AssignComment = p.AssignComment,
+                        EmployeeId = p.EmployeeId,
+                        AssignId = p.AssignId
+                    }));
+            SortingList = res;
         }
 
-        public void OrderedAppartNo()
+        #region SorterMetoder
+       public void OrderedTimeDB()
         {
-            AssignmentList = new ObservableCollection<Assignment>(AssignmentList.OrderBy(i => i.AppartNo));
+            SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.AssignId));
+        }
+        public void OrderedRankList()
+        {
+            SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.AssignRankNo));
+
+        }
+
+        public void OrderByBuildingNo()
+        {
+           SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.BuildingNo));
         }
 
         #endregion
-
-
+      
 
 
         #region LoadEmployeeList

@@ -57,14 +57,16 @@
                             <ColumnDefinition Width="4*"/>
                             <ColumnDefinition Width="3*"/>
                         </Grid.ColumnDefinitions>
-                            <TextBlock Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Mine opgaver"/>
-                        <!--<ComboBox Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                            <ComboBoxItem Content="Ansvarlig"/>
-                        </ComboBox>-->
+                        <TextBlock Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Mine opgaver"/>
+                        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="30" Margin="10,14,0,0" VerticalAlignment="Top" Width="100" PlaceholderText="Sorter" Grid.Column="1">
+                            <Button Content="Tid" Command="{Binding SortByTimeDbCommand}" Width="80"/>
+                            <Button Content="Bygning" Command="{Binding SortByBuildingNoCommand}" Width="80"/>
+                            <Button Content="Akut" Command="{Binding SortByRankNoCommand}" Width="80"/>
+                        </ComboBox>
                     </Grid>
                     <Grid Grid.Row="2">
-                        <Border Style="{StaticResource Border}">
-                            <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding Singleton.AssignmentList}" SelectionChanged="FPMineOpgaverListView_SelectionChanged" SelectedItem="{Binding Singleton.SelectedAssignmentMVM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                        <Border Style="{StaticResource Border}" Margin="0,0,0,-188">
+                            <ListView x:Name="FPMineOpgaverListView" ItemsSource="{Binding Singleton.SortingList}" SelectionChanged="FPMineOpgaverListView_SelectionChanged" SelectedItem="{Binding Singleton.SelectedAssignmentMVM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Border Style="{StaticResource ListViewBorder}">
@@ -90,31 +92,7 @@
                         </Border>
                         <ProgressRing IsActive="{Binding Singleton.IsBusy}"  Style="{StaticResource ProgressRingStyle}"/>
                     </Grid>
-                        <!--<TextBlock Grid.Column="0" Text="Sortér efter: "/> -->
-                    <Grid Grid.Row="4">
-                        <TextBlock Style="{StaticResource LabelStyle}" Text="Fælles opgaver"/>
-                    </Grid>
-                    <Grid Grid.Row="5">
-                        <Border Style="{StaticResource Border}">
-                   <ListView ItemsSource="{Binding Singleton.RegAssignmentList}">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <Border Style="{StaticResource ListViewBorder}">
-                                            <StackPanel>
-                                                <Grid>
-                                                    <Grid.RowDefinitions>
-                                                        <RowDefinition/>
-                                                    </Grid.RowDefinitions>
-                                                    <TextBlock Grid.Row="0" Text="{Binding RegAssignTitle}" Style="{StaticResource ListViewTitle}"/>
-                                                </Grid>
-                                            </StackPanel>
-                                        </Border>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </Border>
-                        <ProgressRing IsActive="{Binding Singleton.IsBusy}" Style="{StaticResource ProgressRingStyle}"/>
-                    </Grid>
+                    <!--<TextBlock Grid.Column="0" Text="Sortér efter: "/> -->
                 </Grid>
             </Grid>
 
@@ -133,14 +111,15 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1">
                     <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
-                    <Button Content="Mine opgaver" Click="FPToFP"/>
+                    <!--<Button Content="Tid/indmelt" Click="FPToFP"/>-->
                 </Grid>
                 <Grid Grid.Column="3">
-                    <!--<Button Content="Opret opgave" Click="FPToAddAssign"/>-->
+                    <!--<Button Content="Bygning" Command="{Binding SortByBuildingNoCommand, Mode=TwoWay}" />-->
                 </Grid>
                 <Grid Grid.Column="5">
-                    <!--<Button Content="Opret fællesopgave" Click="FPToAddRegAssign" />-->
+                    <!--<Button Content="Akut" Command="{Binding SortByRankNoCommand, Mode=TwoWay}"/>-->
                 </Grid>
+                <Button Content="Opdater" Grid.Column="7" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Command="{Binding UpdateSortingListCommand, Mode=TwoWay}"/>
             </Grid>
         </Grid>
     </Grid>

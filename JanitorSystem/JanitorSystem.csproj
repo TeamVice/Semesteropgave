@@ -105,6 +105,8 @@
     </Compile>
     <Compile Include="Model\Appartment.cs" />
     <Compile Include="Model\Assignment.cs" />
+    <Compile Include="Model\AssignmentSorting.cs" />
+    <Compile Include="Model\CombinedTablesView.cs" />
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\ViceListsSingleton.cs" />

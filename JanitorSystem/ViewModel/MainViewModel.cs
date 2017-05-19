@@ -22,14 +22,16 @@ namespace JanitorSystem.ViewModel
             Singleton = ViceListsSingleton.Instance;
             #region Iniates Clear methods // To avoid a bug when changing from assignmentinfo view to AssignmentListFrontPage
 
+            
             Singleton.ClearAssignmentList();
-
-            #endregion
             Singleton.LoadAssignmentList();
+            #endregion
+            Singleton.LoadSortingList();
 
-            SortAssignListByRankCommand = new RelayCommand(Singleton.OrderedRankList, null);
-            SortDepAndApparCommand = new RelayCommand(Singleton.OrderedAppartNo, null);
-
+            SortByTimeDbCommand = new RelayCommand(Singleton.OrderedTimeDB,null);
+            SortByRankNoCommand = new RelayCommand(Singleton.OrderedRankList, null);
+            SortByBuildingNoCommand = new RelayCommand(Singleton.OrderByBuildingNo, null);
+            UpdateSortingListCommand = new RelayCommand(Singleton.LoadSortingList,null);
             
         } // constructor
 
@@ -39,12 +41,12 @@ namespace JanitorSystem.ViewModel
         #endregion
 
         #region ICommands
+        public ICommand SortByTimeDbCommand { get; set; }
+        public ICommand SortByRankNoCommand { get; set; }
 
-        public ICommand SortAssignListByRankCommand { get; set; }
+       public ICommand SortByBuildingNoCommand { get; set; }
 
-       public ICommand SortDepAndApparCommand { get; set; }
-
-
+        public ICommand UpdateSortingListCommand { get; set; }
 
         #endregion
     }
