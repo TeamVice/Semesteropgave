@@ -55,11 +55,11 @@
                             <ColumnDefinition Width="2*"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Mine opgaver"/>
-                        <!--<ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="30" Margin="10,14,0,0" VerticalAlignment="Top" Width="100" PlaceholderText="Sorter" Grid.Column="1" SelectionChanged="comboBox_SelectionChanged">
+                        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="30" Margin="10,14,0,0" VerticalAlignment="Top" Width="100" PlaceholderText="Sorter" Grid.Column="1" SelectionChanged="comboBox_SelectionChanged">
                             <Button Content="Tid" Command="{Binding SortByTimeDbCommand}" Width="80"/>
                             <Button Content="Bygning" Command="{Binding SortByBuildingNoCommand}" Width="80"/>
                             <Button Content="Akut" Command="{Binding SortByRankNoCommand}" Width="80"/>
-                        </ComboBox>-->
+                        </ComboBox>
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}" Margin="0,0,0,0">

@@ -24,14 +24,14 @@
         <!-- Title area -->
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <TextBlock Text="TeamVice Boligforening" Style="{StaticResource Title}"/>
             </Grid>
             <Grid Grid.Column="1">
-                <Border Style="{StaticResource LogoBorder}">
+                <Border Style="{StaticResource LogoBorder}" Width="75">
                     <TextBlock Text="VTM" Style="{StaticResource LogoTextBlock}" PointerPressed="VTMClick"/>
                 </Border>
             </Grid>
@@ -58,9 +58,9 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Border Grid.RowSpan="3" Style="{StaticResource Border}"/>
-                <TextBlock Grid.Row="0" Text="Hvem er du?" Style="{StaticResource HeaderTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="44"/>
-                <Button Grid.Row="1" Content="Vicevært" HorizontalAlignment="Center" VerticalAlignment="Center" Click="JanitorButton" Width="200" Height="80" FontSize="40"/>
-                <Button Grid.Row="2" Content="DLA" HorizontalAlignment="Center" VerticalAlignment="Center" Click="DLAButton" Width="200" Height="80" FontSize="40" />
+                <TextBlock Grid.Row="0" Text="Hvem er du?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
+                <Button Grid.Row="1" Content="Vicevært" HorizontalAlignment="Center" VerticalAlignment="Center" Click="JanitorButton" Width="230" Height="100" FontSize="48"/>
+                <Button Grid.Row="2" Content="DLA" HorizontalAlignment="Center" VerticalAlignment="Center" Click="DLAButton" Width="230" Height="100" FontSize="48" />
             </Grid>
         </Grid>
     </Grid>
