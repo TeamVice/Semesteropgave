@@ -35,21 +35,24 @@
     
     <!-- Title Textblock -->
     <Style x:Key="Title" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
-        <Setter Property="FontSize" Value="35"/>
+        <Setter Property="FontSize" Value="38"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="#FF00C0FF"/>
     </Style>
     
     <!-- LOGO textblock and border -->
     <Style x:Key="LogoTextBlock" TargetType="TextBlock" BasedOn="{StaticResource FontStyle}">
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="FontSize" Value="38"/>
+        <Setter Property="Foreground" Value="#FF00C0FF"/>
     </Style>
 
     <Style x:Key="LogoBorder" TargetType="Border">
         <Setter Property="BorderBrush" Value="Black"/>
         <Setter Property="BorderThickness" Value="3"/>
+        <Setter Property="CornerRadius" Value="10"/>
     </Style>
 
     <!-- Borders -->
