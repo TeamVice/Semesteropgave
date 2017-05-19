@@ -82,7 +82,7 @@
                     </Grid>
                     <Grid Grid.Row="4">
                         <Border Style="{StaticResource Border}">
-                            <TextBox PlaceholderText="Kommentarer" FontSize="20" Text="{Binding Singleton.SelectedAssignmentMVM.AssignComment, Mode=TwoWay}"/>
+                            <TextBox PlaceholderText="Kommentarer" FontSize="20" Text="{Binding Singleton.SelectedAssignmentMVM.AssignComment, Mode=TwoWay}" Background="White"/>
                         </Border>
                     </Grid>
                     <Grid Grid.Row="5">

@@ -102,7 +102,7 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <TextBox x:Name="AddAssignTitleTextBox" Grid.Row="0" Grid.Column="0" PlaceholderText="Titel" Text="{Binding Assignment.AssignTitle, Mode=TwoWay}" Background="White"/>
-                            <TextBox x:Name="AddAssignDescriptionTextBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" PlaceholderText="Beskrivelse" Text="{Binding Assignment.AssignText, Mode=TwoWay}" Background="White"/>
+                            <TextBox x:Name="AddAssignDescriptionTextBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" PlaceholderText="Beskrivelse" TextWrapping="Wrap" Text="{Binding Assignment.AssignText, Mode=TwoWay}" Background="White"/>
                             <ComboBox x:Name="AssignRankNoComboBox" Grid.Row="5" Grid.Column="0" PlaceholderText="Prioritering" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                                 <Button Content="1" Command="{Binding SetRankNoOneCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                                 <Button Content="2" Command="{Binding SetRankNoTwoCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
