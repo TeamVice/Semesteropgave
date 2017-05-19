@@ -42,6 +42,8 @@ namespace JanitorSystem.Handlers
             Avm.Singleton.AddAssignment(tempAssignment);
             Avm.Singleton.ClearAssignmentList();
             Avm.Singleton.LoadAssignmentList();
+
+           // OutPutToUser = "Opgave blev oprettet!";
         }
 
         #endregion
