@@ -7,6 +7,7 @@ using JanitorSystem.Model;
 using JanitorSystem.View;
 using JanitorSystem.ViewModel;
 using JanitorSystem.Facade;
+using Windows.UI.Popups;
 
 namespace JanitorSystem.Handlers
 {
@@ -37,6 +38,10 @@ namespace JanitorSystem.Handlers
         public void UpdateAssignComment()
         {
             Aiv.Singleton.EditAssignComment(Aiv.Singleton.SelectedAssignmentMVM);
+
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            new MessageDialog("Du har opdateret opgavekommentaren").ShowAsync();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
         #endregion
