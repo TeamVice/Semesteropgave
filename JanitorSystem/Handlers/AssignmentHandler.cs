@@ -31,22 +31,39 @@ namespace JanitorSystem.Handlers
 
         public void AddAssignment()
         {
-            Assignment tempAssignment = new Assignment();
-            
-            tempAssignment.AssignTitle = Avm.Assignment.AssignTitle;
-            tempAssignment.AssignText = Avm.Assignment.AssignText;
-            tempAssignment.AssignRankNo = Avm.Assignment.AssignRankNo;
-            tempAssignment.AppartNo = Avm.SelectedAppartmentId.AppartNo;
-            tempAssignment.AssignComment = "Kommentar: ";
-            tempAssignment.DepId = Avm.SelectedDepartmentId.DepId;
-            tempAssignment.EmployeeId = Avm.SelectedEmployeeId.EmployeeId;
-            Avm.Singleton.AddAssignment(tempAssignment);
-            Avm.Singleton.ClearAssignmentList();
-            Avm.Singleton.LoadAssignmentList();
+            //bool noAssignDataSelected = true;
 
-            #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-            new MessageDialog("Du har oprettet opgave").ShowAsync();
-            #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            if (Avm.Assignment.AssignTitle != null && Avm.Assignment.AssignText != null &&
+                Avm.Assignment.AssignRankNo != null && Avm.SelectedAppartmentId.AppartNo != null &&
+                Avm.SelectedDepartmentId.DepId != null && Avm.SelectedEmployeeId.EmployeeId != null)
+            {
+                //noAssignDataSelected = false;
+
+                Assignment tempAssignment = new Assignment();
+
+                tempAssignment.AssignTitle = Avm.Assignment.AssignTitle;
+                tempAssignment.AssignText = Avm.Assignment.AssignText;
+                tempAssignment.AssignRankNo = Avm.Assignment.AssignRankNo;
+                tempAssignment.AppartNo = Avm.SelectedAppartmentId.AppartNo;
+                tempAssignment.AssignComment = "Kommentar: ";
+                tempAssignment.DepId = Avm.SelectedDepartmentId.DepId;
+                tempAssignment.EmployeeId = Avm.SelectedEmployeeId.EmployeeId;
+                Avm.Singleton.AddAssignment(tempAssignment);
+                Avm.Singleton.ClearAssignmentList();
+                Avm.Singleton.LoadAssignmentList();
+
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                new MessageDialog("Du har oprettet opgave").ShowAsync();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            }
+            else
+            {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                new MessageDialog("Har du glemt at udfylde et felt?").ShowAsync();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+
+            }
+
         }
 
         public void testy()
