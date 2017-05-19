@@ -102,12 +102,8 @@
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
                             <TextBox x:Name="AddAssignTitleTextBox" Grid.Row="0" Grid.Column="0" PlaceholderText="Titel" Text="{Binding Assignment.AssignTitle, Mode=TwoWay}" Background="White"/>
-                            <TextBox x:Name="AddAssignDescriptionTextBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="4" PlaceholderText="Beskrivelse" TextWrapping="Wrap" Text="{Binding Assignment.AssignText, Mode=TwoWay}" Background="White"/>
-                            <ComboBox x:Name="AssignRankNoComboBox" Grid.Row="5" Grid.Column="0" PlaceholderText="Prioritering" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                                <Button Content="1" Command="{Binding SetRankNoOneCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <Button Content="2" Command="{Binding SetRankNoTwoCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <Button Content="3" Command="{Binding SetRankNoThreeCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                            </ComboBox>
+                            <TextBox x:Name="AddAssignDescriptionTextBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="5" PlaceholderText="Beskrivelse" TextWrapping="Wrap" Text="{Binding Assignment.AssignText, Mode=TwoWay}" Background="White"/>
+                            
                             <Button Grid.Row="7" Grid.Column="0" Content="Opret opgave" HorizontalAlignment="Left" Command="{Binding AddAssignmentCommand}"/>
                         </Grid>
                         <Grid Grid.Column="1">
@@ -121,12 +117,17 @@
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="*"/>
                             </Grid.RowDefinitions>
-                            <Rectangle Grid.Row="0" Grid.RowSpan="5" Fill="White" Stroke="Black"/>
-                            <ComboBox x:Name="AddAssignAfdelingTextBox" Grid.Row="0" PlaceholderText="Afdeling" ItemsSource="{Binding Singleton.DepartmentsList}" SelectedItem="{Binding SelectedDepartmentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                            <ComboBox x:Name="AddAssignAppartNoTextBox" Grid.Row="1" PlaceholderText="Lejligheds Nr." ItemsSource="{Binding Singleton.AppartmentList}" SelectedItem="{Binding SelectedAppartmentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                            <ComboBox x:Name="AddAssignEmployeeTextBox" Grid.Row="4" PlaceholderText="Ansvarlig" ItemsSource="{Binding Singleton.EmployeeList}" SelectedItem="{Binding SelectedEmployeeId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                            <TextBox x:Name="AddAssignFirstPhoneTextBox" Grid.Row="2" PlaceholderText="Primær telefon" Text="{Binding SelectedAppartmentId.AppartmentPhone1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
-                            <TextBox x:Name="AddAssignSecondPhoneTextBox" Grid.Row="3" PlaceholderText="Sekundær telefon" Text="{Binding SelectedAppartmentId.AppartmentPhone2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True"/>
+                            <!--<Rectangle Grid.Row="0" Grid.RowSpan="5" Fill="White" Stroke="Black"/>-->
+                            <ComboBox x:Name="AssignRankNoComboBox" Grid.Row="0" Grid.Column="0" PlaceholderText="Prioritering" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Button Content="1" Command="{Binding SetRankNoOneCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Button Content="2" Command="{Binding SetRankNoTwoCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Button Content="3" Command="{Binding SetRankNoThreeCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </ComboBox>
+                            <ComboBox x:Name="AddAssignAfdelingTextBox" Grid.Row="1" PlaceholderText="Afdeling" ItemsSource="{Binding Singleton.DepartmentsList}" SelectedItem="{Binding SelectedDepartmentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White"/>
+                            <ComboBox x:Name="AddAssignAppartNoTextBox" Grid.Row="2" PlaceholderText="Lejligheds Nr." ItemsSource="{Binding Singleton.AppartmentList}" SelectedItem="{Binding SelectedAppartmentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White"/>
+                            <ComboBox x:Name="AddAssignEmployeeTextBox" Grid.Row="5" PlaceholderText="Ansvarlig" ItemsSource="{Binding Singleton.EmployeeList}" SelectedItem="{Binding SelectedEmployeeId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White"/>
+                            <TextBox x:Name="AddAssignFirstPhoneTextBox" Grid.Row="3" PlaceholderText="Primær telefon" Text="{Binding SelectedAppartmentId.AppartmentPhone1, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" Background="White"/>
+                            <TextBox x:Name="AddAssignSecondPhoneTextBox" Grid.Row="4" PlaceholderText="Sekundær telefon" Text="{Binding SelectedAppartmentId.AppartmentPhone2, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="True" Background="White"/>
                         </Grid>
                     </Grid>
                 </Grid>
