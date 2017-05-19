@@ -60,25 +60,29 @@
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="1">
-                        <TextBlock Style="{StaticResource LabelStyle}" Text="Opgaven"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Opgaven"/>
+                        <Button Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Afslut opgaven" Command="{Binding FinishAssignmentCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                     <Grid Grid.Row="2">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="2*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Border Grid.RowSpan="6" Style="{StaticResource Border}"/>
-                        <!--</Border>-->
-                        <TextBlock x:Name="AssignInfoTitleTextBlock" Grid.Row="0" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20" Text="{Binding Singleton.SelectedAssignmentMVM.AssignTitle}"/>
-                        <TextBlock x:Name="AssignInfoAddressTextBlock" Grid.Row="1" Text="{Binding Singleton.SelectedAssignmentMVM.AppartNo, Mode=TwoWay}" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
-                        <TextBlock x:Name="AssignInfoDescriptionTextBlock" Grid.Row="2" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20" Text="{Binding Singleton.SelectedAssignmentMVM.AssignText}"/>
-                        <TextBlock x:Name="AssignInfoNameTextBlock" Grid.Row="3" Text="{Binding Singleton.SelectedAssignmentMVM.AppartmentOwner}" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
-                        <TextBlock x:Name="AssignInfoPhoneTextBlock" Grid.Row="4" Text="{Binding Singleton.SelectedAssignmentMVM.AppartmentPhone1}" VerticalAlignment="Center" Margin="10,5,0,0" FontSize="20"/>
-                        <TextBlock x:Name="AssignInfoSecondPhoneTextBlock" Grid.Row="5" Text="{Binding Singleton.SelectedAssignmentMVM.AppartmentPhone2}" VerticalAlignment="Center" Margin="10,0,0,0" FontSize="20"/>
+                        <TextBlock x:Name="AssignInfoTitleTextBlock" Grid.Row="0" Text="{Binding Singleton.SelectedAssignmentMVM.AssignTitle}" Style="{StaticResource ListViewAssignInfo}"/>
+                        <TextBlock x:Name="AssignInfoAddressTextBlock" Grid.Row="2" Text="{Binding Singleton.SelectedAssignmentMVM.AppartNo, Mode=TwoWay}" Style="{StaticResource ListViewAssignInfo}"/>
+                        <TextBlock x:Name="AssignInfoDescriptionTextBlock" Grid.Row="1" Text="{Binding Singleton.SelectedAssignmentMVM.AssignText}" Style="{StaticResource ListViewAssignInfo}"/>
+                        <TextBlock x:Name="AssignInfoNameTextBlock" Grid.Row="3" Text="{Binding Singleton.SelectedAssignmentMVM.AppartmentOwner}" Style="{StaticResource ListViewAssignInfo}"/>
+                        <TextBlock x:Name="AssignInfoPhoneTextBlock" Grid.Row="4" Text="{Binding Singleton.SelectedAssignmentMVM.AppartmentPhone1}" Style="{StaticResource ListViewAssignInfo}"/>
+                        <TextBlock x:Name="AssignInfoSecondPhoneTextBlock" Grid.Row="5" Text="{Binding Singleton.SelectedAssignmentMVM.AppartmentPhone2}" Style="{StaticResource ListViewAssignInfo}"/>
                     </Grid>
                     <Grid Grid.Row="4">
                         <Border Style="{StaticResource Border}">
@@ -107,7 +111,7 @@
                 <Grid Grid.Column="1">
                     
                     <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
-                    <Button Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Afslut opgaven" Command="{Binding FinishAssignmentCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    
                 </Grid>
 
             </Grid>
