@@ -12,7 +12,13 @@
         <ViewModel:AssignmentInfoViewModel/>
     </Page.DataContext>
     
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White" Offset="0"/>
+                <GradientStop Color="#FFBFBFBF" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid x:Name="ViceAppMobile">
             <!-- General seperation of areas -->
             <Grid.RowDefinitions>
@@ -23,11 +29,11 @@
             <!-- Title area -->
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="6*"/>
+                    <ColumnDefinition Width="2*"/>
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="0">
-                    <TextBlock Text="TeamVice Boligforening" Style="{StaticResource Title}"/>
+                    <TextBlock Text="Vice Task Manager" Style="{StaticResource Title}"/>
                 </Grid>
                 <Grid Grid.Column="1">
                     <Border Style="{StaticResource LogoBorder}">

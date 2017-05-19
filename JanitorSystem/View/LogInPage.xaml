@@ -24,14 +24,14 @@
         <!-- Title area -->
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="8*"/>
+                <ColumnDefinition Width="6*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
-                <TextBlock Text="TeamVice Boligforening" Style="{StaticResource Title}"/>
+                <TextBlock Text="Vice Task Manager" Style="{StaticResource Title}"/>
             </Grid>
             <Grid Grid.Column="1">
-                <Border Style="{StaticResource LogoBorder}" Width="75">
+                <Border Style="{StaticResource LogoBorder}" Width="100">
                     <TextBlock Text="VTM" Style="{StaticResource LogoTextBlock}" PointerPressed="VTMClick"/>
                 </Border>
             </Grid>
@@ -53,14 +53,17 @@
             </Grid.DataContext>
             <Grid Grid.Row="2" Grid.Column="1">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
+                    <RowDefinition Height="20"/>
                 </Grid.RowDefinitions>
-                <Border Grid.RowSpan="3" Style="{StaticResource Border}"/>
-                <TextBlock Grid.Row="0" Text="Hvem er du?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
-                <Button Grid.Row="1" Content="Vicevært" HorizontalAlignment="Center" VerticalAlignment="Center" Click="JanitorButton" Width="230" Height="100" FontSize="48"/>
-                <Button Grid.Row="2" Content="DLA" HorizontalAlignment="Center" VerticalAlignment="Center" Click="DLAButton" Width="230" Height="100" FontSize="48" />
+                <Border Grid.RowSpan="5" Style="{StaticResource Border}"/>
+                <Rectangle Grid.Row="1" Height="100"></Rectangle>
+                <TextBlock Grid.Row="1" Text="Hvem er du?" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" FontWeight="Bold"/>
+                <Button Grid.Row="2" Content="Vicevært" HorizontalAlignment="Center" VerticalAlignment="Center" Click="JanitorButton" Width="230" FontSize="48"/>
+                <Button Grid.Row="3" Content="DLA" HorizontalAlignment="Center" VerticalAlignment="Center" Click="DLAButton" Width="230" FontSize="48"/>
             </Grid>
         </Grid>
     </Grid>
