@@ -19,6 +19,9 @@ namespace JanitorSystem.ViewModel
             Assignment = new Assignment();
             AddAssignmentCommand = new RelayCommand(InstanceAssignmentHandler.AddAssignment,null);
             OpdaterAssignemntCommand = new RelayCommand(Singleton.opdater,null);
+            SetRankNoOneCommand = new RelayCommand(InstanceAssignmentHandler.testy,null);
+            SetRankNoTwoCommand = new RelayCommand(InstanceAssignmentHandler.testy2,null);
+            SetRankNoThreeCommand = new RelayCommand(InstanceAssignmentHandler.testy3,null);
         } // constructor
 
         #region Properties
@@ -31,6 +34,11 @@ namespace JanitorSystem.ViewModel
         public ICommand AddAssignmentCommand { get; set; }
 
         public ICommand OpdaterAssignemntCommand { get; set; }
+
+        public ICommand SetRankNoOneCommand { get; set; }
+        public ICommand SetRankNoTwoCommand { get; set; }
+        public ICommand SetRankNoThreeCommand { get; set; }
+
         #endregion
 
         #region SelectedEmployeeId

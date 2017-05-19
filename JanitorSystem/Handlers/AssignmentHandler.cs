@@ -34,7 +34,7 @@ namespace JanitorSystem.Handlers
             
             tempAssignment.AssignTitle = Avm.Assignment.AssignTitle;
             tempAssignment.AssignText = Avm.Assignment.AssignText;
-            tempAssignment.AssignRankNo = 1;
+            tempAssignment.AssignRankNo = Avm.Assignment.AssignRankNo;
             tempAssignment.AppartNo = Avm.SelectedAppartmentId.AppartNo;
             tempAssignment.AssignComment = "Kommentar: ";
             tempAssignment.DepId = Avm.SelectedDepartmentId.DepId;
@@ -44,6 +44,21 @@ namespace JanitorSystem.Handlers
             Avm.Singleton.LoadAssignmentList();
 
            // OutPutToUser = "Opgave blev oprettet!";
+        }
+
+        public void testy()
+        {
+            Avm.Assignment.AssignRankNo = 1;
+        }
+
+        public void testy2()
+        {
+            Avm.Assignment.AssignRankNo = 2;
+        }
+
+        public void testy3()
+        {
+            Avm.Assignment.AssignRankNo = 3;
         }
 
         #endregion
