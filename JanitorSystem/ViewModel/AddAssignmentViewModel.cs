@@ -19,9 +19,9 @@ namespace JanitorSystem.ViewModel
             Assignment = new Assignment();
             AddAssignmentCommand = new RelayCommand(InstanceAssignmentHandler.AddAssignment,null);
             OpdaterAssignemntCommand = new RelayCommand(Singleton.opdater,null);
-            SetRankNoOneCommand = new RelayCommand(InstanceAssignmentHandler.testy,null);
-            SetRankNoTwoCommand = new RelayCommand(InstanceAssignmentHandler.testy2,null);
-            SetRankNoThreeCommand = new RelayCommand(InstanceAssignmentHandler.testy3,null);
+            SetRankNoOneCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToOne,null);
+            SetRankNoTwoCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToTwo,null);
+            SetRankNoThreeCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToThree,null);
         } // constructor
 
         #region Properties

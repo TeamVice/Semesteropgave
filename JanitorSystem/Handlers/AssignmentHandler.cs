@@ -66,17 +66,17 @@ namespace JanitorSystem.Handlers
 
         }
 
-        public void testy()
+        public void SetPriorityToOne()
         {
             Avm.Assignment.AssignRankNo = 1;
         }
 
-        public void testy2()
+        public void SetPriorityToTwo()
         {
             Avm.Assignment.AssignRankNo = 2;
         }
 
-        public void testy3()
+        public void SetPriorityToThree()
         {
             Avm.Assignment.AssignRankNo = 3;
         }
