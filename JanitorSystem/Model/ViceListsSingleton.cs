@@ -12,6 +12,7 @@ using Windows.UI.Composition;
 using JanitorSystem.Common;
 using JanitorSystem.Facade;
 using JanitorSystem.Handlers;
+using Windows.UI.Popups;
 
 namespace JanitorSystem.Model
 {
@@ -181,7 +182,7 @@ namespace JanitorSystem.Model
 
         public async void RemoveAssignment(AssignmentSorting deleteAssignment)
         {
-            await FacadeService.DeleteAssignment(deleteAssignment);
+                await FacadeService.DeleteAssignment(deleteAssignment);
         }
 
         #endregion

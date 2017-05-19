@@ -50,9 +50,22 @@ namespace JanitorSystem.Handlers
 
         public void DeleteAssignment()
         {
-            ViceListsSingleton.Instance.RemoveAssignment(ViceListsSingleton.Instance.SelectedAssignmentMVM);
-            ViceListsSingleton.Instance.ClearAssignmentList();
-            ViceListsSingleton.Instance.LoadAssignmentList();
+            if(ViceListsSingleton.Instance.SelectedAssignmentMVM != null)
+            {
+                ViceListsSingleton.Instance.RemoveAssignment(ViceListsSingleton.Instance.SelectedAssignmentMVM);
+                ViceListsSingleton.Instance.ClearAssignmentList();
+                ViceListsSingleton.Instance.LoadAssignmentList();
+
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                new MessageDialog("Opgaven er nu afsluttet og slette fra din opgaveliste og puttet i databasen over afsluttede opgaver. DLA har adgang til denne liste.").ShowAsync();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            }
+            else
+            {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                new MessageDialog("Ingen opgave at slette.").ShowAsync();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            }
         }
 
         #endregion
