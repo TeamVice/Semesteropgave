@@ -148,7 +148,7 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="3">
                     <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
-                    <Button Content="Opdater" Command="{Binding OpdaterAssignemntCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button  Content="Opdater" Command="{Binding OpdaterAssignemntCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                 </Grid>
                 <Grid Grid.Column="3"/>
             </Grid>

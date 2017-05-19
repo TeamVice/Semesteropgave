@@ -182,16 +182,7 @@ namespace JanitorSystem.Model
 
         public async void RemoveAssignment(AssignmentSorting deleteAssignment)
         {
-            //try
-            //{
                 await FacadeService.DeleteAssignment(deleteAssignment);
-            //}
-            //catch (Exception e)
-            //{
-
-            //   Debug.Write(e); 
-            //}
-           
         }
 
         #endregion
