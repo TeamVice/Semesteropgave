@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using JanitorSystem.Facade;
 using JanitorSystem.Model;
 using JanitorSystem.ViewModel;
+using Windows.UI.Popups;
 
 namespace JanitorSystem.Handlers
 {
@@ -42,6 +43,10 @@ namespace JanitorSystem.Handlers
             Avm.Singleton.AddAssignment(tempAssignment);
             Avm.Singleton.ClearAssignmentList();
             Avm.Singleton.LoadAssignmentList();
+
+            #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            new MessageDialog("Du har oprettet opgave").ShowAsync();
+            #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
         public void testy()
