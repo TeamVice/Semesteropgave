@@ -52,9 +52,6 @@ namespace JanitorSystem.View
             this.Frame.Navigate(typeof(LogInPage), null);
         }
 
-        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
     }
 }
