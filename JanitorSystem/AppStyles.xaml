@@ -38,7 +38,7 @@
         <Setter Property="FontSize" Value="38"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="Foreground" Value="#FF00C0FF"/>
+        <Setter Property="Foreground" Value="#FF00A6DC"/>
     </Style>
     
     <!-- LOGO textblock and border -->
@@ -46,7 +46,7 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="38"/>
-        <Setter Property="Foreground" Value="#FF00C0FF"/>
+        <Setter Property="Foreground" Value="#FF00A6DC"/>
     </Style>
 
     <Style x:Key="LogoBorder" TargetType="Border">
