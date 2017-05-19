@@ -51,5 +51,7 @@ namespace JanitorSystem.View
         {
             this.Frame.Navigate(typeof(LogInPage), null);
         }
+
+
     }
 }
