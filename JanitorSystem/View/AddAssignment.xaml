@@ -103,7 +103,7 @@
                             </Grid.RowDefinitions>
                             <TextBox x:Name="AddAssignTitleTextBox" Grid.Row="0" Grid.Column="0" PlaceholderText="Titel" Text="{Binding Assignment.AssignTitle, Mode=TwoWay}" Background="White"/>
                             <TextBox x:Name="AddAssignDescriptionTextBox" Grid.Row="1" Grid.Column="0" Grid.RowSpan="5" PlaceholderText="Beskrivelse" TextWrapping="Wrap" Text="{Binding Assignment.AssignText, Mode=TwoWay}" Background="White"/>
-                            
+
                             <Button Grid.Row="7" Grid.Column="0" Content="Opret opgave" HorizontalAlignment="Left" Command="{Binding AddAssignmentCommand}"/>
                         </Grid>
                         <Grid Grid.Column="1">
@@ -119,9 +119,9 @@
                             </Grid.RowDefinitions>
                             <!--<Rectangle Grid.Row="0" Grid.RowSpan="5" Fill="White" Stroke="Black"/>-->
                             <ComboBox x:Name="AssignRankNoComboBox" Grid.Row="0" Grid.Column="0" PlaceholderText="Prioritering" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                                <Button Content="1" Command="{Binding SetRankNoOneCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <Button Content="2" Command="{Binding SetRankNoTwoCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-                                <Button Content="3" Command="{Binding SetRankNoThreeCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                <Button Content="Akut"  Command="{Binding SetRankNoOneCommand}" Click="ClosePriorityOne" Width="160" Height="30"/>
+                                <Button Content="Alm opgave"  Command="{Binding SetRankNoTwoCommand}" Click="ClosePriorityTwo" Width="160" Height="30"/>
+                                <Button Content="Kan vente"  Command="{Binding SetRankNoThreeCommand}" Click="ClosePriorityThree" Width="160" Height="30"/>
                             </ComboBox>
                             <ComboBox x:Name="AddAssignAfdelingTextBox" Grid.Row="1" PlaceholderText="Afdeling" ItemsSource="{Binding Singleton.DepartmentsList}" SelectedItem="{Binding SelectedDepartmentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White"/>
                             <ComboBox x:Name="AddAssignAppartNoTextBox" Grid.Row="2" PlaceholderText="Lejligheds Nr." ItemsSource="{Binding Singleton.AppartmentList}" SelectedItem="{Binding SelectedAppartmentId, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White"/>
