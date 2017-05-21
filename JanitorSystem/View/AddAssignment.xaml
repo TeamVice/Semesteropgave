@@ -62,7 +62,12 @@
                         <RowDefinition Height="30"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="1">
-                        <TextBlock Style="{StaticResource LabelStyle}" Text="Opgaver"/>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Opgaver"/>
+                        <Button Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"  Content="Opdater" Command="{Binding OpdaterAssignemntCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
@@ -148,7 +153,7 @@
                 </Grid.ColumnDefinitions>
                 <Grid Grid.Column="3">
                     <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
-                    <Button  Content="Opdater" Command="{Binding OpdaterAssignemntCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    
                 </Grid>
                 <Grid Grid.Column="3"/>
             </Grid>
