@@ -73,21 +73,23 @@
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Border Style="{StaticResource ListViewBorder}">
-                                            <StackPanel>
+                                            <!--<StackPanel>-->
                                                 <Grid>
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition/>
                                                         <RowDefinition/>
                                                     </Grid.RowDefinitions>
                                                     <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="10*"/>
+                                                        <ColumnDefinition Width="2*"/>
                                                         <ColumnDefinition Width="*"/>
                                                     </Grid.ColumnDefinitions>
-                                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding AssignRankNo}" Style="{StaticResource ListViewRank}"/>
-                                                    <TextBlock Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding AssignText}" TextWrapping="Wrap" Style="{StaticResource ListViewText}"/>
+                                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding AssignRankNo}" Style="{StaticResource ListViewRank}" HorizontalAlignment="Stretch"/>
+                                                    <TextBlock Grid.Row="1" Text="{Binding AssignText}" TextWrapping="Wrap" Style="{StaticResource ListViewText}"/>
                                                     <TextBlock Grid.Row="0" Text="{Binding AssignTitle}" Style="{StaticResource ListViewTitle}"/>
+                                                    <!--<TextBlock Grid.Row="1" Grid.Column="1" Text="Bygning:" HorizontalAlignment="Left" Style="{StaticResource ListViewText}"/>-->
+                                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BuildingNo}" HorizontalAlignment="Right" Style="{StaticResource ListViewText}"/>
                                                 </Grid>
-                                            </StackPanel>
+                                            <!--</StackPanel>-->
                                         </Border>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
