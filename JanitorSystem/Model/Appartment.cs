@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Model
 {
- 
-
     public class Appartment
     {
-
         #region Properties
         /// <summary
         /// Properties that match the Appartment tabel attributs in the database.
@@ -22,7 +19,6 @@ namespace JanitorSystem.Model
         public int BuildingNo { get; set; }
         public int DepId { get; set; }
         #endregion
-
 
         #region Tostring method override
         /// <summary>

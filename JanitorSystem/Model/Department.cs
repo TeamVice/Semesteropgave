@@ -8,7 +8,6 @@ namespace JanitorSystem.Model
 {
     public class Department
     {
-
         #region Properties
         /// <summary
         /// Properties that match the Department tabel attributs in the database.
@@ -19,7 +18,6 @@ namespace JanitorSystem.Model
         public string DepCity { get; set; }
         public int DepZipCode { get; set; }
         #endregion
-
 
         #region Tostring method override
         /// <summary>

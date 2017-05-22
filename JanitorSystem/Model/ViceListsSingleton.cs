@@ -23,8 +23,7 @@ namespace JanitorSystem.Model
     public sealed class ViceListsSingleton : ViewPropertyChanged
     {
 
-
-        #region Instance property. 
+        #region Instance property 
         /// <summary>
         /// Instance prop type ViceListSingleton, sealed class with private konstruktør. 
         /// A prop which has a get metoden that returns the variable instance. 
@@ -36,7 +35,6 @@ namespace JanitorSystem.Model
             get { return instance; }
         }
         #endregion
-
 
         #region Lists in the janitor system
 

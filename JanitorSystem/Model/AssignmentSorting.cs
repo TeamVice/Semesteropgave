@@ -12,7 +12,6 @@ namespace JanitorSystem.Model
     /// </summary>
     public class AssignmentSorting
     {
-      
         #region Properties from Assignment class
 
         public int AssignId { get; set; }
@@ -34,6 +33,5 @@ namespace JanitorSystem.Model
         public int BuildingNo { get; set; }
 
         #endregion 
-
     }
 }

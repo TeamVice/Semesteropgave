@@ -16,7 +16,6 @@ namespace JanitorSystem.ViewModel
 
     public class AddAssignmentViewModel : ViewPropertyChanged
     {
-
         #region Properties
         public Assignment Assignment { get; set; }
         public AssignmentHandler InstanceAssignmentHandler { get; set; }
@@ -82,6 +81,8 @@ namespace JanitorSystem.ViewModel
         }
         #endregion
 
+        #region Constructor
+
         public AddAssignmentViewModel()
         {
             Singleton = ViceListsSingleton.Instance;
@@ -92,8 +93,8 @@ namespace JanitorSystem.ViewModel
             SetRankNoOneCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToOne,null);
             SetRankNoTwoCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToTwo,null);
             SetRankNoThreeCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToThree,null);
-        } // constructor
+        }
 
- 
+        #endregion
     }
 }

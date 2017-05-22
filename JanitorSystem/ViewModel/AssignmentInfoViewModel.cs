@@ -15,7 +15,6 @@ namespace JanitorSystem.ViewModel
     /// </summary>
     public class AssignmentInfoViewModel : ViewPropertyChanged
     {
-
         #region Properties af typen ICommand
 
         public ICommand EditAssignCommentCommand { get; set; }

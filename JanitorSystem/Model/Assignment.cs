@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Model
 {
-   
 
     public class Assignment
     {
@@ -26,6 +25,5 @@ namespace JanitorSystem.Model
 
         #endregion
 
-      
     }
 }

@@ -8,7 +8,6 @@ namespace JanitorSystem.Model
 {
     public class Employee
     {
-
         #region Properties
         /// <summary
         /// Properties that match the Employee tabel attributs in the database.
@@ -18,7 +17,6 @@ namespace JanitorSystem.Model
         public int EmployeePhone { get; set; }
         public string EmployeeTitle { get; set; }
         #endregion
-
 
         #region Tostring method override
         /// <summary>

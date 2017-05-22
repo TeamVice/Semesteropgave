@@ -56,6 +56,5 @@ namespace JanitorSystem.ViewModel
         }
         #endregion
 
-
     }
 }

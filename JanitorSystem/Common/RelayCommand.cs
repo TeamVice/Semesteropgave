@@ -10,7 +10,7 @@ namespace JanitorSystem.Common
 {
     /// <summary>
     /// This class implemenets the ICommand interfase. 
-    /// The interfase enables delagates to generate command buttons in the system. 
+    /// The interfase enables delegates to generate command buttons in the system. 
     /// </summary>
     public class RelayCommand : ICommand
     {
