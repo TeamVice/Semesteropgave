@@ -16,29 +16,34 @@ namespace JanitorSystem.Handlers
 {
     public class AssignmentHandler
     {
-        public AssignmentHandler(AddAssignmentViewModel avm)
-        {
-            Avm = avm;
-        }
-
         #region Properties
 
         public AddAssignmentViewModel Avm { get; set; }
 
         #endregion
 
+        #region Comstructor that includes the local parameter avm of type AddAssignmentViewModel.
+
+        public AssignmentHandler(AddAssignmentViewModel avm)
+        {
+            Avm = avm;
+        }
+        #endregion
+
         #region AddAssignment Method
 
+        /// <summary>
+        /// The addAssignment method includes and if else to allow help boxes for the user in the view.
+        /// The message dialogboxes are wrapped in pragma. 
+        /// </summary>
         public void AddAssignment()
         {
-            //bool noAssignDataSelected = true;
-
+            
             if (Avm.Assignment.AssignTitle != null && Avm.Assignment.AssignText != null &&
                 Avm.Assignment.AssignRankNo != null && Avm.SelectedAppartmentId.AppartNo != null &&
                 Avm.SelectedDepartmentId.DepId != null && Avm.SelectedEmployeeId.EmployeeId != null)
             {
-                //noAssignDataSelected = false;
-
+               
                 Assignment tempAssignment = new Assignment();
 
                 tempAssignment.AssignTitle = Avm.Assignment.AssignTitle;
@@ -63,7 +68,6 @@ namespace JanitorSystem.Handlers
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
 
             }
-
         }
 
         public void SetPriorityToOne()

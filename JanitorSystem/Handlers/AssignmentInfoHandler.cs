@@ -13,15 +13,17 @@ namespace JanitorSystem.Handlers
 {
     public class AssignmentInfoHandler
     {
-        public AssignmentInfoHandler(AssignmentInfoViewModel vm)
-        {
-            this.Aiv = vm;
-        } // constructor
-
         #region Properties
 
         public AssignmentInfoViewModel Aiv { get; set; }
 
+        #endregion
+
+        #region Constructor with a local parameter of type assignmentInforViewModel.
+        public AssignmentInfoHandler(AssignmentInfoViewModel vm)
+        {
+            this.Aiv = vm;
+        }
         #endregion
 
         #region Http call to get AppartmentOwner // this cannot be in vicelist duo to await operator.
@@ -35,6 +37,11 @@ namespace JanitorSystem.Handlers
 
         #region Method to update assignment comment
 
+        /// <summary>
+        /// The method to update assignment includes a
+        /// message dialogboxes are wrapped in pragma. 
+        /// </summary>
+
         public void UpdateAssignComment()
         {
             Aiv.Singleton.EditAssignComment(Aiv.Singleton.SelectedAssignmentMVM);
@@ -47,6 +54,11 @@ namespace JanitorSystem.Handlers
         #endregion
 
         #region Method to delete assignemtns
+
+        /// <summary>
+        /// The deleteassignment method includes and if else to allow help boxes for the user in the view.
+        /// The message dialogboxes are wrapped in pragma. 
+        /// </summary>
 
         public void DeleteAssignment()
         {
