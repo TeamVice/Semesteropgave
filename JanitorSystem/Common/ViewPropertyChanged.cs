@@ -8,6 +8,10 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Common
 {
+/// <summary>
+/// This class implemenets the INotifyPropertyChanged interfase. 
+/// The interfase enables that changes updated in a view is implementaed by the view model in the system. 
+/// </summary>
     public class ViewPropertyChanged : INotifyPropertyChanged
     {
         #region Method to handle updating the view
@@ -19,7 +23,7 @@ namespace JanitorSystem.Common
 
         #endregion
        
-        #region Properties
+        #region Property of datatype PropertyChangedEventHandler
         public event PropertyChangedEventHandler PropertyChanged;
         #endregion
     }

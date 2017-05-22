@@ -10,8 +10,14 @@ using JanitorSystem.Common;
 
 namespace JanitorSystem.ViewModel
 {
+    /// <summary>
+    /// The view model inherits from the class ViewPropertyChanged from the common folder in the system.  
+    /// </summary>
+
     public class AddAssignmentViewModel : ViewPropertyChanged
     {
+
+
         public AddAssignmentViewModel()
         {
             Singleton = ViceListsSingleton.Instance;
@@ -25,23 +31,21 @@ namespace JanitorSystem.ViewModel
         } // constructor
 
         #region Properties
-         public Assignment Assignment { get; set; }
+        public Assignment Assignment { get; set; }
         public AssignmentHandler InstanceAssignmentHandler { get; set; }
         public ViceListsSingleton Singleton { get; set; }
         #endregion
        
-        #region ICommands
+        #region Properties af typen ICommand
         public ICommand AddAssignmentCommand { get; set; }
-
         public ICommand OpdaterAssignemntCommand { get; set; }
-
         public ICommand SetRankNoOneCommand { get; set; }
         public ICommand SetRankNoTwoCommand { get; set; }
         public ICommand SetRankNoThreeCommand { get; set; }
 
-        #endregion
+        #endregion 
 
-        #region SelectedEmployeeId
+        #region SelectedEmployeeId full property
         /// <summary>
         /// This select will give the neccecary ID associated with the employer that is picked in the combobox, it will then be used in AddAssignment() to pass on the ID to a tempassigment.
         /// </summary>
@@ -58,7 +62,7 @@ namespace JanitorSystem.ViewModel
         }
         #endregion
 
-        #region SelectedDepartmentId
+        #region SelectedDepartmentId full property
         /// <summary>
         /// This select will give the neccecary ID associated with the Department that is picked in the combobox, it will then be used in AddAssignment() to pass on the ID to a tempassigment.
         /// </summary>
