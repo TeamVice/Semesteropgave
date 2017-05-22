@@ -84,8 +84,8 @@
                                                         <ColumnDefinition Width="*"/>
                                                         <ColumnDefinition Width="0.25*"/>
                                                 </Grid.ColumnDefinitions>
-                                                <TextBlock Grid.Row="0" Grid.Column="1" Text="Prio:" HorizontalAlignment="Right" Style="{StaticResource ListViewText}" Margin="0,0,5,0" VerticalAlignment="Center"/>
-                                                <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding AssignRankNo}" Style="{StaticResource ListViewRank}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="Prio:" HorizontalAlignment="Right" Style="{StaticResource ListViewText}" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding AssignRankNo}" Style="{StaticResource ListViewRank}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                                     <TextBlock Grid.Row="1" Text="{Binding AssignText}" TextWrapping="Wrap" Style="{StaticResource ListViewText}"/>
                                                     <TextBlock Grid.Row="0" Text="{Binding AssignTitle}" Style="{StaticResource ListViewTitle}"/>
                                                     <TextBlock Grid.Row="1" Grid.Column="1" Text="Bygning: " HorizontalAlignment="Right" Style="{StaticResource ListViewText}" Margin="0,0,5,0"/>

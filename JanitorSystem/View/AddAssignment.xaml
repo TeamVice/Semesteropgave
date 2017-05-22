@@ -78,8 +78,22 @@
                                                 <Grid Width="318">
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition/>
+                                                        <RowDefinition/>
+                                                        <RowDefinition/>
                                                     </Grid.RowDefinitions>
-                                                    <TextBlock Grid.Row="0" Text="{Binding AssignTitle}" Style="{StaticResource ListViewTitle}"/>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="3.25*"/>
+                                                        <ColumnDefinition Width="1.25*"/>
+                                                        <ColumnDefinition Width="0.25*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding AssignTitle}" Style="{StaticResource ListViewTitle}"/>
+                                                    <TextBlock Grid.Row="1" Grid.Column="0" Grid.RowSpan="3" Text="{Binding AssignText}" Style="{StaticResource ListViewText}" TextWrapping="Wrap"/>
+                                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="Prio:" HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Style="{StaticResource ListViewText}"/>
+                                                    <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding AssignRankNo}" Style="{StaticResource ListViewRank}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="Lejlighed: " HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Style="{StaticResource ListViewText}"/>
+                                                    <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding AppartNo}" Style="{StaticResource ListViewText}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Row="2" Grid.Column="1" Text="Ansvarlig: " HorizontalAlignment="Right" Margin="0,0,5,0" VerticalAlignment="Center" Style="{StaticResource ListViewText}"/>
+                                                    <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding EmployeeId}" Style="{StaticResource ListViewText}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                                 </Grid>
                                             </StackPanel>
                                         </Border>
