@@ -153,15 +153,7 @@ namespace JanitorSystem.Model
             AppartmentList = new ObservableCollection<Appartment>();
             SortingList = new ObservableCollection<AssignmentSorting>();
 
-            #region LoadLists
-            
-            LoadAssignmentList();
-            LoadEmployeeList();
-            LoadAppartmentList();
-            LoadDepartmentList();
-            
-            LoadSortingList();
-            #endregion
+            LoadAllLists();
         }
 
         #endregion
@@ -331,6 +323,19 @@ namespace JanitorSystem.Model
 
         #endregion
 
-       
+        #region Method to load all lists
+
+        public void LoadAllLists()
+        {
+            LoadAssignmentList();
+            LoadAppartmentList();
+            LoadDepartmentList();
+            LoadEmployeeList();
+            LoadSortingList();
+        }
+
+        #endregion
+
+
     }
 }

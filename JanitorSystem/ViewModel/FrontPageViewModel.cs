@@ -15,10 +15,7 @@ using JanitorSystem.Handlers;
 
 namespace JanitorSystem.ViewModel
 {
-    /// <summary>
-    /// The view model inherits from the class ViewPropertyChanged from the common folder in the system.  
-    /// </summary>
-    public class MainViewModel : ViewPropertyChanged
+    public class FrontPageViewModel : ViewPropertyChanged
     {
         #region Properties
         public ViceListsSingleton Singleton { get; set; }
@@ -36,7 +33,7 @@ namespace JanitorSystem.ViewModel
         #endregion
 
         #region Contructor
-        public MainViewModel()
+        public FrontPageViewModel()
         {
 
             Singleton = ViceListsSingleton.Instance;
