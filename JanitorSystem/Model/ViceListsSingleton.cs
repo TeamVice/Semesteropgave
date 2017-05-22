@@ -16,62 +16,36 @@ using Windows.UI.Popups;
 
 namespace JanitorSystem.Model
 {
+    /// <summary>
+    /// The ViceListSingleton class inherits from the class ViewPropertyChanged from the common folder in the system.  
+    /// </summary>
+
     public sealed class ViceListsSingleton : ViewPropertyChanged
     {
-        #region Singleton // Constructor
-        private ViceListsSingleton()
-        {
-            AssignmentList = new ObservableCollection<Assignment>();
-            EmployeeList = new ObservableCollection<Employee>();
-            DepartmentsList = new ObservableCollection<Department>();
-            AppartmentList = new ObservableCollection<Appartment>();
-            SortingList = new ObservableCollection<AssignmentSorting>();
 
-            #region LoadLists
-            
-            LoadAssignmentList();
-            LoadEmployeeList();
-            LoadAppartmentList();
-            LoadDepartmentList();
-            
-            LoadSortingList();
-            #endregion
-        } // constructor 
 
-        private static readonly ViceListsSingleton instance = new ViceListsSingleton();
-
+        #region Instance property. 
+        /// <summary>
+        /// Instance prop type ViceListSingleton, sealed class with private konstruktør. 
+        /// A prop which has a get metoden that returns the variable instance. 
+        /// </summary>
         public static ViceListsSingleton Instance
         {
             get { return instance; }
         }
 
-        
-
-
         #endregion
 
-        #region ProgressRing
-        private bool _isBusy;
 
-        public bool IsBusy
-        {
-            get { return _isBusy; }
-            set
-            {
-                _isBusy = value;
-                OnPropertyChanged(nameof(IsBusy));
-            }
-        }
-        #endregion
-
-        #region Lister
-
-        
-        #region PropAssignmentList
+        #region Lists in the janitor system
 
         /// <summary>
-        /// Denne prop er initieseret af assignmenthandler.
+        /// This region includes all full props of type observablecollection with a specified class datatype. 
+        /// The set methods include Onpropertychanged.
         /// </summary>
+
+
+        #region PropAssignmentList
 
         private ObservableCollection<Assignment> assignmentList;
 
@@ -85,6 +59,11 @@ namespace JanitorSystem.Model
             }
 
         }
+
+        #endregion
+
+        #region PropSortingList
+
         private ObservableCollection<AssignmentSorting> sortingList;
 
         public ObservableCollection<AssignmentSorting> SortingList
@@ -97,17 +76,7 @@ namespace JanitorSystem.Model
             }
         }
 
-
-        public void opdater()
-        {
-            ClearAssignmentList();
-            LoadAssignmentList();
-        }
-        
-
         #endregion
-
- 
 
         #region PropEmployeeList
 
@@ -147,11 +116,15 @@ namespace JanitorSystem.Model
         #endregion
 
 
-
-
         #endregion
 
-        #region SelectedAssignmentMVM
+
+        #region PropSelectedAssignmentMVM
+
+        /// <summary>
+        /// In order for the janitor to select an assignment in the assignment list, 
+        /// this property is bound to the list view of the main page for the janitor. 
+        /// </summary>
         private AssignmentSorting selectedAssignmentMVM;
 
         public AssignmentSorting SelectedAssignmentMVM
@@ -162,6 +135,46 @@ namespace JanitorSystem.Model
                 selectedAssignmentMVM = value;
                 OnPropertyChanged(nameof(SelectedAssignmentMVM));
             }
+        }
+
+        #endregion
+
+        #region Singleton // Constructor
+        /// <summary>
+        /// Private constructor. Assibility is limited to this specific class.
+        /// </summary>
+
+        private ViceListsSingleton()
+        {
+            AssignmentList = new ObservableCollection<Assignment>();
+            EmployeeList = new ObservableCollection<Employee>();
+            DepartmentsList = new ObservableCollection<Department>();
+            AppartmentList = new ObservableCollection<Appartment>();
+            SortingList = new ObservableCollection<AssignmentSorting>();
+
+            #region LoadLists
+            
+            LoadAssignmentList();
+            LoadEmployeeList();
+            LoadAppartmentList();
+            LoadDepartmentList();
+            
+            LoadSortingList();
+            #endregion
+        } 
+
+        private static readonly ViceListsSingleton instance = new ViceListsSingleton();
+
+        #endregion
+
+
+
+        #region Method to update the views
+
+        public void opdater()
+        {
+            ClearAssignmentList();
+            LoadAssignmentList();
         }
 
         #endregion
@@ -197,7 +210,7 @@ namespace JanitorSystem.Model
                 AssignmentList = await FacadeService.GetAssignmentList();
                 LoadSortingList();
                 
-                //AppartmentList = new ObservableCollection<Appartment>(AppartmentList.OrderBy(j => j.AppartBuildingNo ));
+               
             }
             catch (Exception e)
             {
@@ -208,6 +221,7 @@ namespace JanitorSystem.Model
 
         #endregion
 
+        #region LoadAssignmentSortingList
         public void LoadSortingList()
         {
 
@@ -230,9 +244,10 @@ namespace JanitorSystem.Model
                     }));
             SortingList = res;
         }
+        #endregion
 
         #region SorterMetoder
-       public void OrderedTimeDB()
+        public void OrderedTimeDB()
         {
             SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.AssignId));
         }
@@ -249,8 +264,6 @@ namespace JanitorSystem.Model
 
         #endregion
       
-
-
         #region LoadEmployeeList
 
         public async void LoadEmployeeList()
@@ -301,9 +314,10 @@ namespace JanitorSystem.Model
         }
 
         #endregion
+
         #endregion
-        
-        #region Methods to clear lists
+
+        #region Method to clear lists
 
         #region ClearListerMetoder
 
@@ -316,7 +330,6 @@ namespace JanitorSystem.Model
         }
 
         #endregion
-
 
 
         #endregion

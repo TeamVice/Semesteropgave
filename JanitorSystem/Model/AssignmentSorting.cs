@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Model
 {
+    /// <summary>
+    /// This class include properties from both the assignment and appartment classes. 
+    /// The class is used for the combination of class imformation in a view. 
+    /// </summary>
     public class AssignmentSorting
     {
-        /// <summary>
-        /// This class include properties from both the assignment and appartment classes. 
-        /// The class is used for the combination of class imformation in a view. 
-        /// </summary>
-
+      
         #region Properties from Assignment class
 
         public int AssignId { get; set; }

@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 
 namespace JanitorSystem.Model
 {
+   
+
     public class Assignment
     {
         #region Properties
-       
+        /// <summary
+        /// Properties that match the Assignment tabel attributs in the database.
+        /// </summary>
         public int AssignId { get; set; }
         public string AssignTitle { get; set; }
         public string AssignText { get; set; }
@@ -22,10 +26,6 @@ namespace JanitorSystem.Model
 
         #endregion
 
-
-        public override string ToString()
-        {
-            return $"{AssignTitle} ";
-        }
+      
     }
 }
