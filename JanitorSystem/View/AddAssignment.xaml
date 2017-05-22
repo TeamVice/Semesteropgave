@@ -88,7 +88,6 @@
                                 </ListView.ItemTemplate>
                             </ListView>
                         </Border>
-                        <ProgressRing IsActive="{Binding Singleton.IsBusy}" Style="{StaticResource ProgressRingStyle}"/>
                     </Grid>
                     <Grid Grid.Row="4">
                         <Grid.ColumnDefinitions>
