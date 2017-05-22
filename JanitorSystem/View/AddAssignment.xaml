@@ -75,11 +75,11 @@
                                     <DataTemplate>
                                         <Border Style="{StaticResource ListViewBorder}">
                                             <StackPanel>
-                                                <Grid>
+                                                <Grid Width="318">
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition/>
                                                     </Grid.RowDefinitions>
-                                                    <TextBlock Grid.Row="0" Text="{Binding AssignTitle}" Style="{StaticResource ListViewTitle}" Padding="0,0,500,0"/>
+                                                    <TextBlock Grid.Row="0" Text="{Binding AssignTitle}" Style="{StaticResource ListViewTitle}"/>
                                                 </Grid>
                                             </StackPanel>
                                         </Border>
