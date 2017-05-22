@@ -17,8 +17,25 @@ namespace JanitorSystem.ViewModel
 {
     public class MainViewModel : ViewPropertyChanged
     {
+        #region Properties
+        public ViceListsSingleton Singleton { get; set; }
+
+        #endregion
+
+        #region Properties af typen ICommand
+        public ICommand SortByTimeDbCommand { get; set; }
+        public ICommand SortByRankNoCommand { get; set; }
+
+        public ICommand SortByBuildingNoCommand { get; set; }
+
+        public ICommand UpdateSortingListCommand { get; set; }
+
+        #endregion
+
+        #region Contructor
         public MainViewModel()
         {
+
             Singleton = ViceListsSingleton.Instance;
             #region Iniates Clear methods // To avoid a bug when changing from assignmentinfo view to AssignmentListFrontPage
 
@@ -33,21 +50,9 @@ namespace JanitorSystem.ViewModel
             SortByBuildingNoCommand = new RelayCommand(Singleton.OrderByBuildingNo, null);
             UpdateSortingListCommand = new RelayCommand(Singleton.LoadSortingList,null);
             
-        } // constructor
-
-        #region Properties
-        public ViceListsSingleton Singleton { get; set; }
-
+        }
         #endregion
 
-        #region ICommands
-        public ICommand SortByTimeDbCommand { get; set; }
-        public ICommand SortByRankNoCommand { get; set; }
 
-       public ICommand SortByBuildingNoCommand { get; set; }
-
-        public ICommand UpdateSortingListCommand { get; set; }
-
-        #endregion
     }
 }
