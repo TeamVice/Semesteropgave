@@ -29,10 +29,7 @@ namespace JanitorSystem.Common
         public RelayCommand(Action methodToExecute, Func<bool> methodToDetectCanExecute)
         {
             this.methodToExecute = methodToExecute;
-            this.methodToDetectCanExecute = methodToDetectCanExecute;
-            //this.canExecuteChangedTimer.Tick += canExecuteChangedTimer_Tick;
-            //this.canExecuteChangedTimer.Interval = new TimeSpan(0, 0, 1);
-            //this.canExecuteChangedTimer.Start();
+            this.methodToDetectCanExecute = methodToDetectCanExecute;  
         }
 
         #endregion
@@ -64,17 +61,7 @@ namespace JanitorSystem.Common
 
         #endregion
 
-        #region Method we may use to make a button unclickable
 
-         private void canExecuteChangedTimer_Tick(object sender, object e)
-        {
-            if (this.CanExecuteChanged != null)
-            {
-                this.CanExecuteChanged(this, EventArgs.Empty);
-            }
-        }
-
-        #endregion
        
     }
 }

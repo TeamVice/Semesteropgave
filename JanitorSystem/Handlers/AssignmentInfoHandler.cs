@@ -44,11 +44,22 @@ namespace JanitorSystem.Handlers
 
         public void UpdateAssignComment()
         {
-            Aiv.Singleton.EditAssignComment(Aiv.Singleton.SelectedAssignmentMVM);
+            if (Aiv.Singleton.SelectedAssignmentMVM != null)
+            {
+                Aiv.Singleton.EditAssignComment(Aiv.Singleton.SelectedAssignmentMVM);
 
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-            new MessageDialog("Du har opdateret opgavekommentaren").ShowAsync();
+                new MessageDialog("Du har opdateret opgavekommentaren").ShowAsync();
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+            }
+            else
+            {
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+                new MessageDialog("Ingen opgave er valgt.").ShowAsync();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
+
+            }
+
         }
 
         #endregion
