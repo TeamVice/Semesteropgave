@@ -49,7 +49,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.DataContext>
-                <ViewModel:MainViewModel/>
+                <ViewModel:FrontPageViewModel/>
             </Grid.DataContext>
             <Grid Grid.Row="2" Grid.Column="1">
                 <Grid.RowDefinitions>

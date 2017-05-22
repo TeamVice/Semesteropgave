@@ -109,7 +109,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\AddAssignmentViewModel.cs" />
     <Compile Include="ViewModel\AssignmentInfoViewModel.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\FrontPageViewModel.cs" />
     <Compile Include="View\AddAssignment.xaml.cs">
       <DependentUpon>AddAssignment.xaml</DependentUpon>
     </Compile>

@@ -15,7 +15,7 @@ using JanitorSystem.Handlers;
 
 namespace JanitorSystem.ViewModel
 {
-    public class MainViewModel : ViewPropertyChanged
+    public class FrontPageViewModel : ViewPropertyChanged
     {
         #region Properties
         public ViceListsSingleton Singleton { get; set; }
@@ -33,7 +33,7 @@ namespace JanitorSystem.ViewModel
         #endregion
 
         #region Contructor
-        public MainViewModel()
+        public FrontPageViewModel()
         {
 
             Singleton = ViceListsSingleton.Instance;
