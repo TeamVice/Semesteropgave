@@ -14,9 +14,14 @@ using System.ComponentModel;
 
 namespace JanitorSystem.Facade
 {
+    /// <summary>
+    /// This class comminicates with the TeamVice Webservice Dot.net solution through Http commands.
+    /// </summary>
     public class FacadeService
     {
+        #region Serverurl varible with the azure website address.
         private const string serverUrl = "http://teamvicewebservice20170518050703.azurewebsites.net";
+        #endregion
 
         #region Get Http kald
 
@@ -239,7 +244,6 @@ namespace JanitorSystem.Facade
         }
 
         #endregion
-
 
         #region Delete Http kald
 
