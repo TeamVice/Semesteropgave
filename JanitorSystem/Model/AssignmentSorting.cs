@@ -8,7 +8,12 @@ namespace JanitorSystem.Model
 {
     public class AssignmentSorting
     {
-        #region Properties Assignment
+        /// <summary>
+        /// This class include properties from both the assignment and appartment classes. 
+        /// The class is used for the combination of class imformation in a view. 
+        /// </summary>
+
+        #region Properties from Assignment class
 
         public int AssignId { get; set; }
         public string AssignTitle { get; set; }
@@ -21,7 +26,7 @@ namespace JanitorSystem.Model
 
         #endregion
 
-        #region Properties
+        #region Properties from Appartment class
 
         public string AppartmentOwner { get; set; }
         public int AppartmentPhone1 { get; set; }

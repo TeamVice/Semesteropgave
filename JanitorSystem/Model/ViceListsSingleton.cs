@@ -321,10 +321,6 @@ namespace JanitorSystem.Model
 
         #endregion
 
-        //var hotelList10 = from r in AssignmentList
-        //    join h in AppartmentList
-        //    on r.AppartNo equals h.AppartNo
-        //    where h.AppartNo.Equals(9)
-        //    select r.AssignTitle;
+       
     }
 }
