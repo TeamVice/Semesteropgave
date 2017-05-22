@@ -12,26 +12,8 @@ namespace JanitorSystem.ViewModel
 {
     public class AssignmentInfoViewModel : ViewPropertyChanged
     {
-        public AssignmentInfoViewModel()
-        {
-            Singleton = ViceListsSingleton.Instance;
 
-            HandlerInfoAssign = new AssignmentInfoHandler(this);
-            EditAssignCommentCommand = new RelayCommand(HandlerInfoAssign.UpdateAssignComment,null);
-
-            FinishAssignmentCommand = new RelayCommand(HandlerInfoAssign.DeleteAssignment,null);
-#pragma warning disable 4014
-            LoadAppartData();
-#pragma warning restore 4014
-            
-        } // constructor
-
-        public async Task LoadAppartData()
-        {
-            SelectedAppartment = await HandlerInfoAssign.GetAppartmentOwner();
-        }
-
-        #region ICommands
+        #region Properties af typen ICommand
 
         public ICommand EditAssignCommentCommand { get; set; }
 
@@ -50,12 +32,39 @@ namespace JanitorSystem.ViewModel
             get { return selectedAppartment; }
             set
             {
-                selectedAppartment = value; 
+                selectedAppartment = value;
                 OnPropertyChanged(nameof(SelectedAppartment));
             }
         }
 
 
         #endregion
+
+        #region Constructor
+
+        public AssignmentInfoViewModel()
+        {
+            Singleton = ViceListsSingleton.Instance;
+
+            HandlerInfoAssign = new AssignmentInfoHandler(this);
+            EditAssignCommentCommand = new RelayCommand(HandlerInfoAssign.UpdateAssignComment,null);
+
+            FinishAssignmentCommand = new RelayCommand(HandlerInfoAssign.DeleteAssignment,null);
+#pragma warning disable 4014
+            LoadAppartData();
+#pragma warning restore 4014
+            
+        }
+        #endregion
+
+        #region Method to load appartment data
+
+        public async Task LoadAppartData()
+        {
+            SelectedAppartment = await HandlerInfoAssign.GetAppartmentOwner();
+        }
+
+        #endregion
+
     }
 }
