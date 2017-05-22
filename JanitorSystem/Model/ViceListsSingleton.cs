@@ -29,11 +29,12 @@ namespace JanitorSystem.Model
         /// Instance prop type ViceListSingleton, sealed class with private konstruktør. 
         /// A prop which has a get metoden that returns the variable instance. 
         /// </summary>
+        /// 
+        private static readonly ViceListsSingleton instance = new ViceListsSingleton();
         public static ViceListsSingleton Instance
         {
             get { return instance; }
         }
-
         #endregion
 
 
@@ -161,9 +162,7 @@ namespace JanitorSystem.Model
             
             LoadSortingList();
             #endregion
-        } 
-
-        private static readonly ViceListsSingleton instance = new ViceListsSingleton();
+        }
 
         #endregion
 
