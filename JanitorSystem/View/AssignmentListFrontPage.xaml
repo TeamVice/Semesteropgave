@@ -125,7 +125,7 @@
                 <Grid Grid.Column="5">
                     <!--<Button Content="Akut" Command="{Binding SortByRankNoCommand, Mode=TwoWay}"/>-->
                 </Grid>
-                <Button Content="Opdater" Grid.Column="7" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Command="{Binding UpdateSortingListCommand, Mode=TwoWay}"/>
+                <!--<Button Content="Opdater" Grid.Column="7" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Command="{Binding UpdateSortingListCommand, Mode=TwoWay}"/>-->
             </Grid>
         </Grid>
     </Grid>
