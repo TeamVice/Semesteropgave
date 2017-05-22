@@ -119,7 +119,6 @@ namespace JanitorSystem.Model
 
         #endregion
 
-
         #region PropSelectedAssignmentMVM
 
         /// <summary>
@@ -209,50 +208,6 @@ namespace JanitorSystem.Model
 
 
         #endregion
-
-        #region ShowSorting list
-        public void ShowSortingList()
-        {
-
-            ObservableCollection<AssignmentSorting> res = new ObservableCollection<AssignmentSorting>(
-                AssignmentList.Join(AppartmentList, p => p.AppartNo, g => g.AppartNo,
-                    (p, g) => new AssignmentSorting()
-                    {
-                        AssignTitle = p.AssignTitle,
-                        AssignText = p.AssignText,
-                        DepId = p.DepId,
-                        BuildingNo = g.BuildingNo,
-                        AssignRankNo = p.AssignRankNo,
-                        AppartNo = p.AppartNo,
-                        AppartmentOwner = g.AppartmentOwner,
-                        AppartmentPhone1 = g.AppartmentPhone1,
-                        AppartmentPhone2 = g.AppartmentPhone2,
-                        AssignComment = p.AssignComment,
-                        EmployeeId = p.EmployeeId,
-                        AssignId = p.AssignId
-                    }));
-            SortingList = res;
-        }
-        #endregion
-
-        #region SorterMetoder
-        public void OrderedTimeDB()
-        {
-            SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.AssignId));
-        }
-        public void OrderedRankList()
-        {
-            SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.AssignRankNo));
-
-        }
-
-        public void OrderByDepAndBuildingNo()
-        {
-           SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.DepId).ThenBy(j => j.BuildingNo));
-        }
-
-
-        #endregion
       
         #region LoadEmployeeList
 
@@ -305,6 +260,31 @@ namespace JanitorSystem.Model
 
         #endregion
 
+        #region ShowSorting list
+        public void ShowSortingList()
+        {
+
+            ObservableCollection<AssignmentSorting> res = new ObservableCollection<AssignmentSorting>(
+                AssignmentList.Join(AppartmentList, p => p.AppartNo, g => g.AppartNo,
+                    (p, g) => new AssignmentSorting()
+                    {
+                        AssignTitle = p.AssignTitle,
+                        AssignText = p.AssignText,
+                        DepId = p.DepId,
+                        BuildingNo = g.BuildingNo,
+                        AssignRankNo = p.AssignRankNo,
+                        AppartNo = p.AppartNo,
+                        AppartmentOwner = g.AppartmentOwner,
+                        AppartmentPhone1 = g.AppartmentPhone1,
+                        AppartmentPhone2 = g.AppartmentPhone2,
+                        AssignComment = p.AssignComment,
+                        EmployeeId = p.EmployeeId,
+                        AssignId = p.AssignId
+                    }));
+            SortingList = res;
+        }
+        #endregion
+
         #endregion
 
         #region Method to clear lists
@@ -337,6 +317,24 @@ namespace JanitorSystem.Model
 
         #endregion
 
+        #region SortingMethod
+        public void OrderedTimeDB()
+        {
+            SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.AssignId));
+        }
+        public void OrderedRankList()
+        {
+            SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.AssignRankNo).ThenBy(j => j.DepId));
+
+        }
+
+        public void OrderByDepAndBuildingNo()
+        {
+            SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.DepId).ThenBy(j => j.BuildingNo));
+        }
+
+
+        #endregion
 
     }
 }
