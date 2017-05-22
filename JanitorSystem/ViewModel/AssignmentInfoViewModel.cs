@@ -31,7 +31,7 @@ namespace JanitorSystem.ViewModel
             SelectedAppartment = await HandlerInfoAssign.GetAppartmentOwner();
         }
 
-        #region ICommands
+        #region Properties af typen ICommand
 
         public ICommand EditAssignCommentCommand { get; set; }
 

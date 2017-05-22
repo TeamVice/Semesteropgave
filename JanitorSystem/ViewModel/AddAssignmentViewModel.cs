@@ -17,25 +17,12 @@ namespace JanitorSystem.ViewModel
     public class AddAssignmentViewModel : ViewPropertyChanged
     {
 
-
-        public AddAssignmentViewModel()
-        {
-            Singleton = ViceListsSingleton.Instance;
-            InstanceAssignmentHandler = new AssignmentHandler(this);          
-            Assignment = new Assignment();
-            AddAssignmentCommand = new RelayCommand(InstanceAssignmentHandler.AddAssignment,null);
-            OpdaterAssignemntCommand = new RelayCommand(Singleton.opdater,null);
-            SetRankNoOneCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToOne,null);
-            SetRankNoTwoCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToTwo,null);
-            SetRankNoThreeCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToThree,null);
-        } // constructor
-
         #region Properties
         public Assignment Assignment { get; set; }
         public AssignmentHandler InstanceAssignmentHandler { get; set; }
         public ViceListsSingleton Singleton { get; set; }
         #endregion
-       
+
         #region Properties af typen ICommand
         public ICommand AddAssignmentCommand { get; set; }
         public ICommand OpdaterAssignemntCommand { get; set; }
@@ -80,7 +67,7 @@ namespace JanitorSystem.ViewModel
 
         #endregion
 
-        #region SelectedAppartmentId
+        #region SelectedAppartmentId full property
 
         private Appartment selectedAppartmentId;
 
@@ -94,5 +81,19 @@ namespace JanitorSystem.ViewModel
             }
         }
         #endregion
+
+        public AddAssignmentViewModel()
+        {
+            Singleton = ViceListsSingleton.Instance;
+            InstanceAssignmentHandler = new AssignmentHandler(this);          
+            Assignment = new Assignment();
+            AddAssignmentCommand = new RelayCommand(InstanceAssignmentHandler.AddAssignment,null);
+            OpdaterAssignemntCommand = new RelayCommand(Singleton.opdater,null);
+            SetRankNoOneCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToOne,null);
+            SetRankNoTwoCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToTwo,null);
+            SetRankNoThreeCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToThree,null);
+        } // constructor
+
+ 
     }
 }

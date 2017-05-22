@@ -166,8 +166,6 @@ namespace JanitorSystem.Model
 
         #endregion
 
-
-
         #region Method to update the views
 
         public void opdater()
