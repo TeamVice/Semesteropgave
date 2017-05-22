@@ -74,7 +74,7 @@
                                     <DataTemplate>
                                         <Border Style="{StaticResource ListViewBorder}">
                                             <!--<StackPanel>-->
-                                                <Grid>
+                                                <Grid Width="320">
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition/>
                                                         <RowDefinition/>
