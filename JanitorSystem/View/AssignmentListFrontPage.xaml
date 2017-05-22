@@ -78,7 +78,8 @@
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition/>
                                                         <RowDefinition/>
-                                                    </Grid.RowDefinitions>
+                                                        <RowDefinition/>
+                                                </Grid.RowDefinitions>
                                                     <Grid.ColumnDefinitions>
                                                         <ColumnDefinition Width="3.5*"/>
                                                         <ColumnDefinition Width="*"/>
@@ -86,11 +87,13 @@
                                                 </Grid.ColumnDefinitions>
                                                     <TextBlock Grid.Row="0" Grid.Column="1" Text="Prio:" HorizontalAlignment="Right" Style="{StaticResource ListViewText}" Margin="0,0,5,0" VerticalAlignment="Center"/>
                                                     <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding AssignRankNo}" Style="{StaticResource ListViewRank}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                                    <TextBlock Grid.Row="1" Text="{Binding AssignText}" TextWrapping="Wrap" Style="{StaticResource ListViewText}"/>
-                                                    <TextBlock Grid.Row="0" Text="{Binding AssignTitle}" Style="{StaticResource ListViewTitle}"/>
-                                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="Bygning: " HorizontalAlignment="Right" Style="{StaticResource ListViewText}" Margin="0,0,5,0"/>
-                                                    <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding BuildingNo}" HorizontalAlignment="Left" Style="{StaticResource ListViewText}"/>
-                                                </Grid>
+                                                    <TextBlock Grid.Row="1" Grid.RowSpan="2" Text="{Binding AssignText}" TextWrapping="Wrap" Style="{StaticResource ListViewText}" VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Row="0" Text="{Binding AssignTitle}" Style="{StaticResource ListViewTitle}" VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Row="2" Grid.Column="1" Text="Bygning: " HorizontalAlignment="Right" Style="{StaticResource ListViewText}" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Row="2" Grid.Column="2" Text="{Binding BuildingNo}" HorizontalAlignment="Left" Style="{StaticResource ListViewText}" VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="Afdeling: " HorizontalAlignment="Right" Style="{StaticResource ListViewText}" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                                                    <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding DepId}" HorizontalAlignment="Left" Style="{StaticResource ListViewText}" VerticalAlignment="Center"/>
+                                            </Grid>
                                             <!--</StackPanel>-->
                                         </Border>
                                     </DataTemplate>
