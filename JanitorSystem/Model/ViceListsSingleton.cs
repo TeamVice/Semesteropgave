@@ -158,9 +158,9 @@ namespace JanitorSystem.Model
 
         #endregion
 
-        #region Method to update the views
+        #region Method to update DLA ListView
 
-        public void opdater()
+        public void UpdateToDLAListView()
         {
             ClearAssignmentList();
             LoadAssignmentList();
