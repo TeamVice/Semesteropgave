@@ -88,7 +88,7 @@ namespace JanitorSystem.ViewModel
             InstanceAssignmentHandler = new AssignmentHandler(this);          
             Assignment = new Assignment();
             AddAssignmentCommand = new RelayCommand(InstanceAssignmentHandler.AddAssignment,null);
-            OpdaterAssignemntCommand = new RelayCommand(Singleton.opdater,null);
+            OpdaterAssignemntCommand = new RelayCommand(Singleton.UpdateToDLAListView,null);
             SetRankNoOneCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToOne,null);
             SetRankNoTwoCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToTwo,null);
             SetRankNoThreeCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToThree,null);
