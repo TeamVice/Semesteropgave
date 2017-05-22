@@ -50,7 +50,7 @@ namespace JanitorSystem.ViewModel
 
             SortByTimeDbCommand = new RelayCommand(Singleton.OrderedTimeDB,null);
             SortByRankNoCommand = new RelayCommand(Singleton.OrderedRankList, null);
-            SortByBuildingNoCommand = new RelayCommand(Singleton.OrderByBuildingNo, null);
+            SortByBuildingNoCommand = new RelayCommand(Singleton.OrderByDepAndBuildingNo, null);
             UpdateSortingListCommand = new RelayCommand(Singleton.ShowSortingList,null);
             
         }
