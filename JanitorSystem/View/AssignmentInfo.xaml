@@ -54,9 +54,9 @@
                         <RowDefinition Height="50"/>
                         <RowDefinition Height="5*"/>
                         <RowDefinition Height="20"/>
-                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="2*"/>
                         <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="0.5*"/>
                     </Grid.RowDefinitions>
                     <Grid Grid.Row="1">
                         <Grid.ColumnDefinitions>
@@ -68,32 +68,31 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="2*"/>
-                            <RowDefinition Height="3*"/>
-                            <RowDefinition Height="2*"/>
-                            <RowDefinition Height="2*"/>
-                            <RowDefinition Height="2*"/>
-                            <RowDefinition Height="2*"/>
-                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="4*"/>
                             <ColumnDefinition Width="6*"/>
                         </Grid.ColumnDefinitions>
-                        <Border Grid.RowSpan="7" Grid.ColumnSpan="3" Style="{StaticResource Border}"/>
+                        <Border Grid.RowSpan="6" Grid.ColumnSpan="3" Style="{StaticResource Border}"/>
                         <TextBlock Grid.Row="0" Grid.Column="0" Text="Titel: " Margin="10,5,10,5" Style="{StaticResource AssignInfoDes}"/>
                         <TextBlock x:Name="AssignInfoTitleTextBlock" Grid.Row="0" Grid.Column="1" Text="{Binding Singleton.SelectedAssignmentMVM.AssignTitle}" Style="{StaticResource ListViewAssignInfo}" Margin="0,5,10,5" FontWeight="Bold"/>
                         <TextBlock Grid.Row="1" Grid.Column="0" Text="Beskrivelse:" Style="{StaticResource AssignInfoDes}"/>
-                        <TextBlock x:Name="AssignInfoBuildingNoTextBlock" Grid.Row="3" Grid.Column="1" Text="{Binding Singleton.SelectedAssignmentMVM.BuildingNo}" Style="{StaticResource ListViewAssignInfo}" HorizontalAlignment="Left"/>
-                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Byg og lejnr.:" Style="{StaticResource AssignInfoDes}"/>
-                        <TextBlock x:Name="AssignInfoAddressTextBlock" Grid.Row="3" Grid.Column="1" Text="{Binding Singleton.SelectedAssignmentMVM.AppartNo, Mode=TwoWay}" Style="{StaticResource ListViewAssignInfo}" HorizontalAlignment="Center"/>
-                        <TextBlock x:Name="AssignInfoDescriptionTextBlock" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" Text="{Binding Singleton.SelectedAssignmentMVM.AssignText}" Style="{StaticResource ListViewAssignInfo}" TextWrapping="WrapWholeWords" Padding="0,0,5,0" VerticalAlignment="Top"/>
-                        <TextBlock Grid.Row="6" Grid.Column="0" Text="Navn:" Style="{StaticResource AssignInfoDes}"/>
-                        <TextBlock x:Name="AssignInfoNameTextBlock" Grid.Row="6" Grid.Column="1" Text="{Binding Singleton.SelectedAssignmentMVM.AppartmentOwner}" Style="{StaticResource ListViewAssignInfo}"/>
-                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Primær tlf: " Style="{StaticResource AssignInfoDes}"/>
-                        <TextBlock x:Name="AssignInfoPhoneTextBlock" Grid.Row="4" Grid.Column="1" Text="{Binding Singleton.SelectedAssignmentMVM.AppartmentPhone1}" Style="{StaticResource ListViewAssignInfo}"/>
-                        <TextBlock Grid.Row="5" Grid.Column="0" Text="Sekundær tlf: " Style="{StaticResource AssignInfoDes}" />
-                        <TextBlock x:Name="AssignInfoSecondPhoneTextBlock" Grid.Row="5" Grid.Column="1" Text="{Binding Singleton.SelectedAssignmentMVM.AppartmentPhone2}" Style="{StaticResource ListViewAssignInfo}"/>
+                        <TextBlock x:Name="AssignInfoBuildingNoTextBlock" Grid.Row="2" Grid.Column="1" Text="{Binding Singleton.SelectedAssignmentMVM.BuildingNo}" Style="{StaticResource ListViewAssignInfo}" HorizontalAlignment="Left"/>
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Byg og lejnr.:" Style="{StaticResource AssignInfoDes}"/>
+                        <TextBlock x:Name="AssignInfoAddressTextBlock" Grid.Row="2" Grid.Column="1" Text="{Binding Singleton.SelectedAssignmentMVM.AppartNo, Mode=TwoWay}" Style="{StaticResource ListViewAssignInfo}" HorizontalAlignment="Center"/>
+                        <TextBlock x:Name="AssignInfoDescriptionTextBlock" Grid.Row="1" Grid.Column="1" Text="{Binding Singleton.SelectedAssignmentMVM.AssignText}" Style="{StaticResource ListViewAssignInfo}" TextWrapping="Wrap" Padding="0,0,5,0" VerticalAlignment="Top"/>
+                        <TextBlock Grid.Row="5" Grid.Column="0" Text="Navn:" Style="{StaticResource AssignInfoDes}"/>
+                        <TextBlock x:Name="AssignInfoNameTextBlock" Grid.Row="5" Grid.Column="1" Text="{Binding Singleton.SelectedAssignmentMVM.AppartmentOwner}" Style="{StaticResource ListViewAssignInfo}"/>
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Primær tlf: " Style="{StaticResource AssignInfoDes}"/>
+                        <TextBlock x:Name="AssignInfoPhoneTextBlock" Grid.Row="3" Grid.Column="1" Text="{Binding Singleton.SelectedAssignmentMVM.AppartmentPhone1}" Style="{StaticResource ListViewAssignInfo}"/>
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Sekundær tlf: " Style="{StaticResource AssignInfoDes}" />
+                        <TextBlock x:Name="AssignInfoSecondPhoneTextBlock" Grid.Row="4" Grid.Column="1" Text="{Binding Singleton.SelectedAssignmentMVM.AppartmentPhone2}" Style="{StaticResource ListViewAssignInfo}"/>
                     </Grid>
                     <Grid Grid.Row="4">
                         <Border Style="{StaticResource Border}">
@@ -103,24 +102,13 @@
                     <Grid Grid.Row="5">
                         <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="Opdater Kommentar" Command="{Binding EditAssignCommentCommand}" />
                     </Grid>
-                    <Grid Grid.Row="6">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Button Content="Tilbage til opgaver" HorizontalAlignment="Center" VerticalAlignment="Bottom" Click="AssignInfoToFP" FontWeight="Bold"/>
-                    </Grid>
                 </Grid>
             </Grid>
 
             <!-- Area with menu buttons -->
             <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
                 <Grid Grid.Column="1">
-
-                    <!-- <AppBarButton Icon="List" HorizontalAlignment="Center"/> -->
-
+                    <Button Content="Tilbage til opgaver" HorizontalAlignment="Center" VerticalAlignment="Top" Click="AssignInfoToFP" FontWeight="Bold"/>
                 </Grid>
 
             </Grid>
