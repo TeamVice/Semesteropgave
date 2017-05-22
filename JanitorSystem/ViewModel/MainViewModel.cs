@@ -15,6 +15,9 @@ using JanitorSystem.Handlers;
 
 namespace JanitorSystem.ViewModel
 {
+    /// <summary>
+    /// The view model inherits from the class ViewPropertyChanged from the common folder in the system.  
+    /// </summary>
     public class MainViewModel : ViewPropertyChanged
     {
         #region Properties
