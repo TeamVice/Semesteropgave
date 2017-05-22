@@ -80,14 +80,16 @@
                                                         <RowDefinition/>
                                                     </Grid.RowDefinitions>
                                                     <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition Width="2*"/>
+                                                        <ColumnDefinition Width="3.5*"/>
                                                         <ColumnDefinition Width="*"/>
-                                                    </Grid.ColumnDefinitions>
-                                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding AssignRankNo}" Style="{StaticResource ListViewRank}" HorizontalAlignment="Stretch"/>
+                                                        <ColumnDefinition Width="0.25*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Row="0" Grid.Column="1" Text="Prio:" HorizontalAlignment="Right" Style="{StaticResource ListViewText}" Margin="0,0,5,0" VerticalAlignment="Center"/>
+                                                <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding AssignRankNo}" Style="{StaticResource ListViewRank}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                                                     <TextBlock Grid.Row="1" Text="{Binding AssignText}" TextWrapping="Wrap" Style="{StaticResource ListViewText}"/>
                                                     <TextBlock Grid.Row="0" Text="{Binding AssignTitle}" Style="{StaticResource ListViewTitle}"/>
-                                                    <!--<TextBlock Grid.Row="1" Grid.Column="1" Text="Bygning:" HorizontalAlignment="Left" Style="{StaticResource ListViewText}"/>-->
-                                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding BuildingNo}" HorizontalAlignment="Right" Style="{StaticResource ListViewText}"/>
+                                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="Bygning: " HorizontalAlignment="Right" Style="{StaticResource ListViewText}" Margin="0,0,5,0"/>
+                                                    <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding BuildingNo}" HorizontalAlignment="Left" Style="{StaticResource ListViewText}"/>
                                                 </Grid>
                                             <!--</StackPanel>-->
                                         </Border>
