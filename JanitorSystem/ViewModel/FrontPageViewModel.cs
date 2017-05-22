@@ -43,12 +43,12 @@ namespace JanitorSystem.ViewModel
             Singleton.ClearAssignmentList();
             Singleton.LoadAssignmentList();
             #endregion
-            Singleton.LoadSortingList();
+            Singleton.ShowSortingList();
 
             SortByTimeDbCommand = new RelayCommand(Singleton.OrderedTimeDB,null);
             SortByRankNoCommand = new RelayCommand(Singleton.OrderedRankList, null);
             SortByBuildingNoCommand = new RelayCommand(Singleton.OrderByBuildingNo, null);
-            UpdateSortingListCommand = new RelayCommand(Singleton.LoadSortingList,null);
+            UpdateSortingListCommand = new RelayCommand(Singleton.ShowSortingList,null);
             
         }
         #endregion

@@ -197,7 +197,7 @@ namespace JanitorSystem.Model
             try
             {
                 AssignmentList = await FacadeService.GetAssignmentList();
-                LoadSortingList();
+                ShowSortingList();
                 
                
             }
@@ -210,8 +210,8 @@ namespace JanitorSystem.Model
 
         #endregion
 
-        #region LoadAssignmentSortingList
-        public void LoadSortingList()
+        #region ShowSorting list
+        public void ShowSortingList()
         {
 
             ObservableCollection<AssignmentSorting> res = new ObservableCollection<AssignmentSorting>(
@@ -331,7 +331,7 @@ namespace JanitorSystem.Model
             LoadAppartmentList();
             LoadDepartmentList();
             LoadEmployeeList();
-            LoadSortingList();
+            ShowSortingList();
         }
 
         #endregion
