@@ -246,10 +246,11 @@ namespace JanitorSystem.Model
 
         }
 
-        public void OrderByBuildingNo()
+        public void OrderByDepAndBuildingNo()
         {
-           SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.BuildingNo));
+           SortingList = new ObservableCollection<AssignmentSorting>(SortingList.OrderBy(i => i.DepId).ThenBy(j => j.BuildingNo));
         }
+
 
         #endregion
       
