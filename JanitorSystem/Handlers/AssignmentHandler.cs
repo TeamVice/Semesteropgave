@@ -40,8 +40,8 @@ namespace JanitorSystem.Handlers
         {
             
             if (Avm.Assignment.AssignTitle != null && Avm.Assignment.AssignText != null &&
-                Avm.Assignment.AssignRankNo != null && Avm.SelectedAppartmentId.AppartNo != null &&
-                Avm.SelectedDepartmentId.DepId != null && Avm.SelectedEmployeeId.EmployeeId != null)
+                Avm.Assignment.AssignRankNo > 0 && Avm.SelectedAppartmentId.AppartNo > 0 &&
+                Avm.SelectedDepartmentId.DepId > 0 && Avm.SelectedEmployeeId.EmployeeId > 0)
             {
                
                 Assignment tempAssignment = new Assignment();
