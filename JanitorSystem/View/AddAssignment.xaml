@@ -70,7 +70,7 @@
                     </Grid>
                     <Grid Grid.Row="2">
                         <Border Style="{StaticResource Border}">
-                            <ListView ItemsSource="{Binding Singleton.AssignmentList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Singleton.SelectedAssignmentMVM, Mode=TwoWay}" SelectionMode="None">
+                            <ListView ItemsSource="{Binding Singleton.AssignmentList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectionMode="None">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Border Style="{StaticResource ListViewBorder}">

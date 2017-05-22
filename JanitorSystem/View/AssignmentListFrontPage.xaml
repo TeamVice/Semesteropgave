@@ -62,9 +62,9 @@
                         </Grid.ColumnDefinitions>
                         <TextBlock Grid.Column="0" Style="{StaticResource LabelStyle}" Text="Mine opgaver"/>
                         <ComboBox x:Name="comboBox" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" PlaceholderText="Sortér">
-                            <Button Content="Tid" Command="{Binding SortByTimeDbCommand}" HorizontalAlignment="Stretch"/>
-                            <Button Content="Bygning" Command="{Binding SortByBuildingNoCommand}" HorizontalAlignment="Stretch"/>
-                            <Button Content="Akut" Command="{Binding SortByRankNoCommand}" HorizontalAlignment="Stretch"/>
+                            <Button Name="TimeButton" Content="Tid" Command="{Binding SortByTimeDbCommand}" HorizontalAlignment="Stretch" Click="TimeButton_OnClick"/>
+                            <Button Name="BuildingButton" Content="Bygning" Command="{Binding SortByBuildingNoCommand}" HorizontalAlignment="Stretch" Click="BuildingButton_OnClick"/>
+                            <Button Name="CriticalButton" Content="Akut" Command="{Binding SortByRankNoCommand}" HorizontalAlignment="Stretch" Click="CriticalButton_OnClick"/>
                         </ComboBox>
                     </Grid>
                     <Grid Grid.Row="2">

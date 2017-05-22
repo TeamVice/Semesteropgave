@@ -52,6 +52,27 @@ namespace JanitorSystem.View
             this.Frame.Navigate(typeof(LogInPage), null);
         }
 
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
+
+        private void TimeButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            comboBox.IsDropDownOpen = false;
+            comboBox.PlaceholderText = "Tid";
+        }
+
+        private void BuildingButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            comboBox.IsDropDownOpen = false;
+            comboBox.PlaceholderText = "Bygning";
+        }
+
+        private void CriticalButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            comboBox.IsDropDownOpen = false;
+            comboBox.PlaceholderText = "Akut";
+        }
     }
 }
