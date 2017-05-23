@@ -25,8 +25,8 @@ namespace JanitorSystem.Model
 
         #region Instance property 
         /// <summary>
-        /// Instance prop type ViceListSingleton, sealed class with private konstruktør. 
-        /// A prop which has a get metoden that returns the variable instance. 
+        /// Instance prop type ViceListSingleton, sealed class with private constructor. 
+        /// A prop which has a get method that returns the variable instance. 
         /// </summary>
         /// 
         private static readonly ViceListsSingleton instance = new ViceListsSingleton();
