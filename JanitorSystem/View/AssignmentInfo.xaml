@@ -107,14 +107,6 @@
                     </Grid>
                 </Grid>
             </Grid>
-
-            <!-- Area with menu buttons -->
-            <Grid Grid.Row="2">
-                <Grid Grid.Column="1">
-                    <!--<Button Content="Tilbage til opgaver" HorizontalAlignment="Center" VerticalAlignment="Top" Click="AssignInfoToFP" FontWeight="Bold"/>-->
-                </Grid>
-
-            </Grid>
         </Grid>
     </Grid>
 </Page>

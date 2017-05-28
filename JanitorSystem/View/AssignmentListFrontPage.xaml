@@ -73,7 +73,6 @@
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <Border Style="{StaticResource ListViewBorder}">
-                                            <!--<StackPanel>-->
                                                 <Grid Width="318">
                                                     <Grid.RowDefinitions>
                                                         <RowDefinition/>
@@ -94,7 +93,6 @@
                                                     <TextBlock Grid.Row="1" Grid.Column="1" Text="Afdeling: " HorizontalAlignment="Right" Style="{StaticResource ListViewText}" Margin="0,0,5,0" VerticalAlignment="Center"/>
                                                     <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding DepId}" HorizontalAlignment="Left" Style="{StaticResource ListViewText}" VerticalAlignment="Center"/>
                                             </Grid>
-                                            <!--</StackPanel>-->
                                         </Border>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>

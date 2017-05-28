@@ -8,7 +8,12 @@
     x:Class="JanitorSystem.View.LogInPage"
     mc:Ignorable="d">
 
+    <Page.DataContext>
+        <ViewModel:FrontPageViewModel/>
+    </Page.DataContext>
+
     <Grid>
+        <!-- Background -->
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="White" Offset="0"/>
@@ -16,26 +21,31 @@
             </LinearGradientBrush>
         </Grid.Background>
 
+        <!-- Main page indexation -->
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="13*"/>
             <RowDefinition Height="48"/>
         </Grid.RowDefinitions>
+        
         <!-- Title area -->
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="6*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
+            <!-- Title -->
             <Grid Grid.Column="0">
                 <TextBlock Text="Vice Task Manager" Style="{StaticResource Title}"/>
             </Grid>
+            <!-- Logo -->
             <Grid Grid.Column="1">
                 <Border Style="{StaticResource LogoBorder}" Width="100">
                     <TextBlock Text="VTM" Style="{StaticResource LogoTextBlock}" PointerPressed="VTMClick"/>
                 </Border>
             </Grid>
         </Grid>
+        
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="10"/>
@@ -48,9 +58,7 @@
                 <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Grid.DataContext>
-                <ViewModel:FrontPageViewModel/>
-            </Grid.DataContext>
+            
             <Grid Grid.Row="2" Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="20"/>
