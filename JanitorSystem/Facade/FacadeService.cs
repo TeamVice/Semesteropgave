@@ -196,7 +196,7 @@ namespace JanitorSystem.Facade
         #endregion
 
         #region Post Http kald
-        public static async Task<bool> PostAssignment(Assignment tempAssignment)
+        public static async Task<Assignment> PostAssignment(Assignment tempAssignment)
         {
             using (var client = new HttpClient())
             {
@@ -205,16 +205,20 @@ namespace JanitorSystem.Facade
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 
 
-                var response = await client.PostAsJsonAsync<Assignment>("api/Assignments", tempAssignment);
-
-                if (response.IsSuccessStatusCode)
+                try
+                     
                 {
-                    return true;
+                    HttpResponseMessage response = await client.PostAsJsonAsync<Assignment>("api/Assignments", tempAssignment);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return await response.Content.ReadAsAsync<Assignment>();
+                    }
                 }
-                else
+                catch (Exception e)
                 {
-                    return false;
+                    Debug.Write($"Exception {e}");
                 }
+                return null;
             }
         }
         #endregion
