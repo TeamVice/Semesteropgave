@@ -225,7 +225,7 @@ namespace JanitorSystem.Facade
 
         #region Edit/Put Http kald
 
-        public static async Task<bool> PutAssignComment(AssignmentSorting assignCommentEdit)
+        public static async Task<AssignmentSorting> PutAssignComment(AssignmentSorting assignCommentEdit)
         {
             using (var client = new HttpClient())
             {
@@ -234,16 +234,21 @@ namespace JanitorSystem.Facade
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 string urlString = "api/assignments/" + assignCommentEdit.AssignId;
 
-                var response = await client.PutAsJsonAsync(urlString, assignCommentEdit);
+                
 
-                if (response.IsSuccessStatusCode)
+                try
                 {
-                    return true;
+                    HttpResponseMessage response = await client.PutAsJsonAsync(urlString, assignCommentEdit);
+                    if (response.IsSuccessStatusCode)
+                    {
+                       return await response.Content.ReadAsAsync<AssignmentSorting>();
+                    }
                 }
-                else
+                catch (Exception e)
                 {
-                    return false;
+                    Debug.Write($"Exception {e}");
                 }
+                return null;
             }
         }
 
