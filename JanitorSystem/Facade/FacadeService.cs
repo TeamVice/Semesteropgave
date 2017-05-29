@@ -256,13 +256,26 @@ namespace JanitorSystem.Facade
 
         #region Delete Http kald
 
-        public static async Task DeleteAssignment(AssignmentSorting assignmentToDelete)
+        public static async Task<HttpResponseMessage> DeleteAssignment(AssignmentSorting assignmentToDelete)
         {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri(serverUrl);
                 string urlString = "api/assignments/" + assignmentToDelete.AssignId;
                 await client.DeleteAsync(urlString);
+                try
+                {
+                    HttpResponseMessage response = await client.DeleteAsync(urlString);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        return await client.DeleteAsync(urlString);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.Write($"Exception {e}");
+                }
+                return null;
             }
         } 
 
