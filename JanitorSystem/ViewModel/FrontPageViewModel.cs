@@ -25,6 +25,7 @@ namespace JanitorSystem.ViewModel
 
         #endregion
 
+
         #region Properties af typen ICommand
         public ICommand SortByTimeDbCommand { get; set; }
         public ICommand SortByRankNoCommand { get; set; }
