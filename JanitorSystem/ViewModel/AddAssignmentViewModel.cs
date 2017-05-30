@@ -93,6 +93,10 @@ namespace JanitorSystem.ViewModel
             SetRankNoOneCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToOne,null);
             SetRankNoTwoCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToTwo,null);
             SetRankNoThreeCommand = new RelayCommand(InstanceAssignmentHandler.SetPriorityToThree,null);
+
+            SelectedAppartmentId = new Appartment();
+            SelectedDepartmentId = new Department();
+            SelectedEmployeeId = new Employee();
         }
 
         #endregion
